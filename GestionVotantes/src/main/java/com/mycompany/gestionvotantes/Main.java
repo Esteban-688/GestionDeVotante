@@ -16,30 +16,38 @@ import java.util.*;
  */
 public class Main {
     public static void main (String[]arg) throws IOException{
-    
+        
         System.out.println("Bienvenido al programa de gestion de asistencia");
-        int se = 100;
+        int choose = 100;
+        LugarVotacion mesa = new LugarVotacion();
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
         do{
          
             System.out.println("Elija una opcion:\n");
                 System.out.println("------------------------------------\n");
-                System.out.println("1.  \n");
-                System.out.println("2.  \n");
-                System.out.println("3.  \n");
-                System.out.println("4.  \n");
+                System.out.println("1. Agregar votante \n");
+                System.out.println("2. Mostrar todos los votantes \n");
+                System.out.println("3. \n");
+                System.out.println("4. \n");
                 System.out.println("5.  \n");
                 System.out.println("6.  \n");
                 System.out.println("------------------------------------\n");
-                se = leer.read();
+                choose = Integer.parseInt(leer.readLine());
                 
-                switch(se){
+                switch(choose){
                     case 1:{
-                        System.out.println("");
+                        System.out.println("--AGREGAR VOTANTE--");
+                        mesa.agregarVotante();
                         break;
                     }
                     case 2:{
-                        System.out.println("");
+                        System.out.println("--MOSTRAR VOTANTES-- ");
+                        HashMap auxMesa = mesa.getMesaVotacion();
+                        for(Object aux: auxMesa.values()){
+                            Votante actual = (Votante) aux;
+                            System.out.println("Nombre: "+actual.getName()+" \n Rut: "+actual.getRut()+"\n");
+                            
+                        }
                         break;
                     }
                     case 3:{
@@ -59,7 +67,7 @@ public class Main {
                         break;
                     }
                 }
-        }while(se!=0);
+        }while(choose!=0);
     }
     
 }

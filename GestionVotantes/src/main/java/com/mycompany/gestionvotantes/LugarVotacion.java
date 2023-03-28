@@ -15,7 +15,7 @@ import java.util.*;
 public class LugarVotacion {
      private HashMap<Integer,Votante> mesaVotacion = new HashMap<>();
     
-    public void agregarVotante(Integer rut, String name) throws IOException{
+    public void agregarVotante(Integer rut, String name){
         Votante nuevo = new Votante(name, (int)rut);
         mesaVotacion.put(rut, nuevo);
     }
@@ -34,5 +34,13 @@ public class LugarVotacion {
         mesaVotacion.put(rut, nuevo);
         
     }
+    public HashMap<Integer, Votante> getMesaVotacion() {
+        return mesaVotacion;
+    }
+
+    public void setMesaVotacion(HashMap<Integer, Votante> mesaVotacion) {
+        this.mesaVotacion = mesaVotacion;
+    }
     
 }
+    
