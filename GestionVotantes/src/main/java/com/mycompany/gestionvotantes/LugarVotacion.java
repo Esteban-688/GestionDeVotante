@@ -13,33 +13,28 @@ import java.util.*;
  * @author esteb
  */
 public class LugarVotacion {
-     private HashMap<Integer,Votante> mesaVotacion = new HashMap<>();
-    
-    public void agregarVotante(Integer rut, String name){
-        Votante nuevo = new Votante(name, (int)rut);
-        mesaVotacion.put(rut, nuevo);
+     private HashMap<Integer,Mesa> valparaiso = new HashMap<>();
+     
+    public void agregarMesa(Integer id){
+        Mesa nuevoM = new Mesa((int)id);
+        valparaiso.put(id, nuevoM);
     }
     
-    public void agregarVotante() throws IOException{
+    public void agregarMesa() throws IOException{
     BufferedReader leer = new BufferedReader (new InputStreamReader (System.in));
-    int rut = 0;
-    String name = new String();
-    
-        System.out.println("Selecione el Nombre del votante \n" );
-        name = leer.readLine();
-        System.out.println("Introduzca el Rut sin puntos ni Guion \n");
-        rut = Integer.parseInt(leer.readLine());
+    int id = 0;
+        System.out.println("Introduzca el Número de la Mesa \n");
+        id = Integer.parseInt(leer.readLine());
         
-        Votante nuevo = new Votante(name, rut);
-        mesaVotacion.put(rut, nuevo);
-        
+        Mesa nuevoM = new Mesa(id);
+        valparaiso.put(id, nuevoM);  
     }
-    public HashMap<Integer, Votante> getMesaVotacion() {
-        return mesaVotacion;
+    public HashMap<Integer, Mesa> getValparaiso() {
+        return valparaiso;
     }
 
-    public void setMesaVotacion(HashMap<Integer, Votante> mesaVotacion) {
-        this.mesaVotacion = mesaVotacion;
+    public void setValparaiso(HashMap<Integer, Mesa> valparaiso) {
+        this.valparaiso = valparaiso;
     }
     
 }

@@ -37,12 +37,12 @@ public class Main {
                 switch(choose){
                     case 1:{
                         System.out.println("--AGREGAR VOTANTE--");
-                        mesa.agregarVotante();
+                        mesa.agregarMesa();
                         break;
                     }
                     case 2:{
                         System.out.println("--MOSTRAR VOTANTES-- ");
-                        HashMap auxMesa = mesa.getMesaVotacion();
+                        HashMap auxMesa = mesa.getValparaiso();
                         for(Object aux: auxMesa.values()){
                             Votante actual = (Votante) aux;
                             System.out.println("Nombre: "+actual.getName()+" \n Rut: "+actual.getRut()+"\n");

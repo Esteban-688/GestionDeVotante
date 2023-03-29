@@ -12,16 +12,19 @@ package com.mycompany.gestionvotantes;
 public class Votante {
     private String name;
     private int rut;
+    private int nMesa;
     
     //constructor
-    public Votante(String name, int rut){
+    public Votante(String name, int rut, int nMesa){
         this.name = name;
         this.rut = rut;
+        this.nMesa = nMesa;
     }
     
     public void mostrarVotante(){
         System.out.println("Nombre: "+name+"\n");
         System.out.println("RUT: "+rut+"\n");
+        System.out.println("nMesa"+nMesa+"\n");
     }
 
     public String getName() {
@@ -38,5 +41,13 @@ public class Votante {
 
     public void setRut(int rut) {
         this.rut = rut;
+    }
+    
+    public int getNMesa(){
+        return nMesa;
+    }
+    
+    public void setNMesa(int nMesa){
+        this.nMesa = nMesa;
     }
 }
