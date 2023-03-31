@@ -38,18 +38,17 @@ public class Main {
                 
                 switch(choose){
                     case 1:{
+                        
                         System.out.println("--AGREGAR VOTANTE--");
                         int id = 0;
+                        
                         System.out.println("Introduzca el Número de la Mesa \n");
-                        id = Integer.parseInt(leer.readLine());
-                        //comparar si existe una mesa ya creada
-                        //if (.equals(id)){
-                            
-                        //}
-                        //else{
-                        valpo.agregarMesa(id); 
-                        //}
+                        id = Integer.parseInt(leer.readLine());  
                         auxV = valpo.getValparaiso();
+                        
+                        if(!auxV.containsKey(id)){  
+                           valpo.agregarMesa(id);
+                           }
                         Mesa mesaVotante = new Mesa(id);
                         mesaVotante=auxV.get(id);
                         mesaVotante.agregarVotante(id);

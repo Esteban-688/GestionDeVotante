@@ -46,6 +46,7 @@ public class Mesa {
             System.out.println("Nombre: "+mesaVotante.get(i).getName());
             System.out.println("Rut: "+mesaVotante.get(i).getRut());
             System.out.println("Mesa: "+mesaVotante.get(i).getNMesa());
+            System.out.println(" ");
         }
     }
     public int getId(){
