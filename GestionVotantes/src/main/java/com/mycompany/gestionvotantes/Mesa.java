@@ -58,10 +58,8 @@ public class Mesa {
             System.out.println("Rut: "+mesaVotante.get(i).getRut());
             System.out.println("Mesa: "+mesaVotante.get(i).getNMesa());
             System.out.println(" ");
-            break;
-           }    
-        }
-       System.out.println("NO EXISTE ESE VOTANTE");
+           }
+        }    
                
     }
     public int getId(){
