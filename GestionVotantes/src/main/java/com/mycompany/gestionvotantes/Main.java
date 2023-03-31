@@ -31,8 +31,8 @@ public class Main {
                 System.out.println("2. Mostrar todas las Mesas \n");
                 System.out.println("3. Mostrar por Mesa\n");
                 System.out.println("4. Buscar por Rut\n");
-                System.out.println("5.  \n");
-                System.out.println("6.  \n");
+                System.out.println("5. Eliminar por Rut\n");
+                System.out.println("6. Eliminar Mesa\n");
                 System.out.println("------------------------------------\n");
                 choose = Integer.parseInt(leer.readLine());
                 
@@ -50,19 +50,20 @@ public class Main {
                     }
                     case 3:{
                         System.out.println("--MOSTRAR POR MESA");
-                        
+                            valpo.mostrarMesa(valpo);
                         break;
                     }
                     case 4:{
                         System.out.println("BUSCAR VOTANTE POR RUT");
+                            valpo.buscarRut(valpo);
                         break;
                     }
                     case 5:{
-                        System.out.println("");
+                        System.out.println("ELIMINAR VOTANTE POR RUT");
                         break;
                     }
                     case 6:{
-                        System.out.println("");
+                        System.out.println("ELIMINAR MESA POR NUMERO");
                         break;
                     }
                 }

@@ -41,6 +41,7 @@ public class Mesa {
         Votante nuevoV = new Votante(name, rut, nMesa);
         mesaVotante.add(nuevoV);
     }
+    
     public void imprimirMesa(ArrayList<Votante> mesaVotante){
         for(int i = 0; i<mesaVotante.size() ;i++){
             System.out.println("Nombre: "+mesaVotante.get(i).getName());
@@ -48,6 +49,22 @@ public class Mesa {
             System.out.println("Mesa: "+mesaVotante.get(i).getNMesa());
             System.out.println(" ");
         }
+    }
+    public void imprimirVotante(ArrayList<Votante> mesaVotante, int rut){
+       for(int i = 0; i<mesaVotante.size() ;i++){
+           
+           if(rut==mesaVotante.get(i).getRut()){
+            System.out.println("Nombre: "+mesaVotante.get(i).getName());
+            System.out.println("Rut: "+mesaVotante.get(i).getRut());
+            System.out.println("Mesa: "+mesaVotante.get(i).getNMesa());
+            System.out.println(" ");
+           }
+           else{
+               System.out.println("NO EXISTE ESE VOTANTE");
+               break;
+           }
+            
+        } 
     }
     public int getId(){
         return id;
