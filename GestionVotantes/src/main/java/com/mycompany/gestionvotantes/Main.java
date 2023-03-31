@@ -19,15 +19,17 @@ public class Main {
         
         System.out.println("Bienvenido al programa de gestion de asistencia");
         int choose = 100;
-        LugarVotacion mesa = new LugarVotacion();
+        LugarVotacion valpo = new LugarVotacion();
+        HashMap <Integer,Mesa> auxV = new HashMap<>(); 
+        
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
         do{
          
             System.out.println("Elija una opcion:\n");
                 System.out.println("------------------------------------\n");
-                System.out.println("1. Agregar votante \n");
+                System.out.println("1. Agregar Votante \n");
                 System.out.println("2. Mostrar todos los votantes \n");
-                System.out.println("3. \n");
+                System.out.println("3. Crear Mesa\n");
                 System.out.println("4. \n");
                 System.out.println("5.  \n");
                 System.out.println("6.  \n");
@@ -37,21 +39,30 @@ public class Main {
                 switch(choose){
                     case 1:{
                         System.out.println("--AGREGAR VOTANTE--");
-                        mesa.agregarMesa();
+                        int id = 0;
+                        System.out.println("Introduzca el Número de la Mesa \n");
+                        id = Integer.parseInt(leer.readLine());
+                        //comparar si existe una mesa ya creada
+                        //if (.equals(id)){
+                            
+                        //}
+                        //else{
+                        valpo.agregarMesa(id); 
+                        //}
+                        auxV = valpo.getValparaiso();
+                        Mesa mesaVotante = new Mesa(id);
+                        mesaVotante=auxV.get(id);
+                        mesaVotante.agregarVotante(id);
                         break;
                     }
                     case 2:{
                         System.out.println("--MOSTRAR VOTANTES-- ");
-                        HashMap auxMesa = mesa.getValparaiso();
-                        for(Object aux: auxMesa.values()){
-                            Votante actual = (Votante) aux;
-                            System.out.println("Nombre: "+actual.getName()+" \n Rut: "+actual.getRut()+"\n");
-                            
-                        }
+                            valpo.mostrarTodo(auxV);
                         break;
                     }
                     case 3:{
-                        System.out.println("");
+                        System.out.println("--AGREGAR MESA");
+                        
                         break;
                     }
                     case 4:{
