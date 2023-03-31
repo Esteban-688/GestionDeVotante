@@ -12,7 +12,7 @@ import java.util.*;
 
 /**
  *
- * @author estebanRodriguez
+ * @author estebanRodriguez , eduardomarin , viventemorales
  */
 public class Main {
     public static void main (String[]arg) throws IOException{
