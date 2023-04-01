@@ -21,19 +21,64 @@ public class LugarVotacion {
         Mesa nuevoM = new Mesa((int)id);
         valparaiso.put(id, nuevoM);
     }
-    
-    public void agregarMesa(int id){
-        Mesa nuevoM = new Mesa(id);
-        valparaiso.put(id, nuevoM); 
+    BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+    public void agregarMesa(LugarVotacion valpo)throws IOException{
+        
+                        HashMap <Integer,Mesa> auxV = new HashMap<>();
+                        auxV = valpo.getValparaiso();
+                        int id = 0;
+                        System.out.println("Introduzca el Número de la Mesa \n");
+                        id = Integer.parseInt(leer.readLine());
+                        //comprabacion de si la mesa ya esta creada
+                        if(!auxV.containsKey(id)){
+                           Mesa nuevoM = new Mesa(id);
+                            valparaiso.put(id, nuevoM); 
+                           }
+                        Mesa mesaVotante = new Mesa(id);
+                        mesaVotante=auxV.get(id);
+                        mesaVotante.agregarVotante(id); 
+        
     }    
-    public void mostrarTodo(HashMap<Integer , Mesa> valparaiso){
-        for (Integer key: valparaiso.keySet()){
+    public void mostrarTodo(LugarVotacion valpo){
+        
+        HashMap <Integer,Mesa> auxV = new HashMap<>();
+        auxV = valpo.getValparaiso();
+        for (Integer key: auxV.keySet()){
             Mesa mesaV = new Mesa(key);
-            mesaV = valparaiso.get(key);
+            mesaV = auxV.get(key);
             ArrayList mesaVotante = new ArrayList();
             mesaVotante = mesaV.getMesaVotante();
             mesaV.imprimirMesa(mesaVotante);
         
+        }
+    }
+    
+    public void mostrarMesa(LugarVotacion valpo)throws IOException{
+        HashMap <Integer,Mesa> auxV = new HashMap<>();
+        auxV = valpo.getValparaiso();
+        int id = 0;
+        System.out.println("Introduzca el Número de la Mesa \n");
+        id = Integer.parseInt(leer.readLine());
+        Mesa mesaV = new Mesa(id);
+        mesaV = auxV.get(id);
+        ArrayList mesaVotante = new ArrayList();
+        mesaVotante = mesaV.getMesaVotante();
+        mesaV.imprimirMesa(mesaVotante);
+    }
+    
+    public void buscarRut(LugarVotacion valpo)throws IOException{
+        HashMap <Integer,Mesa> auxV = new HashMap<>();
+        System.out.println("Ingrese Rut a buscar");
+        int rut;
+        rut = Integer.parseInt(leer.readLine());
+        auxV = valpo.getValparaiso();
+        
+        for (Integer key: auxV.keySet()){
+            Mesa mesaV = new Mesa(key);
+            mesaV = auxV.get(key);
+            ArrayList mesaVotante = new ArrayList();
+            mesaVotante = mesaV.getMesaVotante();
+            mesaV.imprimirVotante(mesaVotante, rut);
         }
     }
     
