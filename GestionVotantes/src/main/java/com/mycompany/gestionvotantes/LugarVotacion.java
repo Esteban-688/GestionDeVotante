@@ -24,19 +24,19 @@ public class LugarVotacion {
     BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
     public void agregarMesa(LugarVotacion valpo)throws IOException{
         
-                        HashMap <Integer,Mesa> auxV = new HashMap<>();
-                        auxV = valpo.getValparaiso();
-                        int id = 0;
-                        System.out.println("Introduzca el Número de la Mesa \n");
-                        id = Integer.parseInt(leer.readLine());
-                        //comprabacion de si la mesa ya esta creada
-                        if(!auxV.containsKey(id)){
-                           Mesa nuevoM = new Mesa(id);
-                            valparaiso.put(id, nuevoM); 
-                           }
-                        Mesa mesaVotante = new Mesa(id);
-                        mesaVotante=auxV.get(id);
-                        mesaVotante.agregarVotante(id); 
+        HashMap <Integer,Mesa> auxV = new HashMap<>();
+        auxV = valpo.getValparaiso();
+        int id = 0;
+        System.out.println("Introduzca el Número de la Mesa \n");
+        id = Integer.parseInt(leer.readLine());
+        //comprabacion de si la mesa ya esta creada
+        if(!auxV.containsKey(id)){
+            Mesa nuevoM = new Mesa(id);
+         valparaiso.put(id, nuevoM); 
+        }
+        Mesa mesaVotante = new Mesa(id);
+        mesaVotante=auxV.get(id);
+        mesaVotante.agregarVotante(id); 
         
     }    
     public void mostrarTodo(LugarVotacion valpo){

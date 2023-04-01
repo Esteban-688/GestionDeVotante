@@ -69,5 +69,30 @@ public class Main {
                 }
         }while(choose!=0);
     }
+
+    //Funcion cargar datos desde un csv
+    /*public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{
+		String filePath = "personasInscritas.txt";
+		
+		
+		BufferedReader lectorTxt = new BufferedReader( new FileReader( filePath ) );
+		String lineText = null;
+		
+		while ((lineText = lectorTxt.readLine()) != null) {
+			Votante bi = new Votante();
+			String[] arr = lineText.split(",");
+			bi.setName(arr[0]);
+			bi.setRut(Integer.parseInt(arr[2]));
+			bi.setNMesa(Integer.parseInt(arr[3]));
+			mesaVotante.add(bi);
+		}
+		
+		lectorTxt.close();
+	}*/
+	
+
+
+
+
     
 }
