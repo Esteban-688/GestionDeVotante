@@ -31,7 +31,7 @@ public class Mesa {
     BufferedReader leer = new BufferedReader (new InputStreamReader (System.in));
     int rut = 0;
     int nMesa = id;
-    String name = new String();
+    String name;
     
         System.out.println("Selecione el Nombre del votante \n" );
         name = leer.readLine();
@@ -61,6 +61,19 @@ public class Mesa {
            }
         }    
                
+    }
+    public void eliminarVotante(ArrayList<Votante> mesaVotante, int rut){
+        for(int i = 0; i<mesaVotante.size() ;i++){
+           
+           if(rut == mesaVotante.get(i).getRut()){
+            System.out.println("Nombre: "+mesaVotante.get(i).getName());
+            System.out.println("Rut: "+mesaVotante.get(i).getRut());
+            System.out.println("Mesa: "+mesaVotante.get(i).getNMesa());
+            System.out.println(" Se ha eliminado \n");
+            mesaVotante.remove(i);
+           }
+        }
+    
     }
     public int getId(){
         return id;
