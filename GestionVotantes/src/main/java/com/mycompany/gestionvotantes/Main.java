@@ -22,6 +22,33 @@ public class Main {
         LugarVotacion valpo = new LugarVotacion();
         HashMap <Integer,Mesa> auxV = new HashMap<>(); 
         
+        //agregar automatico los siguientes votantes
+        String name1,name2,name3,name4,name5;
+        int rut1,rut2,rut3,rut4,rut5,id1=1,id2=2,id3=3;
+        //votante1
+        name1 = ("Esteban");
+        rut1 = 207958360;
+        valpo.agregarMesa(valpo,id1,name1,rut1);
+        //votante2
+        name2 = ("Jorge");
+        rut2 = 180634533;
+        valpo.agregarMesa(valpo,id1,name2,rut2);
+        //votante3
+        name3 = ("Julian");
+        rut3 = 218553478;
+        valpo.agregarMesa(valpo,id2,name3,rut3);
+        //votante4
+        name4 = ("Diego");
+        rut4 = 206674580;
+        valpo.agregarMesa(valpo,id2,name4,rut4);
+        //votante5
+        name5 = ("pedro");
+        rut5 = 150580242;
+        valpo.agregarMesa(valpo,id3,name5,rut5);
+        
+        //termino de agregar automatico
+
+        
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
         do{
          
@@ -60,10 +87,12 @@ public class Main {
                     }
                     case 5:{
                         System.out.println("ELIMINAR VOTANTE POR RUT");
+                           valpo.eliminarRut(valpo);
                         break;
                     }
                     case 6:{
                         System.out.println("ELIMINAR MESA POR NUMERO");
+                            valpo.eliminarMesa(valpo);
                         break;
                     }
                 }
