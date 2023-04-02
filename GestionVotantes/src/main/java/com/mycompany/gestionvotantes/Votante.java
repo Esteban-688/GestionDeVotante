@@ -9,22 +9,22 @@ package com.mycompany.gestionvotantes;
  *
  * @author esteb
  */
+
 public class Votante {
-    private String name;
     private int rut;
     private int nMesa;
+    private String name;
     
-    //constructor
-    public Votante(String name, int rut, int nMesa){
+    public Votante(String name, int rut, int nMesa) {
         this.name = name;
         this.rut = rut;
         this.nMesa = nMesa;
     }
     
-    public void mostrarVotante(){
-        System.out.println("Nombre: "+name+"\n");
-        System.out.println("RUT: "+rut+"\n");
-        System.out.println("nMesa"+nMesa+"\n");
+    public void mostrarVotante() {
+        System.out.println("Nombre: " + name + "\n");
+        System.out.println("RUT: " + rut + "\n");
+        System.out.println("Mesa" + nMesa + "\n");
     }
 
     public String getName() {
@@ -43,11 +43,11 @@ public class Votante {
         this.rut = rut;
     }
     
-    public int getNMesa(){
+    public int getNMesa() {
         return nMesa;
     }
     
-    public void setNMesa(int nMesa){
+    public void setNMesa(int nMesa) {
         this.nMesa = nMesa;
     }
 }
