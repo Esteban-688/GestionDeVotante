@@ -15,6 +15,13 @@ import java.util.*;
 
 public class Main {
     public static void main (String[]arg) throws IOException {
+        
+       /*ventana creacion
+       InterfacePrincipal interfacePrincipal = new InterfacePrincipal();
+      
+        /interfacePrincipal.setVisible(true);
+          */  
+       //cierre de aspecto de la inteface ventana
         int choose = 100;
         LugarVotacion valpo = new LugarVotacion();
         HashMap <Integer, Mesa> auxV = new HashMap<>(); 
@@ -51,7 +58,7 @@ public class Main {
         //Término de agregar por defecto
 
         //Menú de opciones
-        System.out.println("Bienvenido al programa de gestión de asistencia\n");
+        System.out.println("Bienvenido al programa de gestión de votacion\n");
         do {
             System.out.println("Menú de opciones");
             System.out.println("------------------------------------");
