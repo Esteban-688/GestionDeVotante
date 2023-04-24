@@ -45,54 +45,33 @@ public class LugarVotacion {
         for (Integer key: valparaiso.keySet()){
             Mesa mesaV = new Mesa(key);
             mesaV = valparaiso.get(key);
-            /*
-            //Se muestra cada una de las mesas con sus votantes
-            ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.obtenerLista();*/
+            //aca se hace uso de imprimir mesa por mesa
             mesaV.imprimirMesa(mesaV.obtenerLista());
         }
     }
-    /*
-    public void mostrarMesa(LugarVotacion valpo) throws IOException {
-        int id;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        //Se pide la mesa a buscar
-        System.out.print("Introduzca el número de la mesa: ");
-        id = Integer.parseInt(leer.readLine());
-        System.out.println();
-
-        //Se obtiene el mapa de mesas
-        Mesa mesaV = new Mesa(id);
-        mesaV = auxV.get(id);
-
-        //Se muestran los votante de la mesa
-        ArrayList mesaVotante = new ArrayList();
-        mesaVotante = mesaV.getMesaVotante();
-        mesaV.imprimirMesa(mesaVotante);
+    
+    public void mostrarMesa() throws IOException {
+        
+        //con este metodo de pide la id de mesa y tambien se valida que este dentro de los parametros
+        int id = verificarId();
+        //luego con el .get(id) obtengo el objeto mesa desde el hashMap
+        // al hacerle .obtenerLista a lo anterior logro obtener el Arraylist dentro de la mesa
+        //luego con imprimir mesa se imprmi el arrayList
+        valparaiso.get(id).imprimirMesa(valparaiso.get(id).obtenerLista());
     }
     
-    public void buscarRut(LugarVotacion valpo) throws IOException {
-        int rut;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
+    public void buscarRut() throws IOException {
+        String rut;
 
         System.out.print("Ingrese el RUT a buscar: ");
-        rut = Integer.parseInt(leer.readLine());
+        rut = leer.readLine();
         System.out.println();
         
         //Se recorre el mapa de mesas
-        for (Integer key: auxV.keySet()){
-            Mesa mesaV = new Mesa(key);
-            mesaV = auxV.get(key);
-
-            //Se muestra el votante
-            ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.getMesaVotante();
-            mesaV.imprimirVotante(mesaVotante, rut);
+        for (Integer key: valparaiso.keySet()){
+             valparaiso.get(key).imprimirVotante(rut);
         }
-    }
+    }/*
     
     public void eliminarRut(LugarVotacion valpo) throws IOException {
         int rut;
@@ -132,5 +111,28 @@ public class LugarVotacion {
             System.out.println("¡Mesa borrada con éxito!\n");
         }
     }  */
+    
+    //validar que el numero que se ingrese es valido dentro de los parametros
+    public int verificarId()throws IOException{
+        
+        int id = 0;//numero de mesa
+        boolean esNumeroValido = false;
+
+        // Validar el número ingresado por el usuario
+        while (!esNumeroValido) {
+            System.out.println("Introduzca Número de mesa: ");
+            String entradaId = leer.readLine();
+
+            // Verificar si la entrada es un número entero
+            try {
+                
+                id = Integer.parseInt(entradaId);
+                esNumeroValido = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida. Por favor, ingrese un número entero.");
+            }
+        }
+       return id;
+    }
 }
     

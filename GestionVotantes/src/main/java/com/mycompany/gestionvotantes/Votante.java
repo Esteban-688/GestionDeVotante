@@ -19,7 +19,8 @@ public class Votante {
     private int nMesa;
     private String name;
     private  BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-    //constructor
+    //constructores
+    
     public Votante(String name, String rut, int nMesa) {
         this.name = name;
         this.rut = rut;
@@ -37,6 +38,7 @@ public class Votante {
         nombre = leer.readLine();
         System.out.println("Introduzca el RUT sin puntos ni guión: ");
         rutVotante = leer.readLine();
+        //aca se verifica 
         verificarId();
         System.out.println();
         //se rellena con lo solicitado
@@ -45,7 +47,7 @@ public class Votante {
        
         
     }
-    
+    //esto verifica que la id sea un numero entero
     public void verificarId()throws IOException{
         
         int id = 0;//numero de mesa
@@ -67,12 +69,6 @@ public class Votante {
         }
        nMesa = id;
     }
-    
-    public void mostrarVotante() {
-        System.out.println("Nombre: " + name + "\n");
-        System.out.println("RUT: " + rut + "\n");
-        System.out.println("Mesa" + nMesa + "\n");
-    } 
    
     public String getName() {
         return name;

@@ -50,7 +50,7 @@ public class Mesa {
         return mesaVotante;
         
     }
-    
+    //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
     public void imprimirMesa(ArrayList<Votante> mesaVotante) {
         //Se muestran los votantes de cada mesa
         for(int i = 0; i < mesaVotante.size(); i++){
@@ -60,18 +60,21 @@ public class Mesa {
             System.out.println();
         }
     }
-    /*
-    public void imprimirVotante(ArrayList<Votante> mesaVotante, int rut) {
+    
+    public Boolean imprimirVotante(String rut) {
+          
         //Se muestran los datos del votante buscado
         for(int i = 0; i < mesaVotante.size(); i++){
-            if(rut == mesaVotante.get(i).getRut()) {
+            if(rut.equals(mesaVotante.get(i).getRut()))  {
                 System.out.println("Nombre: " + mesaVotante.get(i).getName());
                 System.out.println("RUT: " + mesaVotante.get(i).getRut());
                 System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
+                return true;
             }
         }
+        return false;
     }
-
+    /*
     public void eliminarVotante(ArrayList<Votante> mesaVotante, int rut) {
         //Se muestran los datos del votante a eliminar
         for(int i = 0; i < mesaVotante.size(); i++) {

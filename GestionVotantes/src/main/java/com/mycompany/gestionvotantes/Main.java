@@ -92,13 +92,13 @@ public class Main {
 
                 case 3: {
                     System.out.println("-- MOSTRAR POR MESA --");
-                    
+                    valpo.mostrarMesa();
                     break;
                 }
 
                 case 4: {
                     System.out.println("-- BUSCAR VOTANTE POR RUT --");
-                    
+                    valpo.buscarRut();
                     break;
                 }
 
