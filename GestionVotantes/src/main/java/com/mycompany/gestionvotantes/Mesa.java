@@ -28,16 +28,15 @@ public class Mesa {
     
     //funciones
     
-    //obtener un arraylist desde una mesa
-    public ArrayList<Votante> obtenerLista() {
-        return mesaVotante;
+    //obtener un arraylist un votante de una mesa
+    public Votante obtenerVotante(int index){
+        return mesaVotante.get(index);
     }
     
     //agrega un votante a una mesa ya existente,parametros: mesa existente
-    public void agregarVotanteAMesa(ArrayList<Votante> mesaExistente) {
-           
-        mesaVotante = obtenerLista();
-        mesaVotante.add(mesaExistente.get(0));
+    public void agregarVotanteAMesa(Votante votanteNuevo) {
+        
+        mesaVotante.add(votanteNuevo);
         
     }
     
@@ -51,7 +50,7 @@ public class Mesa {
         
     }
     //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
-    public void imprimirMesa(ArrayList<Votante> mesaVotante) {
+    public void imprimirMesa() {
         //Se muestran los votantes de cada mesa
         for(int i = 0; i < mesaVotante.size(); i++){
             System.out.println("Nombre: " + mesaVotante.get(i).getName());

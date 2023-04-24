@@ -20,18 +20,19 @@ public class LugarVotacion {
     
     
     //retorna true si existe mesa, en caso de que no exista false y crea la mesa
-    public boolean agregarMesa()throws IOException{
-        Mesa auxMesa = new Mesa();
-        int id = auxMesa.getId();
+    public boolean agregarMesa() throws IOException{
+        Mesa nuevaMesa = new Mesa();
+        int id = nuevaMesa.getId();
        //comprobar si existe una mesa 
         if(!valparaiso.containsKey(id)){
             //si no existe, se ingresa la mesa con la id al mapa
-            valparaiso.put(id, auxMesa);
+            valparaiso.put(id, nuevaMesa);
             System.out.println("Se agrego a una nueva mesa: " + id);
             return false;
         }
         //si existe la mesa se usa el metodo agregarVotanteAMesa para ingresarlo a la mesa existente
-        valparaiso.get(id).agregarVotanteAMesa(auxMesa.obtenerLista());
+        int index = 0;
+        valparaiso.get(id).agregarVotanteAMesa(nuevaMesa.obtenerVotante(index));
             System.out.println("Se añadio a la mesa existente: " + id);
         return true;
     }
@@ -46,7 +47,7 @@ public class LugarVotacion {
             Mesa mesaV = new Mesa(key);
             mesaV = valparaiso.get(key);
             //aca se hace uso de imprimir mesa por mesa
-            mesaV.imprimirMesa(mesaV.obtenerLista());
+            mesaV.imprimirMesa();
         }
     }
     
@@ -57,12 +58,11 @@ public class LugarVotacion {
         //luego con el .get(id) obtengo el objeto mesa desde el hashMap
         // al hacerle .obtenerLista a lo anterior logro obtener el Arraylist dentro de la mesa
         //luego con imprimir mesa se imprmi el arrayList
-        valparaiso.get(id).imprimirMesa(valparaiso.get(id).obtenerLista());
+        valparaiso.get(id).imprimirMesa();
     }
     
     public void buscarRut() throws IOException {
         String rut;
-
         System.out.print("Ingrese el RUT a buscar: ");
         rut = leer.readLine();
         System.out.println();
