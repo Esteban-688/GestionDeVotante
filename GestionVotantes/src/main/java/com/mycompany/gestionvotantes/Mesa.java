@@ -10,33 +10,45 @@ import java.util.*;
  */
 
 public class Mesa {
+    //declaration Variable
     private int id;
     private ArrayList<Votante> mesaVotante = new ArrayList<Votante>();
+    private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
     
+    //constructor
     public Mesa(int id){
         this.id = id;
     }
-    
-    public void agregarVotante(int rut, String name, int nMesa) {
-        Votante nuevoV = new Votante(name, rut, nMesa);
-        mesaVotante.add(nuevoV);
+    //sobrecargar de constructor
+    public Mesa()throws IOException{
+        Votante nuevoVotante = new Votante();
+        mesaVotante.add(nuevoVotante);
+        id = nuevoVotante.getNMesa();
     }
     
-    public void agregarVotante(int id) throws IOException {
-        BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-        int rut = 0;
-        int nMesa = id;
-        String name;
+    //funciones
     
-        //Se piden los datos
-        System.out.print("Introduzca el nombre del votante: " );
-        name = leer.readLine();
-        System.out.print("Introduzca el RUT sin puntos ni guión: ");
-        rut = Integer.parseInt(leer.readLine());
-        System.out.println();
+    //obtener un arraylist desde una mesa
+    public ArrayList<Votante> obtenerLista() {
+        return mesaVotante;
+    }
+    
+    //agrega un votante a una mesa ya existente,parametros: mesa existente
+    public void agregarVotanteAMesa(ArrayList<Votante> mesaExistente) {
+           
+        mesaVotante = obtenerLista();
+        mesaVotante.add(mesaExistente.get(0));
         
-        Votante nuevoV = new Votante(name, rut, nMesa);
-        mesaVotante.add(nuevoV);
+    }
+    
+    public ArrayList<Votante> agregarVotanteAMesa()throws IOException{
+        //declaration variables de Instacia
+        
+        Votante nuevoVotante = new Votante();
+        mesaVotante.add(nuevoVotante);
+        id = nuevoVotante.getNMesa();
+        return mesaVotante;
+        
     }
     
     public void imprimirMesa(ArrayList<Votante> mesaVotante) {
@@ -48,7 +60,7 @@ public class Mesa {
             System.out.println();
         }
     }
-
+    /*
     public void imprimirVotante(ArrayList<Votante> mesaVotante, int rut) {
         //Se muestran los datos del votante buscado
         for(int i = 0; i < mesaVotante.size(); i++){
@@ -72,7 +84,10 @@ public class Mesa {
             }
         }
     }
-
+*/
+    
+    
+    //setter y getters
     public int getId() {
         return id;
     }
@@ -80,12 +95,4 @@ public class Mesa {
     public void setId(int id) {
         this.id = id;
     } 
-    
-    public ArrayList<Votante> getMesaVotante() {
-        return mesaVotante;
-    }
-    
-    public void setMesaVotante(ArrayList<Votante> mesaVotante) {
-        this.mesaVotante = mesaVotante;
-    }
 }

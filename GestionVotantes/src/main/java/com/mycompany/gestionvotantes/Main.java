@@ -16,17 +16,19 @@ import java.util.*;
 public class Main {
     public static void main (String[]arg) throws IOException {
         
-       /*ventana creacion
+       //ventana creacion
        InterfacePrincipal interfacePrincipal = new InterfacePrincipal();
       
-        /interfacePrincipal.setVisible(true);
-          */  
+        interfacePrincipal.setVisible(true);
+            
        //cierre de aspecto de la inteface ventana
         int choose = 100;
         LugarVotacion valpo = new LugarVotacion();
         HashMap <Integer, Mesa> auxV = new HashMap<>(); 
         BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
         
+        
+        /*
         //Agregar por defecto los siguientes votantes:
         String name1, name2, name3, name4, name5;
         int rut1, rut2, rut3, rut4, rut5, id1 = 1, id2 = 2, id3 = 3;
@@ -57,6 +59,7 @@ public class Main {
         valpo.agregarMesa(valpo, id3, name5, rut5);
         //Término de agregar por defecto
 
+        */
         //Menú de opciones
         System.out.println("Bienvenido al programa de gestión de votacion\n");
         do {
@@ -77,37 +80,37 @@ public class Main {
             switch(choose) {
                 case 1: {
                     System.out.println("-- AGREGAR VOTANTE --"); 
-                    valpo.agregarMesa(valpo);
+                    valpo.agregarMesa();
                     break;
                 }
 
                 case 2: {
                     System.out.println("-- MOSTRAR TODAS LAS MESAS --");
-                    valpo.mostrarTodo(valpo);
+                    valpo.mostrarTodo();
                     break;
                 }
 
                 case 3: {
                     System.out.println("-- MOSTRAR POR MESA --");
-                    valpo.mostrarMesa(valpo);
+                    
                     break;
                 }
 
                 case 4: {
                     System.out.println("-- BUSCAR VOTANTE POR RUT --");
-                    valpo.buscarRut(valpo);
+                    
                     break;
                 }
 
                 case 5: {
                     System.out.println("-- ELIMINAR VOTANTE POR RUT --");
-                    valpo.eliminarRut(valpo);
+                    
                     break;
                 }
 
                 case 6: {
                     System.out.println("-- ELIMINAR MESA POR NUMERO --");
-                    valpo.eliminarMesa(valpo);
+                    
                     break;
                 }
 

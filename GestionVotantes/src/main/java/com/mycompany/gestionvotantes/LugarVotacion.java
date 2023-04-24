@@ -16,62 +16,43 @@ import java.util.HashMap;
 
 public class LugarVotacion {
     private HashMap<Integer, Mesa> valparaiso = new HashMap<>();
-    BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-     
-    public void agregarMesa(LugarVotacion valpo, int id, String name, int rut) {
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        //Se comprueba si la mesa ya está creada
-        if(!auxV.containsKey(id)) {
-            Mesa nuevoM = new Mesa(id);
-            valparaiso.put(id, nuevoM); 
+    private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+    
+    
+    //retorna true si existe mesa, en caso de que no exista false y crea la mesa
+    public boolean agregarMesa()throws IOException{
+        Mesa auxMesa = new Mesa();
+        int id = auxMesa.getId();
+       //comprobar si existe una mesa 
+        if(!valparaiso.containsKey(id)){
+            //si no existe, se ingresa la mesa con la id al mapa
+            valparaiso.put(id, auxMesa);
+            System.out.println("Se agrego a una nueva mesa: " + id);
+            return false;
         }
-
-        //Se agrega el votante
-        Mesa mesaVotante = new Mesa(id);
-        mesaVotante = auxV.get(id);
-        mesaVotante.agregarVotante(rut, name, id);
-        
+        //si existe la mesa se usa el metodo agregarVotanteAMesa para ingresarlo a la mesa existente
+        valparaiso.get(id).agregarVotanteAMesa(auxMesa.obtenerLista());
+            System.out.println("Se añadio a la mesa existente: " + id);
+        return true;
     }
     
-    public void agregarMesa(LugarVotacion valpo) throws IOException {
-        int id;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
+    
 
-        //Se pide la mesa
-        System.out.print("Introduzca el número de la mesa: ");
-        id = Integer.parseInt(leer.readLine());
+    public void mostrarTodo(){
 
-        //Se comprueba si la mesa ya esta creada
-        if(!auxV.containsKey(id)) {
-            Mesa nuevoM = new Mesa(id);
-            valparaiso.put(id, nuevoM); 
-        }
-
-        //Se agrega el votante
-        Mesa mesaVotante = new Mesa(id);
-        mesaVotante = auxV.get(id);
-        mesaVotante.agregarVotante(id);
-    }
-
-    public void mostrarTodo(LugarVotacion valpo) {
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
 
         //Se recorre el mapa de mesas
-        for (Integer key: auxV.keySet()){
+        for (Integer key: valparaiso.keySet()){
             Mesa mesaV = new Mesa(key);
-            mesaV = auxV.get(key);
-
+            mesaV = valparaiso.get(key);
+            /*
             //Se muestra cada una de las mesas con sus votantes
             ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.getMesaVotante();
-            mesaV.imprimirMesa(mesaVotante);
+            mesaVotante = mesaV.obtenerLista();*/
+            mesaV.imprimirMesa(mesaV.obtenerLista());
         }
     }
-    
+    /*
     public void mostrarMesa(LugarVotacion valpo) throws IOException {
         int id;
         HashMap <Integer, Mesa> auxV = new HashMap<>();
@@ -150,15 +131,6 @@ public class LugarVotacion {
             auxV.remove(nMesa);
             System.out.println("¡Mesa borrada con éxito!\n");
         }
-    }
-    
-    public HashMap<Integer, Mesa> getValparaiso() {
-        return valparaiso;
-    }
- 
-    public void setValparaiso(HashMap<Integer, Mesa> valparaiso) {
-        this.valparaiso = valparaiso;
-    }
-    
+    }  */
 }
     
