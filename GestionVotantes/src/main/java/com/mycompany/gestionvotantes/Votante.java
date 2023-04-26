@@ -15,40 +15,46 @@ import java.io.InputStreamReader;
  */
 
 public class Votante {
-    private String rut;
-    private int nMesa;
-    private String name;
+    private String rut;//su rut
+    private int nMesa;//numero de la mesa que se encuentra
+    private String name;//nombre del votante
     private  BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
     //constructores
     
-    public Votante(String name, String rut, int nMesa) {
-        this.name = name;
-        this.rut = rut;
-        this.nMesa = nMesa;
+    public Votante(String nombre, String rutVotante, int numeroMesa) {
+        name = nombre;
+        rut = rutVotante;
+        nMesa = numeroMesa;
     }
-    //sobrecarga de constructor
-    public Votante()throws IOException{   
+    public Votante(){
+        name = "";
+        rut = "";
+        nMesa = 0;
+    }
+    
+    //este metodo rellena desde pantalla un votante ya creado
+    public void crearVotante()throws IOException{
+        
         //declartion variable
-        String nombre;
-        String rutVotante;
+       // String nombre;
+        //String rutVotante;
         //Se piden los datos
         
         //
         System.out.println("Introduzca el nombre del votante: " );
-        nombre = leer.readLine();
+        name = leer.readLine();
         System.out.println("Introduzca el RUT sin puntos ni guión: ");
-        rutVotante = leer.readLine();
+        rut = leer.readLine();
         //aca se verifica 
-        verificarId();
+        nMesa = verificarId();
         System.out.println();
+        
         //se rellena con lo solicitado
-        name = nombre;
-        rut = rutVotante;
-       
+        //Votante(name, rut, nMesa);
         
     }
     //esto verifica que la id sea un numero entero
-    public void verificarId()throws IOException{
+    private int verificarId()throws IOException{
         
         int id = 0;//numero de mesa
         boolean esNumeroValido = false;
@@ -67,7 +73,7 @@ public class Votante {
                 System.out.println("Entrada inválida. Por favor, ingrese un número entero.");
             }
         }
-       nMesa = id;
+       return id;
     }
    
     public String getName() {

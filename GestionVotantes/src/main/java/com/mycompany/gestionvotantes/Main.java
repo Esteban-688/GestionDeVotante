@@ -104,7 +104,7 @@ public class Main {
 
                 case 5: {
                     System.out.println("-- ELIMINAR VOTANTE POR RUT --");
-                    
+                    valpo.eliminarPorRut();
                     break;
                 }
 
