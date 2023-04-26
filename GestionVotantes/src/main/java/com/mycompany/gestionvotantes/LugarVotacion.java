@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.gestionvotantes;
 
 import java.io.*;
@@ -18,8 +14,24 @@ public class LugarVotacion {
     private HashMap<Integer, Mesa> valparaiso = new HashMap<>();
     private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
     
+    //funciones
     
-    //retorna true si existe mesa, en caso de que no exista false y crea la mesa
+    //si existe la mesa pedida, retona true, si no retorna false
+    public boolean mesaExiste(int id){
+        if(valparaiso.get(id) == null){
+            return false;
+        }
+        return true;
+    }
+    //esta funcion agreaa un votante con su id a la Mesa ya existente
+    public void agregarVotanteAMesa(Votante nuevoVotante, int id){
+        valparaiso.get(id).agregarVotanteAMesa(nuevoVotante);
+    }
+    //con esta fucncion mete la mesa al Hashmap
+    public void crearMesa(Mesa nuevaMesa){
+        valparaiso.put(nuevaMesa.getId(), nuevaMesa);
+    }
+    /*retorna true si existe mesa, en caso de que no exista false y crea la mesa
     public boolean agregarMesa() throws IOException{
         Mesa nuevaMesa = new Mesa();
         nuevaMesa.crearMesa();
@@ -35,59 +47,48 @@ public class LugarVotacion {
         valparaiso.get(nuevaMesa.getId()).agregarVotanteAMesa(nuevaMesa.obtenerVotante(index));
             System.out.println("Se añadio a la mesa existente: " + nuevaMesa.getId());
         return true;
-    }
+    }*/
     
     
-
+    //muestra todo
     public void mostrarTodo(){
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
             //aca se hace uso de imprimir mesa por mesa
-            valparaiso.get(key).imprimirMesa();
+            System.out.println("_____________________");
+            System.out.println("");
+            System.out.println("      MESA " + key);
+            if(valparaiso.get(key).imprimirMesa()==false){
+                System.out.println("      VACIA    ");
+            }
+             System.out.println("_____________________");
         }
     }
     
-    public void mostrarMesa() throws IOException {
-        
-        //con este metodo de pide la id de mesa y tambien se valida que este dentro de los parametros
-        int id = verificarId();
+    public void mostrarMesa(int id) throws IOException {
         //luego con el .get(id) obtengo el objeto "Mesa" desde el hashMapa
         //luego con .imprimirMesa se imprimi el arrayList
         valparaiso.get(id).imprimirMesa();
     }
     
-    public void buscarRut() throws IOException {
-        String rut;
-        System.out.println ("Ingrese el RUT a buscar: ");
-        rut = leer.readLine();
-        System.out.println();
-        
+    public void buscarRut(String rut) {
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
-             valparaiso.get(key).imprimirVotante(rut);
-             
+             valparaiso.get(key).imprimirVotante(rut);    
         }
     }
     
-    public void eliminarPorRut() throws IOException {
-        //declaration variable
-        String rut;
-        //Se pide el rut del votante a borrar
-        System.out.println("Ingrese RUT a borrar: ");
-        rut = leer.readLine();
-        System.out.println();
-        
+    public Boolean eliminarPorRut(String rut) { 
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
             //con esa funcion lo busca y elimina al votante por su rut
             //retorna true si lo borra, sino false
             if(valparaiso.get(key).eliminarVotanteDeMesa(rut) == false){
                 System.out.println("no se encontro rut");
-            }
-           
-            
-            
+                return false;
+            } 
         }
+        return true;
     }/*
 
     public void eliminarMesa(LugarVotacion valpo) throws IOException {
@@ -107,27 +108,7 @@ public class LugarVotacion {
         }
     }  */
     
-    //validar que el numero que se ingrese es valido dentro de los parametros
-    private int verificarId()throws IOException{
-        
-        int id = 0;//numero de mesa
-        boolean esNumeroValido = false;
-
-        // Validar el número ingresado por el usuario
-        while (!esNumeroValido) {
-            System.out.println("Introduzca Número de mesa: ");
-            String entradaId = leer.readLine();
-
-            // Verificar si la entrada es un número entero
-            try {
-                
-                id = Integer.parseInt(entradaId);
-                esNumeroValido = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Entrada inválida. Por favor, ingrese un número entero.");
-            }
-        }
-       return id;
-    }
+    
+    
 }
     
