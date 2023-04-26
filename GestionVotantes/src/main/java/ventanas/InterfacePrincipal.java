@@ -5,9 +5,6 @@
  */
 package ventanas;
 
-//import java.io.BufferedReader;
-//import java.io.InputStreamReader;
-//import java.util.HashMap;
 
 /**
  *
@@ -98,7 +95,12 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonMostraTodo.setText("MOSTARR TODO");
+        BotonMostraTodo.setText("MOSTRAR TODO");
+        BotonMostraTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMostraTodoActionPerformed(evt);
+            }
+        });
 
         BotonBuscarRut.setText("Buscar por RUT");
         BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
@@ -223,12 +225,27 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonCrearVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearVActionPerformed
     // TODO add your handling code here:
-        
+        CrearVotanteVentana a = new CrearVotanteVentana(this, true);
+        //visibilidad de ventanas
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonCrearVActionPerformed
 
     private void BotonCrearMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearMesaActionPerformed
         // TODO add your handling code here:
+        CrearMesaVentana a = new CrearMesaVentana(this, true);
+        //visibilidad de ventanas
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonCrearMesaActionPerformed
+
+    private void BotonMostraTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostraTodoActionPerformed
+        // TODO add your handling code here:
+        MostrarTodoVentana a = new MostrarTodoVentana(this, true);
+        //visibilidad de ventanas
+        this.setVisible(false);
+        a.setVisible(true);
+    }//GEN-LAST:event_BotonMostraTodoActionPerformed
 
     /**
      * @param args the command line arguments

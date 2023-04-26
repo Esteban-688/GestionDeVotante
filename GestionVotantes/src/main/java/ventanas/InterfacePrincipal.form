@@ -185,8 +185,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="BotonMostraTodo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="MOSTARR TODO"/>
+            <Property name="text" type="java.lang.String" value="MOSTRAR TODO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMostraTodoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BotonBuscarRut">
           <Properties>
