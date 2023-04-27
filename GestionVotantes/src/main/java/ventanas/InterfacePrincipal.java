@@ -1,9 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ventanas;
+
+import com.mycompany.gestionvotantes.*;
 
 
 /**
@@ -17,6 +15,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
      */
     public InterfacePrincipal() {
         initComponents();
+        setResizable(false);
         //setSize(500,500);
     }
 
@@ -210,7 +209,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //declara el mapa a utilizar
+    LugarVotacion valpo = new LugarVotacion();
+    
     private void BotonEliminarRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarRutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonEliminarRutActionPerformed
@@ -225,7 +226,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonCrearVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearVActionPerformed
     // TODO add your handling code here:
-        CrearVotanteVentana a = new CrearVotanteVentana(this, true);
+        CrearVotanteVentana a = new CrearVotanteVentana(this, true, valpo);
         //visibilidad de ventanas
         this.setVisible(false);
         a.setVisible(true);
@@ -233,7 +234,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonCrearMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearMesaActionPerformed
         // TODO add your handling code here:
-        CrearMesaVentana a = new CrearMesaVentana(this, true);
+        CrearMesaVentana a = new CrearMesaVentana(this, true, valpo);
         //visibilidad de ventanas
         this.setVisible(false);
         a.setVisible(true);
@@ -241,7 +242,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonMostraTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonMostraTodoActionPerformed
         // TODO add your handling code here:
-        MostrarTodoVentana a = new MostrarTodoVentana(this, true);
+        MostrarTodoVentana a = new MostrarTodoVentana(this, true, valpo);
         //visibilidad de ventanas
         this.setVisible(false);
         a.setVisible(true);

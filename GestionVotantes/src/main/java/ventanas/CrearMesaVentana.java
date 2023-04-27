@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ventanas;
 
+import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -19,12 +16,13 @@ public class CrearMesaVentana extends javax.swing.JDialog {
      */
     //declaration de variables
     private JFrame MenuPrincipal;
+    private LugarVotacion valpo = new LugarVotacion();
     
     
-    
-    public CrearMesaVentana(java.awt.Frame parent, boolean modal) {
+    public CrearMesaVentana(java.awt.Frame parent, boolean modal, LugarVotacion valparaiso) {
         super(parent, modal);
         MenuPrincipal = (JFrame) parent;
+        valpo = valparaiso;
         initComponents();
         
     }
@@ -142,16 +140,30 @@ public class CrearMesaVentana extends javax.swing.JDialog {
         //visibilidad de ventanas
         MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal
     }//GEN-LAST:event_BOTONVOLVERActionPerformed
-    private void enviarDatos() {
+    private boolean enviarDatos() {
             // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
-            int NumeroMesa = Integer.parseInt(textNumeroMesa.getText());
+            int numeroMesa = Integer.parseInt(textNumeroMesa.getText());
             // Realiza la acción con los datos (p. ej., enviar los valores al programa principal)
-             JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+             
+            if(valpo.mesaExiste(numeroMesa)== true ){
+                JOptionPane.showMessageDialog(this, "La Mesa "+ numeroMesa+" ya Existe", "Error", JOptionPane.INFORMATION_MESSAGE);
+                // Limpia los campos de texto
+                textNumeroMesa.setText("");
+                // Establece el enfoque en el primer campo de texto
+                textNumeroMesa.requestFocus();
+                return false;
+            }
+             //ASIGNO los datos a la nueva mesa;
+            Mesa mesaNueva = new Mesa(numeroMesa);
+            //meto los datos al hashmap
+            valpo.crearMesa(mesaNueva);
+            //manda mensaje de aprobacion
+            JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             // Limpia los campos de texto
-            
             textNumeroMesa.setText("");
             // Establece el enfoque en el primer campo de texto
             textNumeroMesa.requestFocus();
+            return true;
         }
     private void textNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroMesaActionPerformed
        // TODO add your handling code here:

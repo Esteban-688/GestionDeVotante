@@ -64,6 +64,13 @@ public class LugarVotacion {
              System.out.println("_____________________");
         }
     }
+    //esta funcion copia el hashmap!
+    public HashMap<Integer, Mesa> copiarHashmap(HashMap<Integer, Mesa> valpo){
+        for (Integer key: valparaiso.keySet()){
+            valpo.put(key, valparaiso.get(key));
+        }
+        return valpo;
+    }
     
     public void mostrarMesa(int id) throws IOException {
         //luego con el .get(id) obtengo el objeto "Mesa" desde el hashMapa

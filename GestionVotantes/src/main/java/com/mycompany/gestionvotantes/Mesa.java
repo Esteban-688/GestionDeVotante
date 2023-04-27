@@ -26,7 +26,9 @@ public class Mesa {
     public Votante obtenerVotante(int index){
         return mesaVotante.get(index);
     }
-    
+    public int obtenerTotal(){
+        return mesaVotante.size();
+    }
     //agrega un votante a una mesa ya existente,parametros: mesa existente
     public void agregarVotanteAMesa(Votante votanteNuevo) {
         mesaVotante.add(votanteNuevo);
@@ -47,6 +49,7 @@ public class Mesa {
         }
         return false;
     }
+    
     //con rut el imprime un solo votante mediante su rut
     public Boolean imprimirVotante(String rut) {
           

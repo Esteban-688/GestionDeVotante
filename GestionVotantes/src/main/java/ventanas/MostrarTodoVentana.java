@@ -1,11 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ventanas;
 
+import com.mycompany.gestionvotantes.*;
+import java.awt.Dimension;
+import java.util.*;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.*;
 
 /**
  *
@@ -19,14 +21,57 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
     //declaration de variables
     
     private JFrame MenuPrincipal;
+    private LugarVotacion valpo = new LugarVotacion();
+    private DefaultTableModel modelo;
+    private JTable tabla;
+    private JScrollPane scrollPane;
     
-    
-    
-    public MostrarTodoVentana(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public MostrarTodoVentana(java.awt.Frame parent, boolean modal, LugarVotacion valparaiso) {
+         super(parent, modal);
         MenuPrincipal = (JFrame) parent;
+        valpo = valparaiso;
         initComponents();
+
+        // Crear el modelo de tabla
+        modelo = new DefaultTableModel();
+
+        // Agregar las columnas al modelo
+        modelo.addColumn("NOMBRE");
+        modelo.addColumn("RUT");
+        modelo.addColumn("N° MESA");
+
+        // Crear la JTable con el modelo
+        tabla = new JTable(modelo);
+
+        // Crear el JScrollPane y agregar la JTable dentro de él
+        scrollPane = new JScrollPane(tabla);
+        //scrollPane.setPreferredSize(new Dimension(BackgroundMostrarTodo.getWidth(), BackgroundMostrarTodo.getHeight() - BotonVolver.getHeight() - LBLMostrarTodo.getHeight()));
+        
+        agregarVotantesAFila();
+        BackgroundMostrarTodo.add(scrollPane);
+        
+        
     }
+        public void agregarVotantesAFila() {
+            // Obtener el modelo de la tabla
+            DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+            // Limpiar las filas existentes en el modelo
+            modelo.setRowCount(0);
+
+            // Obtener el HashMap de votantes
+            HashMap<Integer, Mesa> hValparaiso = valpo.copiarHashmap(new HashMap<>());
+
+            // Recorrer el HashMap y agregar los votantes a las filas del modelo
+            for (Integer key : hValparaiso.keySet()) {
+                for(int i = 0; i < hValparaiso.get(key).obtenerTotal(); i++){
+                    
+                    Object[] fila = {hValparaiso.get(key).obtenerVotante(i).getName(), hValparaiso.get(key).obtenerVotante(i).getRut(), hValparaiso.get(key).obtenerVotante(i).getNMesa()};
+                    modelo.addRow(fila);
+                }
+            }
+        }
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,6 +94,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         LBLMostrarTodo.setForeground(new java.awt.Color(0, 0, 0));
         LBLMostrarTodo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LBLMostrarTodo.setText("MOSTRAR TODO");
+        BackgroundMostrarTodo.add(LBLMostrarTodo);
 
         BotonVolver.setText("VOLVER");
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -56,30 +102,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
                 BotonVolverActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout BackgroundMostrarTodoLayout = new javax.swing.GroupLayout(BackgroundMostrarTodo);
-        BackgroundMostrarTodo.setLayout(BackgroundMostrarTodoLayout);
-        BackgroundMostrarTodoLayout.setHorizontalGroup(
-            BackgroundMostrarTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundMostrarTodoLayout.createSequentialGroup()
-                .addGroup(BackgroundMostrarTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BackgroundMostrarTodoLayout.createSequentialGroup()
-                        .addGap(234, 234, 234)
-                        .addComponent(LBLMostrarTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BackgroundMostrarTodoLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(200, Short.MAX_VALUE))
-        );
-        BackgroundMostrarTodoLayout.setVerticalGroup(
-            BackgroundMostrarTodoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundMostrarTodoLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(LBLMostrarTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 454, Short.MAX_VALUE)
-                .addComponent(BotonVolver)
-                .addGap(36, 36, 36))
-        );
+        BackgroundMostrarTodo.add(BotonVolver);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,9 +123,11 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         //cerrar ventana de Dialoj
         this.dispose();
         //visibilidad de ventanas
+        
         MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal
     }//GEN-LAST:event_BotonVolverActionPerformed
-
+    
+       //
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
