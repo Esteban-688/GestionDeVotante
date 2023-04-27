@@ -4,6 +4,7 @@ package com.mycompany.gestionvotantes;
 import java.io.*;
 import java.util.*;
 import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -30,6 +31,12 @@ public class LugarVotacion {
     //con esta fucncion mete la mesa al Hashmap
     public void crearMesa(Mesa nuevaMesa){
         valparaiso.put(nuevaMesa.getId(), nuevaMesa);
+    }
+    public Mesa obtenerMesa(int key){
+        return valparaiso.get(key);
+    }
+    public int obtenerTotalHashmap(){
+        return valparaiso.size();
     }
     /*retorna true si existe mesa, en caso de que no exista false y crea la mesa
     public boolean agregarMesa() throws IOException{
@@ -64,14 +71,17 @@ public class LugarVotacion {
              System.out.println("_____________________");
         }
     }
-    //esta funcion copia el hashmap!
-    public HashMap<Integer, Mesa> copiarHashmap(HashMap<Integer, Mesa> valpo){
-        for (Integer key: valparaiso.keySet()){
-            valpo.put(key, valparaiso.get(key));
-        }
-        return valpo;
-    }
+    public void recorrerHashmap(DefaultTableModel modelo){
+    for (Integer key: valparaiso.keySet()) {
+                for(int i = 0; i < valparaiso.get(key).obtenerTotal(); i++){
+                    
+                    Object[] fila = {valparaiso.get(key).obtenerVotante(i).getName(), valparaiso.get(key).obtenerVotante(i).getRut(), valparaiso.get(key).obtenerVotante(i).getNMesa()};
+                    
+                    modelo.addRow(fila);
+                }
+            }
     
+}
     public void mostrarMesa(int id) throws IOException {
         //luego con el .get(id) obtengo el objeto "Mesa" desde el hashMapa
         //luego con .imprimirMesa se imprimi el arrayList

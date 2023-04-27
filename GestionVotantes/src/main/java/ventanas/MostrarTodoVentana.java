@@ -31,6 +31,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         MenuPrincipal = (JFrame) parent;
         valpo = valparaiso;
         initComponents();
+        
 
         // Crear el modelo de tabla
         modelo = new DefaultTableModel();
@@ -48,6 +49,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         //scrollPane.setPreferredSize(new Dimension(BackgroundMostrarTodo.getWidth(), BackgroundMostrarTodo.getHeight() - BotonVolver.getHeight() - LBLMostrarTodo.getHeight()));
         
         agregarVotantesAFila();
+        //scrollPane.setPreferredSize(new Dimension(500, tabla.getPreferredSize().height));
         BackgroundMostrarTodo.add(scrollPane);
         
         
@@ -58,18 +60,9 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
 
             // Limpiar las filas existentes en el modelo
             modelo.setRowCount(0);
-
-            // Obtener el HashMap de votantes
-            HashMap<Integer, Mesa> hValparaiso = valpo.copiarHashmap(new HashMap<>());
-
+                
             // Recorrer el HashMap y agregar los votantes a las filas del modelo
-            for (Integer key : hValparaiso.keySet()) {
-                for(int i = 0; i < hValparaiso.get(key).obtenerTotal(); i++){
-                    
-                    Object[] fila = {hValparaiso.get(key).obtenerVotante(i).getName(), hValparaiso.get(key).obtenerVotante(i).getRut(), hValparaiso.get(key).obtenerVotante(i).getNMesa()};
-                    modelo.addRow(fila);
-                }
-            }
+            valpo.recorrerHashmap(modelo);
         }
         
 
