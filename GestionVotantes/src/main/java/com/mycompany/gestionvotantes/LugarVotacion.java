@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.gestionvotantes;
 
 import java.io.*;
 import java.util.*;
 import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,103 +15,98 @@ public class LugarVotacion {
     private HashMap<Integer, Mesa> valparaiso = new HashMap<>();
     private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
     
+    //funciones
     
-    //retorna true si existe mesa, en caso de que no exista false y crea la mesa
-    public boolean agregarMesa()throws IOException{
-        Mesa auxMesa = new Mesa();
-        int id = auxMesa.getId();
+    //si existe la mesa pedida, retona true, si no retorna false
+    public boolean mesaExiste(int id){
+        if(valparaiso.get(id) == null){
+            return false;
+        }
+        return true;
+    }
+    //esta funcion agreaa un votante con su id a la Mesa ya existente
+    public void agregarVotanteAMesa(Votante nuevoVotante, int id){
+        valparaiso.get(id).agregarVotanteAMesa(nuevoVotante);
+    }
+    //con esta fucncion mete la mesa al Hashmap
+    public void crearMesa(Mesa nuevaMesa){
+        valparaiso.put(nuevaMesa.getId(), nuevaMesa);
+    }
+    public Mesa obtenerMesa(int key){
+        return valparaiso.get(key);
+    }
+    public int obtenerTotalHashmap(){
+        return valparaiso.size();
+    }
+    /*retorna true si existe mesa, en caso de que no exista false y crea la mesa
+    public boolean agregarMesa() throws IOException{
+        Mesa nuevaMesa = new Mesa();
+        nuevaMesa.crearMesa();
        //comprobar si existe una mesa 
-        if(!valparaiso.containsKey(id)){
+        if(!valparaiso.containsKey(nuevaMesa.getId())){
             //si no existe, se ingresa la mesa con la id al mapa
-            valparaiso.put(id, auxMesa);
-            System.out.println("Se agrego a una nueva mesa: " + id);
+            valparaiso.put(nuevaMesa.getId(), nuevaMesa);
+            System.out.println("Se agrego a una nueva mesa: " + nuevaMesa.getId());
             return false;
         }
         //si existe la mesa se usa el metodo agregarVotanteAMesa para ingresarlo a la mesa existente
-        valparaiso.get(id).agregarVotanteAMesa(auxMesa.obtenerLista());
-            System.out.println("Se añadio a la mesa existente: " + id);
+        int index = 0;
+        valparaiso.get(nuevaMesa.getId()).agregarVotanteAMesa(nuevaMesa.obtenerVotante(index));
+            System.out.println("Se añadio a la mesa existente: " + nuevaMesa.getId());
         return true;
-    }
+    }*/
     
     
-
+    //muestra todo
     public void mostrarTodo(){
-
-
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
-            Mesa mesaV = new Mesa(key);
-            mesaV = valparaiso.get(key);
-            /*
-            //Se muestra cada una de las mesas con sus votantes
-            ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.obtenerLista();*/
-            mesaV.imprimirMesa(mesaV.obtenerLista());
+            //aca se hace uso de imprimir mesa por mesa
+            System.out.println("_____________________");
+            System.out.println("");
+            System.out.println("      MESA " + key);
+            if(valparaiso.get(key).imprimirMesa()==false){
+                System.out.println("      VACIA    ");
+            }
+             System.out.println("_____________________");
         }
     }
-    /*
-    public void mostrarMesa(LugarVotacion valpo) throws IOException {
-        int id;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        //Se pide la mesa a buscar
-        System.out.print("Introduzca el número de la mesa: ");
-        id = Integer.parseInt(leer.readLine());
-        System.out.println();
-
-        //Se obtiene el mapa de mesas
-        Mesa mesaV = new Mesa(id);
-        mesaV = auxV.get(id);
-
-        //Se muestran los votante de la mesa
-        ArrayList mesaVotante = new ArrayList();
-        mesaVotante = mesaV.getMesaVotante();
-        mesaV.imprimirMesa(mesaVotante);
+    public void recorrerHashmap(DefaultTableModel modelo){
+    for (Integer key: valparaiso.keySet()) {
+                for(int i = 0; i < valparaiso.get(key).obtenerTotal(); i++){
+                    
+                    Object[] fila = {valparaiso.get(key).obtenerVotante(i).getName(), valparaiso.get(key).obtenerVotante(i).getRut(), valparaiso.get(key).obtenerVotante(i).getNMesa()};
+                    
+                    modelo.addRow(fila);
+                }
+            }
+    
+}
+    public void mostrarMesa(int id) throws IOException {
+        //luego con el .get(id) obtengo el objeto "Mesa" desde el hashMapa
+        //luego con .imprimirMesa se imprimi el arrayList
+        valparaiso.get(id).imprimirMesa();
     }
     
-    public void buscarRut(LugarVotacion valpo) throws IOException {
-        int rut;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        System.out.print("Ingrese el RUT a buscar: ");
-        rut = Integer.parseInt(leer.readLine());
-        System.out.println();
-        
+    public void buscarRut(String rut) {
         //Se recorre el mapa de mesas
-        for (Integer key: auxV.keySet()){
-            Mesa mesaV = new Mesa(key);
-            mesaV = auxV.get(key);
-
-            //Se muestra el votante
-            ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.getMesaVotante();
-            mesaV.imprimirVotante(mesaVotante, rut);
+        for (Integer key: valparaiso.keySet()){
+             valparaiso.get(key).imprimirVotante(rut);    
         }
     }
     
-    public void eliminarRut(LugarVotacion valpo) throws IOException {
-        int rut;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        //Se pide el rut del votante a borrar
-        System.out.print("Ingrese RUT a borrar: ");
-        rut = Integer.parseInt(leer.readLine());
-        System.out.println();
-        
+    public Boolean eliminarPorRut(String rut) { 
         //Se recorre el mapa de mesas
-        for (Integer key: auxV.keySet()){
-            Mesa mesaV = new Mesa(key);
-            mesaV = auxV.get(key);
-
-            //Se elimina el votante
-            ArrayList mesaVotante = new ArrayList();
-            mesaVotante = mesaV.getMesaVotante();
-            mesaV.eliminarVotante(mesaVotante, rut);
+        for (Integer key: valparaiso.keySet()){
+            //con esa funcion lo busca y elimina al votante por su rut
+            //retorna true si lo borra, sino false
+            if(valparaiso.get(key).eliminarVotanteDeMesa(rut) == false){
+                System.out.println("no se encontro rut");
+                return false;
+            } 
         }
-    }
+        return true;
+    }/*
 
     public void eliminarMesa(LugarVotacion valpo) throws IOException {
         int nMesa;
@@ -132,5 +124,8 @@ public class LugarVotacion {
             System.out.println("¡Mesa borrada con éxito!\n");
         }
     }  */
+    
+    
+    
 }
     

@@ -11,81 +11,74 @@ import java.util.*;
 
 public class Mesa {
     //declaration Variable
-    private int id;
+    private int id;//numero de la mesa que corresponde la cual es la id del hashmap en donde se encuentra
     private ArrayList<Votante> mesaVotante = new ArrayList<Votante>();
-    private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+    
     
     //constructor
-    public Mesa(int id){
-        this.id = id;
+    public Mesa(int numeroDeMesa){
+        id = numeroDeMesa;
     }
-    //sobrecargar de constructor
-    public Mesa()throws IOException{
-        Votante nuevoVotante = new Votante();
-        mesaVotante.add(nuevoVotante);
-        id = nuevoVotante.getNMesa();
-    }
-    
+   
     //funciones
     
-    //obtener un arraylist desde una mesa
-    public ArrayList<Votante> obtenerLista() {
-        return mesaVotante;
+    //obtener un arraylist un votante de una mesa
+    public Votante obtenerVotante(int index){
+        return mesaVotante.get(index);
     }
-    
+    public int obtenerTotal(){
+        return mesaVotante.size();
+    }
     //agrega un votante a una mesa ya existente,parametros: mesa existente
-    public void agregarVotanteAMesa(ArrayList<Votante> mesaExistente) {
-           
-        mesaVotante = obtenerLista();
-        mesaVotante.add(mesaExistente.get(0));
+    public void agregarVotanteAMesa(Votante votanteNuevo) {
+        mesaVotante.add(votanteNuevo);
         
     }
     
-    public ArrayList<Votante> agregarVotanteAMesa()throws IOException{
-        //declaration variables de Instacia
-        
-        Votante nuevoVotante = new Votante();
-        mesaVotante.add(nuevoVotante);
-        id = nuevoVotante.getNMesa();
-        return mesaVotante;
-        
-    }
-    
-    public void imprimirMesa(ArrayList<Votante> mesaVotante) {
-        //Se muestran los votantes de cada mesa
+    //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
+    public boolean imprimirMesa() {
+        if(mesaVotante.size() != 0){
+            //Se muestran los votantes de cada mesa
         for(int i = 0; i < mesaVotante.size(); i++){
             System.out.println("Nombre: " + mesaVotante.get(i).getName());
             System.out.println("RUT: " + mesaVotante.get(i).getRut());
             System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
             System.out.println();
         }
+        return true;
+        }
+        return false;
     }
-    /*
-    public void imprimirVotante(ArrayList<Votante> mesaVotante, int rut) {
+    
+    //con rut el imprime un solo votante mediante su rut
+    public Boolean imprimirVotante(String rut) {
+          
         //Se muestran los datos del votante buscado
         for(int i = 0; i < mesaVotante.size(); i++){
-            if(rut == mesaVotante.get(i).getRut()) {
+            if(rut.equals(mesaVotante.get(i).getRut()))  {
                 System.out.println("Nombre: " + mesaVotante.get(i).getName());
                 System.out.println("RUT: " + mesaVotante.get(i).getRut());
                 System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
+                return true;
             }
         }
+        return false;
     }
-
-    public void eliminarVotante(ArrayList<Votante> mesaVotante, int rut) {
+    //retorna true si logra borrarlo, sino return false
+    public Boolean eliminarVotanteDeMesa(String rut) {
         //Se muestran los datos del votante a eliminar
         for(int i = 0; i < mesaVotante.size(); i++) {
-            if(rut == mesaVotante.get(i).getRut()) {
+            if(rut.equals(mesaVotante.get(i).getRut())){
                 System.out.println("Nombre: " + mesaVotante.get(i).getName());
                 System.out.println("RUT: " + mesaVotante.get(i).getRut());
                 System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
                 System.out.println("\n¡Se ha eliminado con éxito!\n");
                 mesaVotante.remove(i);
+                return true;
             }
         }
+        return false;
     }
-*/
-    
     
     //setter y getters
     public int getId() {
