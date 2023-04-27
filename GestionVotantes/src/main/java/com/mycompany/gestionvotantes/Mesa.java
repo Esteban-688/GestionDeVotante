@@ -1,4 +1,3 @@
-
 package com.mycompany.gestionvotantes;
 
 import java.io.*;
@@ -10,77 +9,84 @@ import java.util.*;
  */
 
 public class Mesa {
-    //declaration Variable
-    private int id;//numero de la mesa que corresponde la cual es la id del hashmap en donde se encuentra
-    private ArrayList<Votante> mesaVotante = new ArrayList<Votante>();
+    /* Declaración de variables */
+    private int id; // Clave de la mesa en el HashMap
+    private ArrayList<Votante> mesaVotante = new ArrayList<Votante>(); // ArrayList de votantes
     
-    
-    //constructor
-    public Mesa(int numeroDeMesa){
+    /* Constructor */
+    public Mesa(int numeroDeMesa) {
         id = numeroDeMesa;
     }
    
-    //funciones
+    /* Funciones */
     
-    //obtener un arraylist un votante de una mesa
-    public Votante obtenerVotante(int index){
+    // Método para obtener un votante desde ArrayList
+    public Votante obtenerVotante(int index) {
         return mesaVotante.get(index);
     }
-    public int obtenerTotal(){
+
+    // Método para obtener el total de votantes del ArrayList
+    public int obtenerTotal() {
         return mesaVotante.size();
     }
-    //agrega un votante a una mesa ya existente,parametros: mesa existente
+
+    // Método que grega un votante a una mesa ya existente. Parámetros: mesa existente
     public void agregarVotanteAMesa(Votante votanteNuevo) {
         mesaVotante.add(votanteNuevo);
         
     }
     
-    //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
+    // Imprime el arraylist con todos sus votantes.
     public boolean imprimirMesa() {
-        if(mesaVotante.size() != 0){
-            //Se muestran los votantes de cada mesa
-        for(int i = 0; i < mesaVotante.size(); i++){
-            System.out.println("Nombre: " + mesaVotante.get(i).getName());
-            System.out.println("RUT: " + mesaVotante.get(i).getRut());
-            System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
-            System.out.println();
-        }
-        return true;
-        }
-        return false;
-    }
-    
-    //con rut el imprime un solo votante mediante su rut
-    public Boolean imprimirVotante(String rut) {
-          
-        //Se muestran los datos del votante buscado
-        for(int i = 0; i < mesaVotante.size(); i++){
-            if(rut.equals(mesaVotante.get(i).getRut()))  {
+        // Se comprueba que no esté vacío
+        if(mesaVotante.size() != 0) {
+            // Se recorre el ArrayList en búsqueda de los votantes
+            for(int i = 0; i < mesaVotante.size(); i++){
+                // Se muestran los datos de cada votante
                 System.out.println("Nombre: " + mesaVotante.get(i).getName());
                 System.out.println("RUT: " + mesaVotante.get(i).getRut());
                 System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
-                return true;
+                System.out.println();
+            }
+            return true; // Todo se mostró con éxito
+        }
+        return false; // No existen votantes
+    }
+    
+    // Método que imprime los datos de un votante a partir de su rut
+    public Boolean imprimirVotante(String rut) {
+        // Se recorre el ArrayList en búsqueda del votante
+        for(int i = 0; i < mesaVotante.size(); i++) {
+            // Se comprueba que coincida el rut
+            if(rut.equals(mesaVotante.get(i).getRut())) {
+                System.out.println("Nombre: " + mesaVotante.get(i).getName());
+                System.out.println("RUT: " + mesaVotante.get(i).getRut());
+                System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
+                return true; // Se imprimió todo
             }
         }
-        return false;
+        return false; // No existe el votante
     }
-    //retorna true si logra borrarlo, sino return false
+
+    // Método para eliminar un votante a partir de su rut
     public Boolean eliminarVotanteDeMesa(String rut) {
-        //Se muestran los datos del votante a eliminar
+        // Se recorre el ArrayList en búsqueda del votante
         for(int i = 0; i < mesaVotante.size(); i++) {
+            // Se comprueba que coincida el rut
             if(rut.equals(mesaVotante.get(i).getRut())){
+                // Se muestran los datos del votante a eliminar
                 System.out.println("Nombre: " + mesaVotante.get(i).getName());
                 System.out.println("RUT: " + mesaVotante.get(i).getRut());
                 System.out.println("Mesa: " + mesaVotante.get(i).getNMesa());
                 System.out.println("\n¡Se ha eliminado con éxito!\n");
                 mesaVotante.remove(i);
-                return true;
+                return true; // Se borró correctamente
             }
         }
-        return false;
+        return false; // No se pudo borrar
     }
     
-    //setter y getters
+    /* Setters y getters */
     
     public int getId() {
         return id;
