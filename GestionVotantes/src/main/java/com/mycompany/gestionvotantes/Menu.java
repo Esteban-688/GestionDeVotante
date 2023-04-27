@@ -12,10 +12,10 @@ import java.util.*;
 public class Menu {
     //clase sobre el menu y pedir datos desde pantalla
     int choose = 100;
-    LugarVotacion valpo = new LugarVotacion();
+    
     Scanner leer = new Scanner(System.in);
     
-    public void desplegarMenu(){
+    public void desplegarMenu(LugarVotacion valpo){
         //Menú de opciones
     //try{
        System.out.println("Bienvenido al programa de gestión de votacion\n");
@@ -112,7 +112,7 @@ public class Menu {
                     }
 
                     case 6: {
-                        System.out.println("-- ELIMINAR MESA POR NUMERO --");
+                        System.out.println("-- MOSTRAR POR MESA --");
                         
                         break;
                     }

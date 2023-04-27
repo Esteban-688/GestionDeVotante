@@ -1,13 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.gestionvotantes;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  *
@@ -18,7 +11,7 @@ public class Votante {
     private String rut;//su rut
     private int nMesa;//numero de la mesa que se encuentra
     private String name;//nombre del votante
-    private  BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
+   
     //constructores
     
     public Votante(String nombre, String rutVotante, int numeroMesa) {
@@ -26,6 +19,8 @@ public class Votante {
         rut = rutVotante;
         nMesa = numeroMesa;
     } 
+    
+    //setters y getters
     public String getName() {
         return name;
     }

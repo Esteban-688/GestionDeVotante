@@ -38,25 +38,7 @@ public class LugarVotacion {
     public int obtenerTotalHashmap(){
         return valparaiso.size();
     }
-    /*retorna true si existe mesa, en caso de que no exista false y crea la mesa
-    public boolean agregarMesa() throws IOException{
-        Mesa nuevaMesa = new Mesa();
-        nuevaMesa.crearMesa();
-       //comprobar si existe una mesa 
-        if(!valparaiso.containsKey(nuevaMesa.getId())){
-            //si no existe, se ingresa la mesa con la id al mapa
-            valparaiso.put(nuevaMesa.getId(), nuevaMesa);
-            System.out.println("Se agrego a una nueva mesa: " + nuevaMesa.getId());
-            return false;
-        }
-        //si existe la mesa se usa el metodo agregarVotanteAMesa para ingresarlo a la mesa existente
-        int index = 0;
-        valparaiso.get(nuevaMesa.getId()).agregarVotanteAMesa(nuevaMesa.obtenerVotante(index));
-            System.out.println("Se añadio a la mesa existente: " + nuevaMesa.getId());
-        return true;
-    }*/
-    
-    
+   
     //muestra todo
     public void mostrarTodo(){
         //Se recorre el mapa de mesas
