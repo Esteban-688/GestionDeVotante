@@ -54,17 +54,16 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         
         
     }
-    
-    public void agregarVotantesAFila() {
-        // Obtener el modelo de la tabla
-        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+        public void agregarVotantesAFila() {
+            // Obtener el modelo de la tabla
+            DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
 
-        // Limpiar las filas existentes en el modelo
-        modelo.setRowCount(0);
+            // Limpiar las filas existentes en el modelo
+            modelo.setRowCount(0);
                 
-        // Recorrer el HashMap y agregar los votantes a las filas del modelo
-        valpo.recorrerHashmap(modelo);
-    }
+            // Recorrer el HashMap y agregar los votantes a las filas del modelo
+            valpo.recorrerHashmap(modelo);
+        }
         
 
     /**

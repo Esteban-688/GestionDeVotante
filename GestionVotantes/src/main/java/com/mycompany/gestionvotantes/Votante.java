@@ -8,19 +8,19 @@ package com.mycompany.gestionvotantes;
  */
 
 public class Votante {
-    /* Declaración de variables */
-    private String rut; // RUT del votante
-    private int nMesa;// Número de la mesa en que se encuentra
-    private String name;// Nombre del votante
+    private String rut;//su rut
+    private int nMesa;//numero de la mesa que se encuentra
+    private String name;//nombre del votante
    
-    /* Constructor */
+    //constructores
+    
     public Votante(String nombre, String rutVotante, int numeroMesa) {
         name = nombre;
         rut = rutVotante;
         nMesa = numeroMesa;
     } 
     
-    /* Setters y getters */
+    //setters y getters
     public String getName() {
         return name;
     }
