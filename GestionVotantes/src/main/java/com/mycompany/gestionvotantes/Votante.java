@@ -9,7 +9,7 @@ package com.mycompany.gestionvotantes;
 
 public class Votante extends Persona {
    
-    //constructores
+    //constructor
     
     public Votante(String nombre, String rutVotante, int numeroMesa) {
        super(nombre, rutVotante, numeroMesa);
@@ -37,7 +37,7 @@ public class Votante extends Persona {
      //Funcion cargar datos desde un csv
      public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{
 		String filePath = "personasInscritas.txt";
-        BufferedReader lectorTxt = new BufferedReader( new FileReader( filePath ) );
+        private BufferedReader lectorTxt = new BufferedReader( new FileReader( filePath ) );
 		String lineText = null;
 		
 		while ((lineText = lectorTxt.readLine()) != null) {

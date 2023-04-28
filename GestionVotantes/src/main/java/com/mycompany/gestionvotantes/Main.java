@@ -18,6 +18,7 @@ public class Main {
     
     public static void main (String[]arg) {
         LugarVotacion valpo = new LugarVotacion();
+        
        //ventana creacion
        InterfacePrincipal interfacePrincipal = new InterfacePrincipal(valpo);
       

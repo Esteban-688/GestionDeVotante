@@ -29,6 +29,7 @@ public class Menu {
                 System.out.println("(4) Buscar por RUT");
                 System.out.println("(5) Eliminar por RUT");
                 System.out.println("(6) Crear Vocal");
+                System.out.println("(7) Mostrar Todos Vocales ");
                 System.out.println("------------------------------------\n");
                 System.out.print("Elija una opción: ");
                 choose = verificarEntero();
@@ -61,7 +62,7 @@ public class Menu {
                         //Con el contructor se crea el votante 
                         Votante nuevoVotante = new Votante(name, rut, nMesa);
                         //con esta funcion se agrega a la mesa pedida SOLO SI EXISTE
-                        valpo.agregarVotanteAMesa(nuevoVotante, nMesa);
+                        valpo.agregarPersonaAMesa(nuevoVotante, nMesa);
                         
                        break; 
                     }
@@ -149,7 +150,7 @@ public class Menu {
                         //Con el contructor se crea el votante 
                         Vocal nuevoVocal = new Vocal(name, rut, nMesa, contraseña);
                         //con esta funcion se agrega a la mesa pedida SOLO SI EXISTE
-                        valpo.agregarVotanteAMesa(nuevoVocal, nMesa);
+                        valpo.agregarPersonaAMesa(nuevoVocal, nMesa);
                         
                        break;
                       

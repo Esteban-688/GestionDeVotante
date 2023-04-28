@@ -200,7 +200,7 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
         //aca se rellena los datos para mandarlos al hashmap
             if(valpo.mesaExiste(numeroMesa) == false){
                 
-                JOptionPane.showMessageDialog(this, "Esa Mesa No existe", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);                
+                JOptionPane.showMessageDialog(this, "Esa Mesa No existe", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);               
                    //throw ExceptionMesaNoCreada;
                 //do{
                       TextNumeroMesa.setText("");
@@ -210,7 +210,7 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
                        // 
             }
          Votante votanteNuevo = new Votante(nombre,rut, numeroMesa);
-         valpo.agregarVotanteAMesa(votanteNuevo, numeroMesa);
+         valpo.agregarPersonaAMesa(votanteNuevo, numeroMesa);
          
         JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
         // Limpia los campos de texto

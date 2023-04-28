@@ -12,9 +12,9 @@ import javax.swing.table.DefaultTableModel;
  */
 
 public class LugarVotacion {
+    //contiene un HASHMAP donde almacena todas las mesas
     private HashMap<Integer, Mesa> valparaiso = new HashMap<>();
-    private BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
-    
+  
     //funciones
     
     //si existe la mesa pedida, retona true, si no retorna false
@@ -25,19 +25,22 @@ public class LugarVotacion {
         return true;
     }
     //esta funcion agreaa un votante con su id a la Mesa ya existente
-    public void agregarVotanteAMesa(Persona nuevoVotante, int id){
-        valparaiso.get(id).agregarVotanteAMesa(nuevoVotante);
+    public void agregarPersonaAMesa(Persona nuevoVotante, int id){
+        valparaiso.get(id).agregarPersonaAMesa(nuevoVotante);
     }
+    
     //con esta fucncion mete la mesa al Hashmap
     public void crearMesa(Mesa nuevaMesa){
         valparaiso.put(nuevaMesa.getId(), nuevaMesa);
     }
+    
     public Mesa obtenerMesa(int key){
         return valparaiso.get(key);
     }
-    public int obtenerTotalHashmap(){
-        return valparaiso.size();
-    }
+    
+   // public int obtenerTotalHashmap(){
+    //    return valparaiso.size();
+    //}
    
     //muestra todo
     public void mostrarTodo(){
@@ -57,14 +60,14 @@ public class LugarVotacion {
     for (Integer key: valparaiso.keySet()) {
                 for(int i = 0; i < valparaiso.get(key).obtenerTotal(); i++){
                     
-                    Object[] fila = {valparaiso.get(key).obtenerVotante(i).getName(), valparaiso.get(key).obtenerVotante(i).getRut(), valparaiso.get(key).obtenerVotante(i).getNMesa()};
+                    Object[] fila = {valparaiso.get(key).obtenerPersona(i).getName(), valparaiso.get(key).obtenerPersona(i).getRut(), valparaiso.get(key).obtenerPersona(i).getNMesa()};
                     
                     modelo.addRow(fila);
                 }
             }
     
 }
-    public void mostrarMesa(int id) throws IOException {
+    public void mostrarMesa(int id){
         //luego con el .get(id) obtengo el objeto "Mesa" desde el hashMapa
         //luego con .imprimirMesa se imprimi el arrayList
         valparaiso.get(id).imprimirMesa();
@@ -73,7 +76,7 @@ public class LugarVotacion {
     public void buscarRut(String rut) {
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
-             valparaiso.get(key).imprimirVotante(rut);    
+             valparaiso.get(key).imprimirPersona(rut);    
         }
     }
     
@@ -82,7 +85,7 @@ public class LugarVotacion {
         for (Integer key: valparaiso.keySet()){
             //con esa funcion lo busca y elimina al votante por su rut
             //retorna true si lo borra, sino false
-            if(valparaiso.get(key).eliminarVotanteDeMesa(rut) == false){
+            if(valparaiso.get(key).eliminarPersonaDeMesa(rut) == false){
                 System.out.println("no se encontro rut");
                 return false;
             } 
