@@ -94,17 +94,35 @@ public class LugarVotacion {
         }
     }
     
-    public Boolean eliminarPorRut(String rut) { 
+    public boolean cambiaVotantePorVocal(String rut, String contraseña){
+        for (Integer key : valparaiso.keySet()){
+            if(valparaiso.get(key).transformarVotanteAVocal(rut,contraseña)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public void eliminarPorRut(String rut) { 
         //Se recorre el mapa de mesas
         for (Integer key: valparaiso.keySet()){
-            //con esa funcion lo busca y elimina al votante por su rut
+            //con esa funcion lo busca y elimina al persona por su rut
             //retorna true si lo borra, sino false
-            if(valparaiso.get(key).eliminarPersonaDeMesa(rut) == false){
-                System.out.println("no se encontro rut");
-                return false;
-            } 
+            valparaiso.get(key).eliminarPersonaDeMesa(rut);
         }
-        return true;
+        
+    }
+    //sobrecarga de metodo
+    // si el valor el true, solo elimine votantes: False, solo elimina vocales
+    public void eliminarPorRut(String rut , boolean a){
+        
+        //eliminar votante(true);eliminar vocal(false)
+        for (Integer key: valparaiso.keySet()){
+        //con esa funcion lo busca y elimina una persona(votante(true) / vocal(false) por su rut
+        //retorna true si lo borra, sino false
+            valparaiso.get(key).eliminarPersonaDeMesa(rut, a);
+        }
+        
     }
 
     public void eliminarMesa(int numeroMesa){

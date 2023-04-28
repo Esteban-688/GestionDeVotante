@@ -105,7 +105,7 @@ public class Mesa {
     }
     //retorna true si logra borrarlo, sino return false
     public Boolean eliminarPersonaDeMesa(String rut) {
-        //Se muestran los datos del votante a eliminar
+        //Se muestran los datos de la persona a eliminar
         for(int i = 0; i < mesaPersona.size(); i++) {
             if(rut.equals(mesaPersona.get(i).getRut())){
                 System.out.println("Nombre: " + mesaPersona.get(i).getName());
@@ -118,7 +118,40 @@ public class Mesa {
         }
         return false;
     }
+    //sobrecarga de metodo
+    //si entra true elimina votante, si entra false elimina vocal
+    public Boolean eliminarPersonaDeMesa(String rut, boolean a) {
+        
+        //si es true empieza a recorrer desde 1 para no eliminar ningun vocal
+        if(a){
+            for(int i = 1; i < mesaPersona.size(); i++) {
+                if(rut.equals(mesaPersona.get(i).getRut())){
+                    mesaPersona.remove(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+        //si es false elimina desde la posicion 0, asi se puede eliminar hasta vocales
+        if(a == false){
+            eliminarPersonaDeMesa(rut);
+            return true;
+        }
+        return false;
+    }
     
+    
+    public boolean transformarVotanteAVocal(String rut, String contraseña){
+        for(int i = 1; i < mesaPersona.size(); i++){
+            if(rut.equals(mesaPersona.get(i).getRut()))  {
+               Vocal nuevoVocal = new Vocal(mesaPersona.get(i).getName(), mesaPersona.get(i).getRut(), mesaPersona.get(i).getNMesa(), contraseña);
+                agregarPersonaAMesa(nuevoVocal);
+                System.out.println("se ha cambiado el nuevo Vocal");
+               return true;
+            }
+        }
+        return false;
+    }
     //setter y getters
     
     public int getId() {

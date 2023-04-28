@@ -29,7 +29,7 @@ public class Menu {
                 System.out.println("(4) Buscar por RUT");
                 System.out.println("(5) Eliminar por RUT");
                 System.out.println("(6) Crear Vocal");
-                System.out.println("(7) Mostrar Todos Vocales ");
+                System.out.println("(7) Cambiar Votante a Vocal ");
                 System.out.println("(8) Eliminar Mesa");
                 System.out.println("------------------------------------\n");
                 System.out.print("Elija una opción: ");
@@ -90,7 +90,7 @@ public class Menu {
                     }
 
                     case 4: {
-                        System.out.println("-- BUSCAR VOTANTE POR RUT --");
+                        System.out.println("-- BUSCAR POR RUT --");
                         String rut;
                         System.out.println ("Ingrese el RUT a buscar: ");
                         rut = leer.nextLine();
@@ -158,8 +158,18 @@ public class Menu {
                     } 
                     case 7:{
                         //funcion especial
-                        System.out.println("--CAMBIAR VOTANTE POR VOCAL--");
-                        
+                        System.out.println("--CAMBIAR VOTANTE A VOCAL--");
+                        System.out.println("Ingrese rut del Votante");
+                        String rut = leer.nextLine();
+                        System.out.println("Ingrese Contraseña");
+                        String contraseña = leer.nextLine();
+                        //este metodo busca, y si encuentra el votante le devuelve como Vocal
+                        if(valpo.cambiaVotantePorVocal(rut, contraseña) == false){
+                            System.out.println("no existe votante");
+                            break;
+                        }
+                        valpo.eliminarPorRut(rut, true);
+                      break;
                     }
                     case 8:{
                         //declaration variable
@@ -173,7 +183,7 @@ public class Menu {
                             break;
                         }
                         valpo.eliminarMesa(numeroMesa);
-                         break;  
+                       break;  
                     }
 
                     default: {
