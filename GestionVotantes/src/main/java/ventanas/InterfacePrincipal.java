@@ -10,13 +10,19 @@ import com.mycompany.gestionvotantes.*;
  */
 public class InterfacePrincipal extends javax.swing.JFrame {
 
+    
+    //Declaration de mapa para guardar todo;
+    LugarVotacion valpo = new LugarVotacion();
     /**
      * Creates new form InterfacePrincipal
      */
-    public InterfacePrincipal() {
+    public InterfacePrincipal(LugarVotacion valparaiso) {
         initComponents();
         setResizable(false);
         //setSize(500,500);
+        
+        valpo = valparaiso;
+        
     }
 
     /**
@@ -210,7 +216,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     //declara el mapa a utilizar
-    LugarVotacion valpo = new LugarVotacion();
+    
     
     private void BotonEliminarRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarRutActionPerformed
         // TODO add your handling code here:

@@ -1,8 +1,3 @@
-/*
-*18. Gestión de Votantes-Locales de Sufragio para elecciones: Manejo de registro de votantes y
-*locales de votación. Hacer auto asignación dependiendo de capacidad de locales de votación
-*y ubicación geográfica de las personas en relación al local.
- */
 package com.mycompany.gestionvotantes;
 
 import ventanas.InterfacePrincipal;
@@ -15,16 +10,16 @@ import java.util.*;
  */
 
 public class Main {
-    public static void main (String[]arg) {
-        
-       //ventana creacion
-       InterfacePrincipal interfacePrincipal = new InterfacePrincipal();
-      
+	public static void main (String[] arg) {
+        LugarVotacion valpo = new LugarVotacion();
+
+	   	// Creación de la ventana y despliegue de la interfaz
+       	InterfacePrincipal interfacePrincipal = new InterfacePrincipal(valpo);
         interfacePrincipal.setVisible(true);
-        //operaciones ventana
-        
-       Menu menu = new Menu();
-        menu.desplegarMenu();
+
+        // Operaciones en la ventana
+       	Menu menu = new Menu();
+        menu.desplegarMenu(valpo);
     }
 
     //Funcion cargar datos desde un csv
@@ -46,10 +41,4 @@ public class Main {
 		
 		lectorTxt.close();
 	}*/
-	
-
-
-
-
-    
 }
