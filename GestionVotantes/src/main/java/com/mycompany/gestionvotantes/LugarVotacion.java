@@ -91,26 +91,12 @@ public class LugarVotacion {
             } 
         }
         return true;
-    }/*
+    }
 
-    public void eliminarMesa(LugarVotacion valpo) throws IOException {
-        int nMesa;
-        HashMap <Integer, Mesa> auxV = new HashMap<>();
-        auxV = valpo.getValparaiso();
-
-        //Se pide la mesa a borrar
-        System.out.print("Ingrese número de mesa a borrar: ");
-        nMesa = Integer.parseInt(leer.readLine());
-        System.out.println();
-
-        //Se comprueba de que exista la mesa. Si existe, se borra
-        if(auxV.containsKey(nMesa)) {
-            auxV.remove(nMesa);
+    public void eliminarMesa(int numeroMesa){
+            valparaiso.remove(numeroMesa);
             System.out.println("¡Mesa borrada con éxito!\n");
-        }
-    }  */
-    
-    
+    }  
     
 }
     

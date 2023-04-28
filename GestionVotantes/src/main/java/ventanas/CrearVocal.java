@@ -1,10 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ventanas;
 
+
+import com.mycompany.gestionvotantes.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author esteb
@@ -12,10 +12,15 @@ package ventanas;
 public class CrearVocal extends javax.swing.JDialog {
 
     /**
-     * Creates new form CrearVocal
+     * declaration de variables
      */
+    private JFrame MenuPrincipal;
+    private LugarVotacion valpo = new LugarVotacion();
+    
+    
     public CrearVocal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        //valpo = valparaiso;
         initComponents();
     }
 
@@ -126,7 +131,7 @@ public class CrearVocal extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CrearVocal dialog = new CrearVocal(new javax.swing.JFrame(), true);
+                CrearVocal dialog = new CrearVocal(new javax.swing.JFrame(), true );
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

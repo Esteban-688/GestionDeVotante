@@ -47,6 +47,8 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         LBLtitle = new javax.swing.JLabel();
         LBLetiqueta = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
+        BotonCrearVocal = new javax.swing.JButton();
+        BotonCambiarVotantePorVocal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,21 +109,21 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonBuscarRut.setText("Buscar por RUT");
+        BotonBuscarRut.setText("BUSCAR POR RUT");
         BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonBuscarRutActionPerformed(evt);
             }
         });
 
-        BotonEliminarRut.setText("Eliminar por RUT");
+        BotonEliminarRut.setText("ELIMINAR POR RUT");
         BotonEliminarRut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonEliminarRutActionPerformed(evt);
             }
         });
 
-        BotonEliminarMesa.setText("Eliminar Mesa");
+        BotonEliminarMesa.setText("ELIMINAR MESA");
 
         LBLtitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
         LBLtitle.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,6 +146,20 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        BotonCrearVocal.setText("CREAR VOCAL");
+        BotonCrearVocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCrearVocalActionPerformed(evt);
+            }
+        });
+
+        BotonCambiarVotantePorVocal.setText("CAMBIAR VOTANTE POR VOCAL");
+        BotonCambiarVotantePorVocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCambiarVotantePorVocalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
@@ -153,20 +169,32 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(LBLtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(backgroundLayout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(LBLtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LBLetiqueta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE))
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(200, 200, 200)
+                            .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonEliminarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(LBLetiqueta)
-                    .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                            .addGroup(backgroundLayout.createSequentialGroup()
+                                .addGap(200, 200, 200)
+                                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BotonEliminarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BotonCrearVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonCambiarVotantePorVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(17, 17, 17))))
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)))
                 .addComponent(BackgroundItems2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         backgroundLayout.setVerticalGroup(
@@ -175,9 +203,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(LBLtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotonCrearVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addGap(70, 70, 70)
@@ -187,9 +215,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(61, 61, 61)
-                        .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BotonCambiarVotantePorVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77)))
-                .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LBLetiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -250,9 +282,20 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         MostrarTodoVentana a = new MostrarTodoVentana(this, true, valpo);
         //visibilidad de ventanas
+        a.setBounds(0, 0, 800, 500);
         this.setVisible(false);
         a.setVisible(true);
     }//GEN-LAST:event_BotonMostraTodoActionPerformed
+
+    private void BotonCrearVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearVocalActionPerformed
+        // TODO add your handling code here:
+        //CrearVocal a = new CrearVocal(this, true, valpo);
+        
+    }//GEN-LAST:event_BotonCrearVocalActionPerformed
+
+    private void BotonCambiarVotantePorVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarVotantePorVocalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonCambiarVotantePorVocalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,8 +305,10 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel BackgroundItems;
     private javax.swing.JPanel BackgroundItems2;
     private javax.swing.JButton BotonBuscarRut;
+    private javax.swing.JButton BotonCambiarVotantePorVocal;
     private javax.swing.JButton BotonCrearMesa;
     private javax.swing.JButton BotonCrearV;
+    private javax.swing.JButton BotonCrearVocal;
     private javax.swing.JButton BotonEliminarMesa;
     private javax.swing.JButton BotonEliminarRut;
     private javax.swing.JButton BotonMostraTodo;

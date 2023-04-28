@@ -30,6 +30,7 @@ public class Menu {
                 System.out.println("(5) Eliminar por RUT");
                 System.out.println("(6) Crear Vocal");
                 System.out.println("(7) Mostrar Todos Vocales ");
+                System.out.println("(8) Eliminar Mesa");
                 System.out.println("------------------------------------\n");
                 System.out.print("Elija una opción: ");
                 choose = verificarEntero();
@@ -154,6 +155,25 @@ public class Menu {
                         
                        break;
                       
+                    } 
+                    case 7:{
+                        //funcion especial
+                        System.out.println("--CAMBIAR VOTANTE POR VOCAL--");
+                        
+                    }
+                    case 8:{
+                        //declaration variable
+                        int numeroMesa;
+                        System.out.println("--ELIMINAR MESA--");
+                         //Se pide la mesa a borrar
+                        System.out.print("Ingrese número de mesa a borrar: ");
+                        numeroMesa = verificarEntero();
+                        if(valpo.mesaExiste(numeroMesa)== false ){
+                            System.out.println("MESA NO EXISTE");
+                            break;
+                        }
+                        valpo.eliminarMesa(numeroMesa);
+                         break;  
                     }
 
                     default: {

@@ -23,7 +23,7 @@ public class Mesa {
    
     //funciones
     public void reservarParaVocal(){
-        String name = ("VOCAL MESA " +id);
+        String name = ("VOCAL DE MESA ");
         String rut = ("NO ASIGNADO");
         //aunque dice que es un votante solo es para reservar el espacio para cuando se asigne un nuevo vocal
         //a una mesa ya creada;
