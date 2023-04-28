@@ -10,11 +10,8 @@ import javax.swing.JOptionPane;
  * @author esteb
  */
 public class CrearVotanteVentana extends javax.swing.JDialog {
-
-    /**
-     * Creates new form CrearVotanteVentana
-     */
     
+    //declaration variables
     private JFrame MenuPrincipal;
     private LugarVotacion valpo = new LugarVotacion();
     

@@ -239,6 +239,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonBuscarRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarRutActionPerformed
         // TODO add your handling code here:
+        BuscarPorRutVentana a = new BuscarPorRutVentana(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonBuscarRutActionPerformed
 
     private void BotonCrearVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonCrearVMouseClicked
