@@ -7,41 +7,20 @@ package com.mycompany.gestionvotantes;
  * @author esteb
  */
 
-public class Votante {
-    private String rut;//su rut
-    private int nMesa;//numero de la mesa que se encuentra
-    private String name;//nombre del votante
+public class Votante extends Persona {
    
     //constructores
     
     public Votante(String nombre, String rutVotante, int numeroMesa) {
-        name = nombre;
-        rut = rutVotante;
-        nMesa = numeroMesa;
+       super(nombre, rutVotante, numeroMesa);
+        
     } 
     
-    //setters y getters
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getRut() {
-        return rut;
-    }
-
-    public void setRut(String rut) {
-        this.rut = rut;
+    //metodo abstract desde Persona
+    @Override
+    public boolean retornaTipo(){
+      //con este metodo retornando true, avisa que es un Votante
+      return true;
     }
     
-    public int getNMesa() {
-        return nMesa;
-    }
-    
-    public void setNMesa(int nMesa) {
-        this.nMesa = nMesa;
-    }
 }

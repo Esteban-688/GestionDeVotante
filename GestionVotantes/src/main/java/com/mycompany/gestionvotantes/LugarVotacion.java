@@ -25,7 +25,7 @@ public class LugarVotacion {
         return true;
     }
     //esta funcion agreaa un votante con su id a la Mesa ya existente
-    public void agregarVotanteAMesa(Votante nuevoVotante, int id){
+    public void agregarVotanteAMesa(Persona nuevoVotante, int id){
         valparaiso.get(id).agregarVotanteAMesa(nuevoVotante);
     }
     //con esta fucncion mete la mesa al Hashmap

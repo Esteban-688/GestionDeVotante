@@ -28,7 +28,7 @@ public class Menu {
                 System.out.println("(3) Mostrar Todo");
                 System.out.println("(4) Buscar por RUT");
                 System.out.println("(5) Eliminar por RUT");
-                System.out.println("(6) Eliminar mesa");
+                System.out.println("(6) Crear Vocal");
                 System.out.println("------------------------------------\n");
                 System.out.print("Elija una opción: ");
                 choose = verificarEntero();
@@ -112,9 +112,47 @@ public class Menu {
                     }
 
                     case 6: {
-                        System.out.println("-- MOSTRAR POR MESA --");
                         
-                        break;
+                        //declaration Variable
+                        
+                        String contraseña;
+                        String name;
+                        String rut;
+                        int nMesa;
+                        
+                        //pedir por pantalla
+                        System.out.println("-- CREAR VOCAL --");
+                        System.out.println("NOMBRE");
+                        System.out.println("Introduzca el nombre del vocal: " );
+                        name = leer.nextLine();
+                        System.out.println("Introduzca el RUT sin puntos ni guión: ");
+                        rut = leer.nextLine();
+                        //aca se verifica si la mesa existe
+                        System.out.println("Introduzca el Número de Mesa");
+                        nMesa = verificarEntero();
+                        //si la mesa no existe se lanza exception de mesa no esta creada
+                        if(valpo.mesaExiste(nMesa) == false){
+                            System.out.println("Seleccione un mesa existente o cree la mesa");
+                            //throw ExceptionMesaNoCreada;
+                            break;
+                        }
+                        // comprueba si ya existe un vocal en mesa, retorna True si existe un vocal en mesa, sino retorna false
+                        if(/*valpo.vocalEnMesa ==*/ true){
+                            System.out.println("Seleccione una mesa donde no exista Vocal");
+                            break;
+                        }
+                        //se pedira contraseña, asumiendo que solo hay un vocal por mesa;
+                        System.out.println("Introduzca una contraseña");
+                        contraseña = leer.nextLine();
+                        System.out.println("Para Ingresar tenga en cuenta que el USUARIO es su nombre: " + name);
+                        System.out.println(" ");
+                        //Con el contructor se crea el votante 
+                        Vocal nuevoVocal = new Vocal(name, rut, nMesa, contraseña);
+                        //con esta funcion se agrega a la mesa pedida SOLO SI EXISTE
+                        valpo.agregarVotanteAMesa(nuevoVocal, nMesa);
+                        
+                       break;
+                      
                     }
 
                     default: {
