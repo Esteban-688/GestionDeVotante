@@ -139,7 +139,7 @@ public class Menu {
                             break;
                         }
                         // comprueba si ya existe un vocal en mesa, retorna True si existe un vocal en mesa, sino retorna false
-                        if(/*valpo.vocalEnMesa ==*/ true){
+                        if(valpo.vocalEnMesa(nMesa) == true){
                             System.out.println("Seleccione una mesa donde no exista Vocal");
                             break;
                         }

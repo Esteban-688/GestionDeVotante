@@ -7,7 +7,7 @@ package com.mycompany.gestionvotantes;
  */
 public abstract class Persona {
     //declaration Variable
-    private String name;
+    protected String name;
     private String rut;
     private int nMesa;
     
@@ -17,7 +17,7 @@ public abstract class Persona {
         nMesa = numeroMesa;
     }
     
-    //este metodo retornara si es votante(true) o vocal(false)
+    //este metodo retornara votante(true) o vocal(false)
     public abstract boolean retornaTipo();
    
     

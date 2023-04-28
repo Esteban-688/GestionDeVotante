@@ -14,8 +14,20 @@ import javax.swing.table.DefaultTableModel;
 public class LugarVotacion {
     //contiene un HASHMAP donde almacena todas las mesas
     private HashMap<Integer, Mesa> valparaiso = new HashMap<>();
-  
+    
+    //contructor sin parametros solo para crear las mesas automaticas
+    public LugarVotacion(){
+        crear10Mesas();
+    }
     //funciones
+    
+    //creacion de 10 mesas automaticas para no hacerlo manual
+    public void crear10Mesas(){
+        for(int i = 1; i<=10; i++){
+            Mesa nuevaMesa = new Mesa(i);
+            valparaiso.put(i, nuevaMesa);
+        }
+    }
     
     //si existe la mesa pedida, retona true, si no retorna false
     public boolean mesaExiste(int id){
@@ -38,10 +50,14 @@ public class LugarVotacion {
         return valparaiso.get(key);
     }
     
-   // public int obtenerTotalHashmap(){
-    //    return valparaiso.size();
-    //}
-   
+    public boolean vocalEnMesa(int id){
+        
+        if(valparaiso.get(id).retonarSiExisteVocal()){
+            //existe vocal en mesa
+          return true;
+        }
+       return false;
+    }
     //muestra todo
     public void mostrarTodo(){
         //Se recorre el mapa de mesas
@@ -50,9 +66,7 @@ public class LugarVotacion {
             System.out.println("_____________________");
             System.out.println("");
             System.out.println("      MESA " + key);
-            if(valparaiso.get(key).imprimirMesa()==false){
-                System.out.println("      VACIA    ");
-            }
+            valparaiso.get(key).imprimirMesa();
              System.out.println("_____________________");
         }
     }

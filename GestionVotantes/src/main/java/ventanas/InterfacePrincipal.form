@@ -23,15 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="background" min="-2" max="-2" attributes="0"/>
-          </Group>
+          <Component id="background" alignment="0" pref="838" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="background" min="-2" max="-2" attributes="0"/>
+          <Component id="background" alignment="1" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -48,81 +45,27 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Component id="BackgroundItems" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
-                                  <Component id="LBLtitle" min="-2" pref="350" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="LBLetiqueta" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="140" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                          <Component id="LBLtitle" min="-2" pref="350" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BotonCrearV" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="BotonCrearMesa" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                              <Component id="BotonMostraTodo" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="BotonEliminarMesa" min="-2" pref="180" max="-2" attributes="0"/>
-                                      <Component id="BotonCrearVocal" min="-2" pref="180" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="BotonCambiarVotantePorVocal" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="BotonBuscarRut" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="BotonEliminarRut" min="-2" pref="180" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                          <Component id="LBLetiqueta" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="BackgroundItems2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                   <Component id="LBLtitle" min="-2" pref="60" max="-2" attributes="0"/>
-                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BotonCrearV" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="BotonCrearVocal" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
-                          <Component id="BotonEliminarMesa" min="-2" pref="40" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BotonCrearMesa" min="-2" pref="40" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="BotonMostraTodo" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="BotonCambiarVotantePorVocal" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BotonBuscarRut" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="BotonEliminarRut" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Component id="LBLetiqueta" min="-2" pref="30" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -148,94 +91,76 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" pref="112" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="97" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="BotonCrearMesa" min="-2" pref="180" max="-2" attributes="0"/>
+                          <Component id="BotonCrearV" min="-2" pref="180" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="BotonBuscarRut" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="BotonMostraTodo" min="-2" pref="180" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="78" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="81" max="-2" attributes="0"/>
-                      <EmptySpace pref="367" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <Component id="BotonCrearV" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="BotonCrearMesa" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                      <Component id="BotonMostraTodo" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="BotonBuscarRut" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JButton" name="BotonCrearV">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\esteb\OneDrive\Escritorio\uni\progra avanzada\proyect\GestionDeVotante\GestionVotantes\Icono\agregarPersonaSF.png"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="CREAR VOTANTE"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotonCrearVMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearVActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JButton" name="BotonCrearMesa">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\esteb\OneDrive\Escritorio\uni\progra avanzada\proyect\GestionDeVotante\GestionVotantes\Icono\mostrarSF.png"/>
-                </Property>
+                <Property name="text" type="java.lang.String" value="CREAR MESA"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearMesaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonMostraTodo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="MOSTRAR TODO"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMostraTodoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonBuscarRut">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BUSCAR POR RUT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonBuscarRutActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="BotonCrearV">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CREAR VOTANTE"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BotonCrearVMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearVActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonCrearMesa">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CREAR MESA"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearMesaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonMostraTodo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="MOSTRAR TODO"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonMostraTodoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonBuscarRut">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="BUSCAR POR RUT"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonBuscarRutActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonEliminarRut">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ELIMINAR POR RUT"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEliminarRutActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonEliminarMesa">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ELIMINAR MESA"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="LBLtitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -268,32 +193,77 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="112" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="BotonEliminarRut" min="-2" pref="180" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BotonCambiarVotantePorVocal" min="-2" pref="220" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="BotonCrearVocal" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="BotonEliminarMesa" min="-2" pref="180" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="114" max="32767" attributes="0"/>
+                      <Component id="BotonCrearVocal" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="BotonEliminarMesa" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="BotonCambiarVotantePorVocal" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+                      <Component id="BotonEliminarRut" min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="BotonEliminarRut">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ELIMINAR POR RUT"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEliminarRutActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonCambiarVotantePorVocal">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CAMBIAR VOTANTE POR VOCAL"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCambiarVotantePorVocalActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonEliminarMesa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ELIMINAR MESA"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="BotonCrearVocal">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="CREAR VOCAL"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearVocalActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="BotonCrearVocal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CREAR VOCAL"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCrearVocalActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BotonCambiarVotantePorVocal">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="CAMBIAR VOTANTE POR VOCAL"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCambiarVotantePorVocalActionPerformed"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -23,12 +23,21 @@ public class Mesa {
    
     //funciones
     public void reservarParaVocal(){
-        String name = ("VOCAL DE MESA ");
+        String name = ("VOCAL DE MESA");
         String rut = ("NO ASIGNADO");
         //aunque dice que es un votante solo es para reservar el espacio para cuando se asigne un nuevo vocal
         //a una mesa ya creada;
         Votante nuevoVocal = new Votante(name, rut, id);
         mesaPersona.add(0, nuevoVocal);
+    }
+    
+    //retorna true si el vocal existe, si no retorna false; 
+    public boolean retonarSiExisteVocal(){
+        
+       if(mesaPersona.get(0).getName().equals("VOCAL DE MESA")){
+           return false;
+       }
+        return true;
     }
     //obtener un arraylist un votante de una mesa
     public Persona obtenerPersona(int index){
@@ -60,18 +69,24 @@ public class Mesa {
     }
     
     //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
-    public boolean imprimirMesa() {
+    public void imprimirMesa() {
         if(mesaPersona.size() != 0){
             //Se muestran los votantes de cada mesa
-        for(int i = 0; i < mesaPersona.size(); i++){
-            System.out.println("Nombre: " + mesaPersona.get(i).getName());
-            System.out.println("RUT: " + mesaPersona.get(i).getRut());
-            System.out.println("Mesa: " + mesaPersona.get(i).getNMesa());
-            System.out.println();
+            for(int i = 0; i < mesaPersona.size(); i++){
+                if(mesaPersona.get(i).retornaTipo()){
+                System.out.println("Nombre: " + mesaPersona.get(i).getName());
+                System.out.println("RUT: " + mesaPersona.get(i).getRut());
+                System.out.println("Mesa: " + mesaPersona.get(i).getNMesa());
+                System.out.println();
+                }
+                 if(mesaPersona.get(i).retornaTipo() == false){
+                System.out.println("nombre: " + mesaPersona.get(i).getName());
+                System.out.println("RUT: " + mesaPersona.get(i).getRut());
+                System.out.println("Mesa: " + mesaPersona.get(i).getNMesa());
+                System.out.println();
+                }
+            }
         }
-        return true;
-        }
-        return false;
     }
     
     //con rut el imprime un solo votante mediante su rut

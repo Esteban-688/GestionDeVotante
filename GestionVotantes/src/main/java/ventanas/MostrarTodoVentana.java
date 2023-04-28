@@ -75,11 +75,15 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         BackgroundMostrarTodo = new javax.swing.JPanel();
         LBLMostrarTodo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         BotonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackgroundMostrarTodo.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -89,23 +93,45 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         LBLMostrarTodo.setText("MOSTRAR TODO");
         BackgroundMostrarTodo.add(LBLMostrarTodo);
 
+        jPanel1.add(BackgroundMostrarTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 610, 540));
+
+        jPanel3.setBackground(new java.awt.Color(0, 153, 204));
+
         BotonVolver.setText("VOLVER");
         BotonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonVolverActionPerformed(evt);
             }
         });
-        BackgroundMostrarTodo.add(BotonVolver);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(BotonVolver)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(480, Short.MAX_VALUE)
+                .addComponent(BotonVolver)
+                .addGap(28, 28, 28))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackgroundMostrarTodo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackgroundMostrarTodo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,7 +142,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
         //cerrar ventana de Dialoj
         this.dispose();
         //visibilidad de ventanas
-        
+
         MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal
     }//GEN-LAST:event_BotonVolverActionPerformed
     
@@ -127,5 +153,7 @@ public class MostrarTodoVentana extends javax.swing.JDialog {
     private javax.swing.JPanel BackgroundMostrarTodo;
     private javax.swing.JButton BotonVolver;
     private javax.swing.JLabel LBLMostrarTodo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

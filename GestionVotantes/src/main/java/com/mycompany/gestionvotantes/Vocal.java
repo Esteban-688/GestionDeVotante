@@ -26,6 +26,11 @@ public class Vocal extends Persona{
     }
     
     //setters y getters
+   
+    @Override
+    public String getName(){
+        return ("VOCAL "+ name);
+    }
     
     public void setContraseña(String password){
         contraseña = password;
