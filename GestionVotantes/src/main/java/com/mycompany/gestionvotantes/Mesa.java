@@ -12,7 +12,7 @@ import java.util.*;
 public class Mesa {
     //declaration Variable
     private int id;//numero de la mesa que corresponde la cual es la id del hashmap en donde se encuentra
-    private ArrayList<Votante> mesaVotante = new ArrayList<Votante>();
+    private ArrayList<Persona> mesaVotante = new ArrayList<Persona>();
     
     
     //constructor
@@ -23,16 +23,25 @@ public class Mesa {
     //funciones
     
     //obtener un arraylist un votante de una mesa
-    public Votante obtenerVotante(int index){
+    public Persona obtenerVotante(int index){
         return mesaVotante.get(index);
     }
     public int obtenerTotal(){
         return mesaVotante.size();
     }
     //agrega un votante a una mesa ya existente,parametros: mesa existente
-    public void agregarVotanteAMesa(Votante votanteNuevo) {
-        mesaVotante.add(votanteNuevo);
+    public void agregarVotanteAMesa(Persona personaNueva) {
+        //aca se pregunta si es vocal o votante
+        if(personaNueva.retornaTipo() == true){
+            //agrego Votante
+            mesaVotante.add(personaNueva);
+        }
+        if(personaNueva.retornaTipo() == false){
+            mesaVotante.add(0,personaNueva);
+        }
         
+        
+                
     }
     
     //esta funcion se encargar de imprimir el Arraylist que tiene todos los votante
