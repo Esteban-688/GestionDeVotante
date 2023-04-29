@@ -87,11 +87,15 @@ public class LugarVotacion {
         valparaiso.get(id).imprimirMesa();
     }
     
-    public void buscarRut(String rut) {
+    public Persona buscarRut(String rut, boolean a) {
         //Se recorre el mapa de mesas
-        for (Integer key: valparaiso.keySet()){
-             valparaiso.get(key).imprimirPersona(rut);    
-        }
+        //si es true viene de ventana, si es false viene de consola
+        
+        //true Ventana : false consola
+            for (Integer key: valparaiso.keySet()){
+                return valparaiso.get(key).imprimirPersona(rut, a);    
+            }
+        return null;
     }
     
     public boolean cambiaVotantePorVocal(String rut, String contraseña){

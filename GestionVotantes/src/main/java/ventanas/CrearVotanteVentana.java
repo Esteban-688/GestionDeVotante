@@ -21,6 +21,7 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
         MenuPrincipal = (JFrame) parent;
         valpo = valparaiso;
         initComponents();
+        setResizable(false);
     }
     
     /**

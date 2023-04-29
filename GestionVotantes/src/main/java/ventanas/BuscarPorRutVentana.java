@@ -7,6 +7,7 @@ package ventanas;
 
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +25,7 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
         MenuPrincipal = (JFrame) parent;
         valpo = valparaiso;
         initComponents();
+        setResizable(false);
     }
 
     /**
@@ -79,6 +81,12 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
+        TextEntraRut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextEntraRutActionPerformed(evt);
+            }
+        });
+
         LBLIntroduzcaRut.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         LBLIntroduzcaRut.setForeground(new java.awt.Color(0, 0, 0));
         LBLIntroduzcaRut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,6 +101,11 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
         LBLRut.setText("Rut:");
 
         BotonBuscar.setText("Buscar");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
 
         BotonVolverMenuPrincipal.setText("VOLVER");
         BotonVolverMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +225,35 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
         MenuPrincipal.setVisible(true);
         
     }//GEN-LAST:event_BotonVolverMenuPrincipalActionPerformed
+    private boolean enviarDatos(){
+        String rut = TextEntraRut.getText();
+        if(valpo.buscarRut(rut, true) == null){
+             JOptionPane.showMessageDialog(this, "No se encontro resultado", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);
+            TextEntraRut.setText("");
+            
+        }
+        TextSalidaDeNombre.setText(valpo.buscarRut(rut, true).getName());
+        TextSalidaDeRut.setText(valpo.buscarRut(rut, true).getRut());
+        TextSalidaDeMesa.setText(Integer.toString(valpo.buscarRut(rut, true).getNMesa()));
+        
+        if(valpo.buscarRut(rut, true).retornaTipo()){
+            TextSalidaDeVocal.setText("NO");
+        }else{
+            TextSalidaDeVocal.setText("SI");
+        }
+        TextEntraRut.setText("");
+        return true;
+    }
+    
+    private void TextEntraRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntraRutActionPerformed
+        // TODO add your handling code here:
+        enviarDatos();
+    }//GEN-LAST:event_TextEntraRutActionPerformed
+
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        // TODO add your handling code here:
+        enviarDatos();
+    }//GEN-LAST:event_BotonBuscarActionPerformed
 
     /**
      * @param args the command line arguments

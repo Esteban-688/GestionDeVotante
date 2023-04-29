@@ -96,7 +96,8 @@ public class Menu {
                         rut = leer.nextLine();
                         System.out.println();
                         //funcion que busca e imprime votante
-                        valpo.buscarRut(rut);
+                        //si pongo true imprimi por ventana, si es False imprime por Consola
+                        valpo.buscarRut(rut, false);
                         break;
                     }
 

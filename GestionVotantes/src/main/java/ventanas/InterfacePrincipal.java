@@ -275,8 +275,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonCrearVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearVocalActionPerformed
         // TODO add your handling code here:
-        //CrearVocal a = new CrearVocal(this, true, valpo);
-        
+        CrearVocalVentana a = new CrearVocalVentana(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonCrearVocalActionPerformed
 
     private void BotonCambiarVotantePorVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarVotantePorVocalActionPerformed

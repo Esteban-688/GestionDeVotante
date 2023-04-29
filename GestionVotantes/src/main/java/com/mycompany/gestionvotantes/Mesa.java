@@ -90,19 +90,22 @@ public class Mesa {
     }
     
     //con rut el imprime un solo votante mediante su rut
-    public Boolean imprimirPersona(String rut) {
+    public Persona imprimirPersona(String rut, boolean a) {
           
         //Se muestran los datos del votante buscado
         for(int i = 0; i < mesaPersona.size(); i++){
             if(rut.equals(mesaPersona.get(i).getRut()))  {
+                if(a == false){
                 System.out.println("Nombre: " +mesaPersona.get(i).getName());
                 System.out.println("RUT: " + mesaPersona.get(i).getRut());
                 System.out.println("Mesa: " + mesaPersona.get(i).getNMesa());
-                return true;
+                }
+                return mesaPersona.get(i);
             }
         }
-        return false;
+        return null;
     }
+   
     //retorna true si logra borrarlo, sino return false
     public Boolean eliminarPersonaDeMesa(String rut) {
         //Se muestran los datos de la persona a eliminar
