@@ -143,6 +143,11 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         });
 
         BotonEliminarMesa.setText("ELIMINAR MESA");
+        BotonEliminarMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarMesaActionPerformed(evt);
+            }
+        });
 
         BotonCrearVocal.setText("CREAR VOCAL");
         BotonCrearVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -283,6 +288,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private void BotonCambiarVotantePorVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarVotantePorVocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BotonCambiarVotantePorVocalActionPerformed
+
+    private void BotonEliminarMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarMesaActionPerformed
+        // TODO add your handling code here:
+        EliminarMesaVentana a = new EliminarMesaVentana(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
+    }//GEN-LAST:event_BotonEliminarMesaActionPerformed
 
     /**
      * @param args the command line arguments

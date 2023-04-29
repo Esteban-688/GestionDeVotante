@@ -29,8 +29,13 @@ public class LugarVotacion {
         }
     }
     
-    //si existe la mesa pedida, retona true, si no retorna false
-    public boolean mesaExiste(int id){
+   /**
+ * ver si existe la mesa
+ * 
+ * @param num El número de mesa
+ * @return si existe la mesa pedida, retona true, si no retorna false
+ */
+    public boolean mesaExiste(int id){ 
         if(valparaiso.get(id) == null){
             return false;
         }

@@ -5,17 +5,25 @@
  */
 package ventanas;
 
+import com.mycompany.gestionvotantes.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author esteb
  */
 public class EliminarMesaVentana extends javax.swing.JDialog {
 
-    /**
-     * Creates new form EliminarMesaVentana
-     */
-    public EliminarMesaVentana(java.awt.Frame parent, boolean modal) {
+    //declaration variable
+    private JFrame MenuPrincipal;
+    private LugarVotacion valpo = new LugarVotacion();
+    
+    
+    public EliminarMesaVentana(java.awt.Frame parent, boolean modal, LugarVotacion valparaiso) {
         super(parent, modal);
+        MenuPrincipal = (JFrame) parent;
+        valpo = valparaiso;
         initComponents();
         setResizable(false);
     }
@@ -29,64 +37,147 @@ public class EliminarMesaVentana extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BackgroundEliminarMesa = new javax.swing.JPanel();
+        LBLTitulo = new javax.swing.JLabel();
+        LBLNMesa = new javax.swing.JLabel();
+        textEntradaNumeroMesa = new javax.swing.JTextField();
+        BotonGuardar = new javax.swing.JButton();
+        BotonVolver = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        BackgroundEliminarMesa.setBackground(new java.awt.Color(0, 153, 204));
+
+        LBLTitulo.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        LBLTitulo.setForeground(new java.awt.Color(0, 0, 0));
+        LBLTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBLTitulo.setText("ELIMINAR MESA");
+
+        LBLNMesa.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        LBLNMesa.setForeground(new java.awt.Color(0, 0, 0));
+        LBLNMesa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBLNMesa.setText("Introduzca N° Mesa");
+
+        textEntradaNumeroMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEntradaNumeroMesaActionPerformed(evt);
+            }
+        });
+
+        BotonGuardar.setText("GUARDAR");
+        BotonGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonGuardarActionPerformed(evt);
+            }
+        });
+
+        BotonVolver.setText("VOLVER");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BackgroundEliminarMesaLayout = new javax.swing.GroupLayout(BackgroundEliminarMesa);
+        BackgroundEliminarMesa.setLayout(BackgroundEliminarMesaLayout);
+        BackgroundEliminarMesaLayout.setHorizontalGroup(
+            BackgroundEliminarMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundEliminarMesaLayout.createSequentialGroup()
+                .addGroup(BackgroundEliminarMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BotonGuardar)
+                    .addComponent(textEntradaNumeroMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundEliminarMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(BackgroundEliminarMesaLayout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addGroup(BackgroundEliminarMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LBLTitulo)
+                                .addComponent(LBLNMesa)))
+                        .addGroup(BackgroundEliminarMesaLayout.createSequentialGroup()
+                            .addGap(17, 17, 17)
+                            .addComponent(BotonVolver))))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        BackgroundEliminarMesaLayout.setVerticalGroup(
+            BackgroundEliminarMesaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundEliminarMesaLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(LBLTitulo)
+                .addGap(69, 69, 69)
+                .addComponent(LBLNMesa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textEntradaNumeroMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BotonGuardar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(BotonVolver)
+                .addGap(34, 34, 34))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(BackgroundEliminarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(BackgroundEliminarMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        // TODO add your handling code here:
+        //cerrar ventana de Dialoj
+        this.dispose();
+        //visibilidad de ventanas
+        MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal
+    }//GEN-LAST:event_BotonVolverActionPerformed
+
+    private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
+        // TODO add your handling code here:
+        enviarDatos();
+    }//GEN-LAST:event_BotonGuardarActionPerformed
+
+    private void textEntradaNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaNumeroMesaActionPerformed
+        // TODO add your handling code here:
+        enviarDatos();
+    }//GEN-LAST:event_textEntradaNumeroMesaActionPerformed
+    
+    private boolean enviarDatos() {
+            // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
+            int numeroMesa = Integer.parseInt(textEntradaNumeroMesa.getText());
+            // Realiza la acción con los datos (p. ej., enviar los valores al programa principal)
+             
+            if(valpo.mesaExiste(numeroMesa) == false ){
+                JOptionPane.showMessageDialog(this, "La Mesa "+ numeroMesa+" NO Existe", "Error", JOptionPane.INFORMATION_MESSAGE);
+                // Limpia los campos de texto
+                textEntradaNumeroMesa.setText("");
+                // Establece el enfoque en el primer campo de texto
+                textEntradaNumeroMesa.requestFocus();
+                return false;
+            }
+            valpo.eliminarMesa(numeroMesa);
+            //manda mensaje de aprobacion
+            JOptionPane.showMessageDialog(this, "Mesa eliminada con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            // Limpia los campos de texto
+            textEntradaNumeroMesa.setText("");
+            // Establece el enfoque en el primer campo de texto
+            textEntradaNumeroMesa.requestFocus();
+            return true;
+        }
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarMesaVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarMesaVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarMesaVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarMesaVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                EliminarMesaVentana dialog = new EliminarMesaVentana(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BackgroundEliminarMesa;
+    private javax.swing.JButton BotonGuardar;
+    private javax.swing.JButton BotonVolver;
+    private javax.swing.JLabel LBLNMesa;
+    private javax.swing.JLabel LBLTitulo;
+    private javax.swing.JTextField textEntradaNumeroMesa;
     // End of variables declaration//GEN-END:variables
 }
