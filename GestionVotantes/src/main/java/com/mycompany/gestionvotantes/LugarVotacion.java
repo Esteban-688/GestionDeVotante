@@ -92,13 +92,22 @@ public class LugarVotacion {
         valparaiso.get(id).imprimirMesa();
     }
     
+    /**
+     *  Se recorre el mapa de mesas
+     *si es true viene de ventana, si es false viene de consola
+     * @param rut
+     * @param a True (VENTANA), False(CONSOLA)
+     * @return un TIPO PERSONA
+     */
     public Persona buscarRut(String rut, boolean a) {
         //Se recorre el mapa de mesas
         //si es true viene de ventana, si es false viene de consola
         
         //true Ventana : false consola
             for (Integer key: valparaiso.keySet()){
-                return valparaiso.get(key).imprimirPersona(rut, a);    
+                if(valparaiso.get(key).imprimirPersona(rut, a) != null){
+                    return valparaiso.get(key).imprimirPersona(rut, a);
+                }
             }
         return null;
     }
@@ -122,7 +131,11 @@ public class LugarVotacion {
         
     }
     //sobrecarga de metodo
-    // si el valor el true, solo elimine votantes: False, solo elimina vocales
+    /**
+     * si el valor el true, solo elimina votantes empieza desde la posicion 1: False, desde vocales elimina vocales posicion 0
+     * @param rut rut del que desea eliminar
+     * @param a TRUE(solo borra votantes)FALSE(puede borra vocales y votante);
+     */ 
     public void eliminarPorRut(String rut , boolean a){
         
         //eliminar votante(true);eliminar vocal(false)

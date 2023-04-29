@@ -287,6 +287,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     private void BotonCambiarVotantePorVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCambiarVotantePorVocalActionPerformed
         // TODO add your handling code here:
+        CambiarVotanteAVocal a = new CambiarVotanteAVocal(this,true,valpo);
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonCambiarVotantePorVocalActionPerformed
 
     private void BotonEliminarMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarMesaActionPerformed

@@ -88,8 +88,14 @@ public class Mesa {
             }
         }
     }
+    /**
+     * SI escoges FALSE imprime VOTANTE/VOCAL mediante su rut y lo retorna
+     * SI escoges True solo retorna un VOTANTE/VOCAL
+     * @param rut rut de persona
+     * @param a TRUE(SOLO RETORNA VOTANTE) FALSE(CONSOLA)
+     * @return TIPO PERSONA/ TRUE(retorna solo PERSONA)FALSE(retorna y imprime por consola)
+     */
     
-    //con rut el imprime un solo votante mediante su rut
     public Persona imprimirPersona(String rut, boolean a) {
           
         //Se muestran los datos del votante buscado
