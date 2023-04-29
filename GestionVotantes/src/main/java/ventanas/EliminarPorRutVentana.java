@@ -17,6 +17,7 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
     public EliminarPorRutVentana(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setResizable(false);
     }
 
     /**

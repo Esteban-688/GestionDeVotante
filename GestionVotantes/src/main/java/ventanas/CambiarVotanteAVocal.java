@@ -16,7 +16,9 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
      */
     public CambiarVotanteAVocal(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        
         initComponents();
+        setResizable(false);
     }
 
     /**

@@ -17,6 +17,7 @@ public class EliminarMesaVentana extends javax.swing.JDialog {
     public EliminarMesaVentana(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setResizable(false);
     }
 
     /**

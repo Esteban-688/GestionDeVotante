@@ -26,6 +26,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         MenuPrincipal = (JFrame) parent;
         valpo = valparaiso;
         initComponents();
+        setResizable(false);
         TextEntradaNombre.requestFocus();
     }
 
