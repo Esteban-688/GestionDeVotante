@@ -26,10 +26,7 @@ public class Main {
         
         login.setVisible(true);
         
-        
-      
-        //interfacePrincipal.setVisible(true);
-        //operaciones ventana
+        //operaciones por consola
         
        Menu menu = new Menu();
         menu.desplegarMenu(valpo);

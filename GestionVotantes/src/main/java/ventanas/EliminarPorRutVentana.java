@@ -231,7 +231,15 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
     private boolean enviarDatos(){
         String rut = TextEntraRut.getText();
+        int NMesa = valpo.buscarRut(rut, true).getNMesa();
+        //con esto se elimina
         valpo.eliminarPorRut(rut);
+        ///esto rellena el vocal vacio de asi serlo
+        if(valpo.buscarRut(rut,true).retornaTipo() == false){
+            Vocal vocalVacio = new Vocal("DE MESA","NO ASIGNADO",NMesa," ");
+            valpo.agregarPersonaAMesa(vocalVacio, NMesa);
+        }
+        //mensaje de confirmacion
         JOptionPane.showMessageDialog(this, "Se elimino Correctamente", "ELIMINADO", JOptionPane.INFORMATION_MESSAGE);
         //limpiar todo
         TextEntraRut.setText("");
