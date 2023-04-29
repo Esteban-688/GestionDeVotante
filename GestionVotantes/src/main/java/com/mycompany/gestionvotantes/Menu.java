@@ -106,7 +106,7 @@ public class Menu {
                     case 5: {
                         //declaration Variable
                         String rut;
-                        System.out.println("-- ELIMINAR VOTANTE POR RUT --");
+                        System.out.println("-- ELIMINAR POR RUT --");
                         //Se pide el rut del votante a borrar
                         System.out.println("Ingrese RUT a borrar: ");
                         rut = leer.nextLine();
@@ -141,7 +141,7 @@ public class Menu {
                             //throw ExceptionMesaNoCreada;
                             break;
                         }
-                        // comprueba si ya existe un vocal en mesa, retorna True si existe un vocal en mesa, sino retorna false
+                        // comprueba si ya existe un vocal en mesa
                         if(valpo.vocalEnMesa(nMesa) == true){
                             System.out.println("Seleccione una mesa donde no exista Vocal");
                             break;
