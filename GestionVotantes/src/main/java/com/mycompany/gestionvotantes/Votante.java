@@ -8,9 +8,14 @@ package com.mycompany.gestionvotantes;
  */
 
 public class Votante extends Persona {
-   
-    //constructor
     
+    /**
+     * CLASE VOTANTE Subclase de Persona
+     *  constructor
+     * @param nombre Nombre del votante
+     * @param rutVotante rut identificador del votante
+     * @param numeroMesa Mesa en la que sera añadido
+     */
     public Votante(String nombre, String rutVotante, int numeroMesa) {
        super(nombre, rutVotante, numeroMesa);
         
@@ -23,17 +28,6 @@ public class Votante extends Persona {
       return true;
     }
     /*
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-    public int getNMesa() {
-        return nMesa;
-    }
-    
-    public void setNMesa(int nMesa) {
-        this.nMesa = nMesa;
-    }
-
      //Funcion cargar datos desde un csv
      public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{
 		String filePath = "personasInscritas.txt";
@@ -50,9 +44,5 @@ public class Votante extends Persona {
 		}
 		
 		lectorTxt.close();
-	}
-	
-=======
->>>>>>> Stashed changes
->>>>>>> f3b370f7f0e341df439fdec7b2d927ba54555e98*/
+	}*/
 }

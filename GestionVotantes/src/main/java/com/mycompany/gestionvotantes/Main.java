@@ -13,9 +13,13 @@ import java.util.*;
  *
  * @author estebanRodriguez , eduardoMarin , vicenteMorales
  */
-
 public class Main {
-    
+    /**
+     * main donde se inicia todas la funciones por consola 
+     * /se inicializa la ventana Principal 
+     * /se inicializa la ventana Login 
+     * /desplega menu de consola  
+     */
     public static void main (String[]arg) {
         LugarVotacion valpo = new LugarVotacion();
         
@@ -31,7 +35,7 @@ public class Main {
        Menu menu = new Menu();
         menu.desplegarMenu(valpo);
     }
-
+    
     //Funcion cargar datos desde un csv
     /*public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{
 		String filePath = "personasInscritas.txt";
@@ -51,10 +55,4 @@ public class Main {
 		
 		lectorTxt.close();
 	}*/
-	
-
-
-
-
-    
 }

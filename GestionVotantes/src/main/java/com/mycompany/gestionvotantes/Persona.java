@@ -10,14 +10,24 @@ public abstract class Persona {
     protected String name;
     private String rut;
     private int nMesa;
-    
+   
+    /**
+     * clase Persona es abstracta
+     * Constructor de Persona para Heredar a sus SubClases
+     * @param nombre    nombre de la persona
+     * @param rutPersona    rut de la persona(identificador)
+     * @param numeroMesa    numero de mesa en la que van su SubClases
+     */
     public Persona(String nombre, String rutPersona, int numeroMesa){
         name = nombre;
         rut = rutPersona;
         nMesa = numeroMesa;
     }
     
-    //este metodo retornara votante(true) o vocal(false)
+    
+    /**
+     * Metodo ABSTRACTO retornara votante(TRUE) o vocal(FALSE) 
+     */
     public abstract boolean retornaTipo();
    
     

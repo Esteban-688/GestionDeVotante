@@ -14,9 +14,11 @@ public class Menu {
     int choose = 100;
     
     Scanner leer = new Scanner(System.in);
-    
+    /**
+     * funcion utilizada para crear y desplegar la funciones principales
+     * @param valpo mapa donde se va utilizay y guardar el programa
+     */
     public void desplegarMenu(LugarVotacion valpo){
-        //Menú de opciones
     //try{
        System.out.println("Bienvenido al programa de gestión de votacion\n");
        
@@ -201,7 +203,11 @@ public class Menu {
         
 }
                     
-    //algunas funciones
+    /**
+     * verifica mediante entrada si el numero ingresado es entero
+     * y asi se logra tener mayor control de lo que entra por consola y Ventana
+     * @return el numero entero pedido ya Verificado que se INT 
+     */
     private int verificarEntero(){
 
          int id = 0;//numero de mesa

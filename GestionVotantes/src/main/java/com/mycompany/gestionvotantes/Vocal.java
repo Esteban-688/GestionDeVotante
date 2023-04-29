@@ -11,14 +11,20 @@ public class Vocal extends Persona{
     private String contraseña;
     
     
-    //contructor
+    /**
+     * CLASE VOCAL Subclase de Persona 
+     * constructor
+     * @param name Nombre del vocal
+     * @param rutVocal rut identificador del vocal
+     * @param numeroMesa Mesa en la que sera vocal
+     * @param password contraseña que sera usada para inicios de sesion
+     */
     public Vocal(String name, String rutVocal, int numeroMesa, String password){
         super(name, rutVocal, numeroMesa);     
         usuario = name;
         contraseña = password;
     }
     
-    //metodo abstract de Persona
     @Override
     public boolean retornaTipo(){
         //retorna false asi indica que es un vocal
