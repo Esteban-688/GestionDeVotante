@@ -242,6 +242,7 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
             TextSalidaDeVocal.setText("SI");
         }
         TextEntraRut.setText("");
+        TextEntraRut.requestFocus();
         return true;
     }
     

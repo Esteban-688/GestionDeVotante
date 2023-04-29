@@ -5,17 +5,25 @@
  */
 package ventanas;
 
+import com.mycompany.gestionvotantes.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author esteb
  */
 public class EliminarPorRutVentana extends javax.swing.JDialog {
 
-    /**
-     * Creates new form EliminarPorRutVentana
-     */
-    public EliminarPorRutVentana(java.awt.Frame parent, boolean modal) {
+    //declaration variable
+    private JFrame MenuPrincipal;
+    private LugarVotacion valpo = new LugarVotacion();
+    
+    
+    public EliminarPorRutVentana(java.awt.Frame parent, boolean modal,LugarVotacion valparaiso) {
         super(parent, modal);
+        MenuPrincipal = (JFrame) parent;
+        valpo = valparaiso;
         initComponents();
         setResizable(false);
     }
@@ -29,64 +37,268 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BackgroundBuscarPorRut1 = new javax.swing.JPanel();
+        PanelTitulo1 = new javax.swing.JPanel();
+        LBLTITULO1 = new javax.swing.JLabel();
+        LBLIntroduzcaRut = new javax.swing.JLabel();
+        TextEntraRut = new javax.swing.JTextField();
+        LBLNombre = new javax.swing.JLabel();
+        LBLRut = new javax.swing.JLabel();
+        BotonBuscar = new javax.swing.JButton();
+        BotonVolverMenuPrincipal = new javax.swing.JButton();
+        TextSalidaDeNombre = new javax.swing.JTextField();
+        TextSalidaDeMesa = new javax.swing.JTextField();
+        LBLMesa = new javax.swing.JLabel();
+        TextSalidaDeRut = new javax.swing.JTextField();
+        LBLVocal = new javax.swing.JLabel();
+        TextSalidaDeVocal = new javax.swing.JTextField();
+        LBLDatos = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        BackgroundBuscarPorRut1.setBackground(new java.awt.Color(0, 153, 204));
+
+        PanelTitulo1.setBackground(new java.awt.Color(0, 153, 204));
+
+        LBLTITULO1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        LBLTITULO1.setForeground(new java.awt.Color(0, 0, 0));
+        LBLTITULO1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBLTITULO1.setText("ELIMINAR POR RUT");
+
+        LBLIntroduzcaRut.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLIntroduzcaRut.setForeground(new java.awt.Color(0, 0, 0));
+        LBLIntroduzcaRut.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBLIntroduzcaRut.setText("Introduzca el RUT");
+
+        javax.swing.GroupLayout PanelTitulo1Layout = new javax.swing.GroupLayout(PanelTitulo1);
+        PanelTitulo1.setLayout(PanelTitulo1Layout);
+        PanelTitulo1Layout.setHorizontalGroup(
+            PanelTitulo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTitulo1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(LBLTITULO1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelTitulo1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LBLIntroduzcaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67))
+        );
+        PanelTitulo1Layout.setVerticalGroup(
+            PanelTitulo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTitulo1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(LBLTITULO1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LBLIntroduzcaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        TextEntraRut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextEntraRutActionPerformed(evt);
+            }
+        });
+
+        LBLNombre.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLNombre.setForeground(new java.awt.Color(0, 0, 0));
+        LBLNombre.setText("NOMBRE");
+
+        LBLRut.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLRut.setForeground(new java.awt.Color(0, 0, 0));
+        LBLRut.setText("Rut:");
+
+        BotonBuscar.setText("Eliminar");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
+
+        BotonVolverMenuPrincipal.setText("VOLVER");
+        BotonVolverMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverMenuPrincipalActionPerformed(evt);
+            }
+        });
+
+        TextSalidaDeNombre.setEditable(false);
+
+        TextSalidaDeMesa.setEditable(false);
+
+        LBLMesa.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLMesa.setForeground(new java.awt.Color(0, 0, 0));
+        LBLMesa.setText("MESA:");
+
+        TextSalidaDeRut.setEditable(false);
+
+        LBLVocal.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLVocal.setForeground(new java.awt.Color(0, 0, 0));
+        LBLVocal.setText("VOCAL:");
+
+        TextSalidaDeVocal.setEditable(false);
+        TextSalidaDeVocal.setText("SI  /  NO");
+
+        LBLDatos.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        LBLDatos.setForeground(new java.awt.Color(0, 0, 0));
+        LBLDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LBLDatos.setText("Datos: (presionar ENTER)");
+
+        javax.swing.GroupLayout BackgroundBuscarPorRut1Layout = new javax.swing.GroupLayout(BackgroundBuscarPorRut1);
+        BackgroundBuscarPorRut1.setLayout(BackgroundBuscarPorRut1Layout);
+        BackgroundBuscarPorRut1Layout.setHorizontalGroup(
+            BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LBLRut)
+                            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                                .addComponent(BotonVolverMenuPrincipal)
+                                .addGap(107, 107, 107)
+                                .addComponent(BotonBuscar))
+                            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                                .addComponent(LBLMesa)
+                                .addGap(18, 18, 18)
+                                .addComponent(TextSalidaDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(LBLVocal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TextSalidaDeVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(PanelTitulo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(TextSalidaDeRut, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                        .addContainerGap(17, Short.MAX_VALUE)
+                        .addComponent(LBLNombre)
+                        .addGap(18, 18, 18)
+                        .addComponent(TextSalidaDeNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(TextEntraRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
+            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        BackgroundBuscarPorRut1Layout.setVerticalGroup(
+            BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                .addComponent(PanelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextEntraRut, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextSalidaDeNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBLNombre))
+                .addGap(18, 18, 18)
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextSalidaDeRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBLRut))
+                .addGap(30, 30, 30)
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextSalidaDeVocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBLVocal)
+                    .addComponent(TextSalidaDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBLMesa))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BotonVolverMenuPrincipal)
+                    .addComponent(BotonBuscar))
+                .addGap(44, 44, 44))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackgroundBuscarPorRut1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(BackgroundBuscarPorRut1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarPorRutVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarPorRutVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarPorRutVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarPorRutVentana.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                EliminarPorRutVentana dialog = new EliminarPorRutVentana(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
+    private boolean enviarDatos(){
+        String rut = TextEntraRut.getText();
+        valpo.eliminarPorRut(rut);
+        JOptionPane.showMessageDialog(this, "Se elimino Correctamente", "ELIMINADO", JOptionPane.INFORMATION_MESSAGE);
+        //limpiar todo
+        TextEntraRut.setText("");
+        TextSalidaDeNombre.setText("");
+        TextSalidaDeRut.setText("");
+        TextSalidaDeMesa.setText("");
+        TextSalidaDeVocal.setText("SI / NO");
+        TextEntraRut.requestFocus();
+        return true;
     }
+    private boolean rellenarEntradaRut(){
+        String rut = TextEntraRut.getText();
+        if(valpo.buscarRut(rut, true) == null){
+             JOptionPane.showMessageDialog(this, "No se encontro resultado", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);
+            TextEntraRut.setText("");
+            
+        }
+        TextSalidaDeNombre.setText(valpo.buscarRut(rut, true).getName());
+        TextSalidaDeRut.setText(valpo.buscarRut(rut, true).getRut());
+        TextSalidaDeMesa.setText(Integer.toString(valpo.buscarRut(rut, true).getNMesa()));
+        
+        if(valpo.buscarRut(rut, true).retornaTipo()){
+            TextSalidaDeVocal.setText("NO");
+        }else{
+            TextSalidaDeVocal.setText("SI");
+        }
+        return true;
+    }
+    private void TextEntraRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntraRutActionPerformed
+        // TODO add your handling code here:
+        rellenarEntradaRut();
+    }//GEN-LAST:event_TextEntraRutActionPerformed
+
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        // TODO add your handling code here:
+        enviarDatos();
+    }//GEN-LAST:event_BotonBuscarActionPerformed
+
+    private void BotonVolverMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverMenuPrincipalActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        MenuPrincipal.setVisible(true);
+
+    }//GEN-LAST:event_BotonVolverMenuPrincipalActionPerformed
+
+   
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BackgroundBuscarPorRut;
+    private javax.swing.JPanel BackgroundBuscarPorRut1;
+    private javax.swing.JButton BotonBuscar;
+    private javax.swing.JButton BotonVolverMenuPrincipal;
+    private javax.swing.JLabel LBLDatos;
+    private javax.swing.JLabel LBLIntroduzcaRut;
+    private javax.swing.JLabel LBLMesa;
+    private javax.swing.JLabel LBLNombre;
+    private javax.swing.JLabel LBLRut;
+    private javax.swing.JLabel LBLTITULO;
+    private javax.swing.JLabel LBLTITULO1;
+    private javax.swing.JLabel LBLVocal;
+    private javax.swing.JPanel PanelTitulo;
+    private javax.swing.JPanel PanelTitulo1;
+    private javax.swing.JTextField TextEntraRut;
+    private javax.swing.JTextField TextSalidaDeMesa;
+    private javax.swing.JTextField TextSalidaDeNombre;
+    private javax.swing.JTextField TextSalidaDeRut;
+    private javax.swing.JTextField TextSalidaDeVocal;
     // End of variables declaration//GEN-END:variables
 }

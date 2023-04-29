@@ -240,6 +240,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     
     private void BotonEliminarRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEliminarRutActionPerformed
         // TODO add your handling code here:
+        EliminarPorRutVentana a = new EliminarPorRutVentana(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
     }//GEN-LAST:event_BotonEliminarRutActionPerformed
 
     private void BotonBuscarRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarRutActionPerformed
