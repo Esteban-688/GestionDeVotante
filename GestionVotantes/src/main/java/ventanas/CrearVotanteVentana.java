@@ -1,6 +1,7 @@
 
 package ventanas;
 
+import com.mycompany.MisExceptiones.*;
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -175,7 +176,7 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
         //visibilidad de ventanas
         MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal                
     }//GEN-LAST:event_BotonVolverActionPerformed
-    private boolean enviarDatos() {
+    private boolean enviarDatos() throws ExceptionMesaNoCreada{
         // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
         String nombre = TextName.getText();
         String rut = TextRut.getText();
@@ -184,15 +185,7 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
          
         //aca se rellena los datos para mandarlos al hashmap
             if(valpo.mesaExiste(numeroMesa) == false){
-                
-                JOptionPane.showMessageDialog(this, "Esa Mesa No existe", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);               
-                   //throw ExceptionMesaNoCreada;
-                //do{
-                      TextNumeroMesa.setText("");
-                      TextNumeroMesa.requestFocus();
-                      return false;
-                      // }while(valpo.mesaExiste(numeroMesa)==true);
-                       // 
+                throw new ExceptionMesaNoCreada();     
             }
          Votante votanteNuevo = new Votante(nombre,rut, numeroMesa);
          valpo.agregarPersonaAMesa(votanteNuevo, numeroMesa);
@@ -218,12 +211,53 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
         
     private void TextNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextNumeroMesaActionPerformed
         // TODO add your handling code here:
+        try{
         enviarDatos();
+        }catch(ExceptionMesaNoCreada e){ 
+            
+            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            
+            if (result == JOptionPane.YES_OPTION) {
+                // El usuario seleccionó "Sí"
+                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
+                //visibilidad de ventanas
+                this.dispose();
+                a.setVisible(true);
+                
+            } else if (result == JOptionPane.NO_OPTION) {
+                // El usuario seleccionó "No"
+                TextNumeroMesa.setText("");
+                TextNumeroMesa.requestFocus();
+            } else {
+                TextNumeroMesa.setText("");
+                TextNumeroMesa.requestFocus();
+            }
+        }
     }//GEN-LAST:event_TextNumeroMesaActionPerformed
 
     private void EnviarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarDatosActionPerformed
         // TODO add your handling code here:
+         try{
         enviarDatos();
+        }catch(ExceptionMesaNoCreada e){
+            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            
+            if (result == JOptionPane.YES_OPTION) {
+                // El usuario seleccionó "Sí"
+                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
+                //visibilidad de ventanas
+                this.dispose();
+                a.setVisible(true);
+                
+            } else if (result == JOptionPane.NO_OPTION) {
+                // El usuario seleccionó "No"
+                TextNumeroMesa.setText("");
+                TextNumeroMesa.requestFocus();
+            } else {
+                TextNumeroMesa.setText("");
+                TextNumeroMesa.requestFocus();
+            }
+        }
     }//GEN-LAST:event_EnviarDatosActionPerformed
 
 

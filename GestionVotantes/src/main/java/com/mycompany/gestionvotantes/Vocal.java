@@ -21,7 +21,7 @@ public class Vocal extends Persona{
      */
     public Vocal(String name, String rutVocal, int numeroMesa, String password){
         super(name, rutVocal, numeroMesa);     
-        usuario = name;
+        usuario = rutVocal;
         contraseña = password;
     }
     

@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import com.mycompany.MisExceptiones.*;
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -300,30 +301,95 @@ public class CrearVocalVentana extends javax.swing.JDialog {
 
     private void jPasswordEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordEntradaActionPerformed
         // TODO add your handling code here:
-        enviarDatos();
+        try{
+            enviarDatos();
+        }catch(ExceptionMesaNoCreada e){ 
+            
+            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            
+            if (result == JOptionPane.YES_OPTION) {
+                // El usuario seleccionó "Sí"
+                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
+                //visibilidad de ventanas
+                this.dispose();
+                a.setVisible(true);
+                
+            } else if (result == JOptionPane.NO_OPTION) {
+                // El usuario seleccionó "No"
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            } else {
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            }
+        }
     }//GEN-LAST:event_jPasswordEntradaActionPerformed
 
     private void TextEntradaNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaNumeroMesaActionPerformed
         // TODO add your handling code here:
-        int id = Integer.parseInt(TextEntradaNumeroMesa.getText());
-        if(valpo.vocalEnMesa(id)){
-            //si es true existe vocal
-            TextSalidaExisteVocal.setText("SI EXISTE");
-        }else{
-            TextSalidaExisteVocal.setText("NO EXISTE");
+        try{
+            int id = Integer.parseInt(TextEntradaNumeroMesa.getText());
+            if(valpo.mesaExiste(id) == false){
+                    throw new ExceptionMesaNoCreada();
+                }
+            if(valpo.vocalEnMesa(id)){
+                //si es true existe vocal
+                TextSalidaExisteVocal.setText("SI EXISTE");
+            }else{
+                TextSalidaExisteVocal.setText("NO EXISTE");
+            }
+        }catch(ExceptionMesaNoCreada e){
+          int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            
+            if (result == JOptionPane.YES_OPTION) {
+                // El usuario seleccionó "Sí"
+                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
+                //visibilidad de ventanas
+                this.dispose();
+                a.setVisible(true);
+                
+            } else if (result == JOptionPane.NO_OPTION) {
+                // El usuario seleccionó "No"
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            } else {
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            }  
         }
         jPasswordEntrada.requestFocus();
     }//GEN-LAST:event_TextEntradaNumeroMesaActionPerformed
 
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         // TODO add your handling code here:
-        enviarDatos();
+        try{
+            enviarDatos();
+        }catch(ExceptionMesaNoCreada e){ 
+            
+            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            
+            if (result == JOptionPane.YES_OPTION) {
+                // El usuario seleccionó "Sí"
+                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
+                //visibilidad de ventanas
+                this.dispose();
+                a.setVisible(true);
+                
+            } else if (result == JOptionPane.NO_OPTION) {
+                // El usuario seleccionó "No"
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            } else {
+                TextEntradaNumeroMesa.setText("");
+                TextEntradaNumeroMesa.requestFocus();
+            }
+        }
     }//GEN-LAST:event_BotonGuardarActionPerformed
 
     private void TextSalidaExisteVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSalidaExisteVocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextSalidaExisteVocalActionPerformed
-    public boolean enviarDatos(){
+    public boolean enviarDatos()throws ExceptionMesaNoCreada{
         //declaration variable
         // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
         String nombre = TextEntradaNombre.getText();
@@ -333,15 +399,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
          
         //aca se rellena los datos para mandarlos al hashmap
             if(valpo.mesaExiste(numeroMesa) == false){
-                
-                JOptionPane.showMessageDialog(this, "Esa Mesa No existe", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);               
-                   //throw ExceptionMesaNoCreada;
-                //do{
-                      TextEntradaNumeroMesa.setText("");
-                      TextEntradaNumeroMesa.requestFocus();
-                      return false;
-                      // }while(valpo.mesaExiste(numeroMesa)==true);
-                       // 
+                throw new ExceptionMesaNoCreada();
             }
             //para obtener la contraseña
         char[] password = jPasswordEntrada.getPassword();

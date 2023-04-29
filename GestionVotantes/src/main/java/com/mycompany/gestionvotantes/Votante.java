@@ -30,19 +30,15 @@ public class Votante extends Persona {
     /*
      //Funcion cargar datos desde un csv
      public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{
-		String filePath = "personasInscritas.txt";
-        private BufferedReader lectorTxt = new BufferedReader( new FileReader( filePath ) );
+            String filePath = "personasInscritas.txt";
+        //private BufferedReader lectorTxt = new BufferedReader( new FileReader( filePath ) );
 		String lineText = null;
 		
-		while ((lineText = lectorTxt.readLine()) != null) {
-			Votante bi = new Votante();
-			String[] arr = lineText.split(",");
-			bi.setNMesa(Integer.parseInt(arr[0]));
-			bi.setName(arr[1]);
-			bi.setRut(arr[2]);
-			mesaVotante.add(bi);
+		while ((lineText = lectorTxt.readLine()) != null) {	
+			String[] arr = leer.split(",");
+			Votante nuevoVotante= new Votante(arr[1], arr[2], Integer.parseInt(arr[0]))
+                        valpo.agregarPersonaAMesa(nuevoVotante,Integer.parseInt(arr[0]));
 		}
-		
 		lectorTxt.close();
 	}*/
 }

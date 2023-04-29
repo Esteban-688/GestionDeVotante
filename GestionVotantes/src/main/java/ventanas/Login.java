@@ -42,6 +42,7 @@ public class Login extends javax.swing.JFrame {
         LBLUsuario1 = new javax.swing.JLabel();
         textEntradaUsuario = new javax.swing.JTextField();
         jPasswordEntrada = new javax.swing.JPasswordField();
+        jButton2 = new javax.swing.JButton();
         panelMODOADMIN = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
@@ -66,6 +67,8 @@ public class Login extends javax.swing.JFrame {
         LBLUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LBLUsuario1.setText("CONTRASEÑA");
 
+        jButton2.setText("ENTRAR");
+
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
         panelContenido.setLayout(panelContenidoLayout);
         panelContenidoLayout.setHorizontalGroup(
@@ -85,7 +88,10 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jPasswordEntrada)))
                     .addGroup(panelContenidoLayout.createSequentialGroup()
                         .addGap(122, 122, 122)
-                        .addComponent(LBLUsuario1)))
+                        .addComponent(LBLUsuario1))
+                    .addGroup(panelContenidoLayout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jButton2)))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         panelContenidoLayout.setVerticalGroup(
@@ -101,7 +107,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(LBLUsuario1)
                 .addGap(18, 18, 18)
                 .addComponent(jPasswordEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(24, 24, 24))
         );
 
         panelMODOADMIN.setBackground(new java.awt.Color(0, 153, 204));
@@ -117,17 +125,17 @@ public class Login extends javax.swing.JFrame {
         panelMODOADMIN.setLayout(panelMODOADMINLayout);
         panelMODOADMINLayout.setHorizontalGroup(
             panelMODOADMINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMODOADMINLayout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
+            .addGroup(panelMODOADMINLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         panelMODOADMINLayout.setVerticalGroup(
             panelMODOADMINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMODOADMINLayout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout BackgroundLoginLayout = new javax.swing.GroupLayout(BackgroundLogin);
@@ -137,7 +145,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(BackgroundLoginLayout.createSequentialGroup()
                 .addGap(189, 189, 189)
                 .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+                .addContainerGap(176, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLoginLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelMODOADMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,8 +155,8 @@ public class Login extends javax.swing.JFrame {
             BackgroundLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(panelContenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelMODOADMIN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -184,6 +192,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel LBLUsuario1;
     private javax.swing.JLabel LBLtitulo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPasswordField jPasswordEntrada;
     private javax.swing.JPanel panelContenido;
     private javax.swing.JPanel panelMODOADMIN;

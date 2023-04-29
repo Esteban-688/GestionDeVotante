@@ -10,5 +10,7 @@ package com.mycompany.MisExceptiones;
  * @author esteb
  */
 public class ExceptionMesaExiste extends Exception {
-    //esta excepcion se lanza cuando se trata de crear un mesa que ya existe
+    public ExceptionMesaExiste(){
+        super("MesaExiste");
+    }
 }

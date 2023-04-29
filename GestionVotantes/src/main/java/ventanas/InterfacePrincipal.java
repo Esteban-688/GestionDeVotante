@@ -46,6 +46,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BotonMostraTodo = new javax.swing.JButton();
         BotonBuscarRut = new javax.swing.JButton();
         BotonVolver = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         LBLtitle = new javax.swing.JLabel();
         LBLetiqueta = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
@@ -100,6 +101,8 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("Icono/adminlogoSF.png"));
+
         javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
         BackgroundItems.setLayout(BackgroundItemsLayout);
         BackgroundItemsLayout.setHorizontalGroup(
@@ -116,13 +119,18 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                     .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(BackgroundItemsLayout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(52, 52, 52))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundItemsLayout.setVerticalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(92, 92, 92)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86)
                 .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,7 +138,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119)
                 .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                 .addComponent(BotonVolver)
                 .addGap(22, 22, 22))
         );
@@ -196,7 +204,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BackgroundItems2Layout.setVerticalGroup(
             BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItems2Layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
+                .addContainerGap(148, Short.MAX_VALUE)
                 .addComponent(BotonCrearVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98)
                 .addComponent(BotonEliminarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,6 +353,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LBLetiqueta;
     private javax.swing.JLabel LBLtitle;
     private javax.swing.JPanel background;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
     
 }

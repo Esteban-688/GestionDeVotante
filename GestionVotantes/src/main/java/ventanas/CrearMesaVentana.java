@@ -1,6 +1,7 @@
 
 package ventanas;
 
+import com.mycompany.MisExceptiones.*;
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -139,18 +140,13 @@ public class CrearMesaVentana extends javax.swing.JDialog {
         //visibilidad de ventanas
         MenuPrincipal.setVisible(true);//con esto se hace visible la ventana principal
     }//GEN-LAST:event_BOTONVOLVERActionPerformed
-    private boolean enviarDatos() {
+    private boolean enviarDatos()throws ExceptionMesaExiste {
             // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
             int numeroMesa = Integer.parseInt(textNumeroMesa.getText());
             // Realiza la acción con los datos (p. ej., enviar los valores al programa principal)
              
             if(valpo.mesaExiste(numeroMesa)== true ){
-                JOptionPane.showMessageDialog(this, "La Mesa "+ numeroMesa+" ya Existe", "Error", JOptionPane.INFORMATION_MESSAGE);
-                // Limpia los campos de texto
-                textNumeroMesa.setText("");
-                // Establece el enfoque en el primer campo de texto
-                textNumeroMesa.requestFocus();
-                return false;
+               throw new ExceptionMesaExiste();
             }
              //ASIGNO los datos a la nueva mesa;
             Mesa mesaNueva = new Mesa(numeroMesa);
@@ -166,12 +162,24 @@ public class CrearMesaVentana extends javax.swing.JDialog {
         }
     private void textNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumeroMesaActionPerformed
        // TODO add your handling code here:
-       enviarDatos();
+       try{
+            enviarDatos();
+       }catch(ExceptionMesaExiste e){
+           JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            textNumeroMesa.setText("");
+            textNumeroMesa.requestFocus();
+       }
     }//GEN-LAST:event_textNumeroMesaActionPerformed
 
     private void BotonCrearMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCrearMesaActionPerformed
         // TODO add your handling code here:
-        enviarDatos();
+        try{
+            enviarDatos();
+       }catch(ExceptionMesaExiste e){
+           JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            textNumeroMesa.setText("");
+            textNumeroMesa.requestFocus();
+       }
     }//GEN-LAST:event_BotonCrearMesaActionPerformed
     
     /**
