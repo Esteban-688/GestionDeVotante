@@ -2,6 +2,7 @@
 package ventanas;
 
 import com.mycompany.gestionvotantes.*;
+import javax.swing.JFrame;
 
 
 /**
@@ -12,16 +13,20 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
     
     //Declaration de mapa para guardar todo;
-    LugarVotacion valpo = new LugarVotacion();
+    private LugarVotacion valpo = new LugarVotacion();
+    
     /**
      * Creates new form InterfacePrincipal
      */
     public InterfacePrincipal(LugarVotacion valparaiso) {
+       
+        valpo = valparaiso;
+        
         initComponents();
         setResizable(false);
         //setSize(500,500);
         
-        valpo = valparaiso;
+       
         
     }
 
@@ -40,6 +45,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BotonCrearMesa = new javax.swing.JButton();
         BotonMostraTodo = new javax.swing.JButton();
         BotonBuscarRut = new javax.swing.JButton();
+        BotonVolver = new javax.swing.JButton();
         LBLtitle = new javax.swing.JLabel();
         LBLetiqueta = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
@@ -87,22 +93,31 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonVolver.setText("Volver al LOGIN");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
         BackgroundItems.setLayout(BackgroundItemsLayout);
         BackgroundItemsLayout.setHorizontalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
                 .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
+            .addGroup(BackgroundItemsLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundItemsLayout.setVerticalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +130,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(119, 119, 119)
                 .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonVolver)
+                .addGap(22, 22, 22))
         );
 
         LBLtitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
@@ -302,6 +319,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_BotonEliminarMesaActionPerformed
 
+    private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Login a = new Login(valpo,this);
+        a.setVisible(true);
+    }//GEN-LAST:event_BotonVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +341,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonEliminarMesa;
     private javax.swing.JButton BotonEliminarRut;
     private javax.swing.JButton BotonMostraTodo;
+    private javax.swing.JButton BotonVolver;
     private javax.swing.JLabel LBLetiqueta;
     private javax.swing.JLabel LBLtitle;
     private javax.swing.JPanel background;

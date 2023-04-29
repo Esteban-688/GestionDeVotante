@@ -5,7 +5,7 @@
  */
 package com.mycompany.gestionvotantes;
 
-import ventanas.InterfacePrincipal;
+import ventanas.*;
 import java.io.*;
 import java.util.*;
 
@@ -20,9 +20,15 @@ public class Main {
         LugarVotacion valpo = new LugarVotacion();
         
        //ventana creacion
-       InterfacePrincipal interfacePrincipal = new InterfacePrincipal(valpo);
+        InterfacePrincipal interfacePrincipal = new InterfacePrincipal(valpo);
+        
+        Login login = new Login(valpo,interfacePrincipal);
+        
+        login.setVisible(true);
+        
+        
       
-        interfacePrincipal.setVisible(true);
+        //interfacePrincipal.setVisible(true);
         //operaciones ventana
         
        Menu menu = new Menu();
