@@ -52,7 +52,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BotonCambiarVotantePorVocal = new javax.swing.JButton();
         BotonBuscarRut = new javax.swing.JButton();
         BotonEliminarRut = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        botonConteoVotos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,8 +176,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         });
         background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 180, 40));
 
-        jButton1.setText("CONTEO DE VOTOS");
-        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
+        botonConteoVotos.setText("CONTEO DE VOTOS");
+        botonConteoVotos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonConteoVotosActionPerformed(evt);
+            }
+        });
+        background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -269,6 +274,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_BotonVolverActionPerformed
 
+    private void botonConteoVotosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonConteoVotosActionPerformed
+        // TODO add your handling code here:
+        conteoDeVotos a = new conteoDeVotos(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
+    }//GEN-LAST:event_botonConteoVotosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -287,7 +299,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonVolver;
     private javax.swing.JLabel LBLtitle;
     private javax.swing.JPanel background;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonConteoVotos;
     // End of variables declaration//GEN-END:variables
     
 }

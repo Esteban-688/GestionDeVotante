@@ -31,9 +31,9 @@ public class Main {
         login.setVisible(true);
         
         //operaciones por consola
-        
-       Menu menu = new Menu();
-        menu.desplegarMenu(valpo);
+        //desactivados para solo uso de ventanas
+       //Menu menu = new Menu();
+       //menu.desplegarMenu(valpo);
     }
     
     //Funcion cargar datos desde un csv

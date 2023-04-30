@@ -234,7 +234,29 @@ public class Mesa {
         escrutinio.add(2,nulos);//NULOS
         return true;
     }
-   
+    /**
+     * 
+     * @return cantidad de votos SI
+     */
+    public int obtenerSi(){   
+        return escrutinio.get(0);
+    }
+    /**
+     * 
+     * @return cantidad de votos NO
+     */
+    public int obtenerNo(){  
+         return escrutinio.get(1);
+    }
+    /**
+     * 
+     * @return cantidad de votos Nulos
+     */
+    public int obtenerNulos(){
+         return escrutinio.get(2);
+    }
+    
+    
     //setter y getters
     public int getId() {
         return id;

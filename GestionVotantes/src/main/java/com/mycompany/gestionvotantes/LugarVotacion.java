@@ -191,6 +191,39 @@ public class LugarVotacion {
     public void rellenarEscrutinio(int numero, int si, int no, int nulos){
         valparaiso.get(numero).rellenaVotos(si, no, nulos);
     }
+    /**
+     * 
+     * @return cantidad total de votos SI
+     */
+    public int obtenerTotalSi(){
+        int total = 0;
+        for (Integer key : valparaiso.keySet()){
+            total += valparaiso.get(key).obtenerSi();
+        }
+        return total;
+    }
+    /**
+     * 
+     * @return cantidad total de votos NO
+     */
+    public int obtenerTotalNo(){
+        int total = 0;
+        for (Integer key : valparaiso.keySet()){
+            total += valparaiso.get(key).obtenerNo();
+        }
+        return total;
+    }
+    /**
+     * 
+     * @return cantidad total de votos Nulos
+     */
+    public int obtenerTotalNulos(){
+        int total = 0;
+        for (Integer key : valparaiso.keySet()){
+            total += valparaiso.get(key).obtenerNulos();
+        }
+        return total;
+    }
    
 }
     
