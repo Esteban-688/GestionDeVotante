@@ -195,34 +195,35 @@ public class Login extends javax.swing.JFrame {
 
     private boolean entrarALogin(){
         String rut = textEntradaUsuario.getText();
+        
         //comprueba que el rut exista
         if(valpo.buscarRut(rut, true) == null){
             JOptionPane.showMessageDialog(this, "USUARIO NO EXISTE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            
             textEntradaUsuario.setText("");
             jPasswordEntrada.setText("");
-            
+            textEntradaUsuario.requestFocus();
         }
         //comprueba que el usuario sean iguales
-        if(valpo.buscarRut(rut, true).getRut() != rut){
-            JOptionPane.showMessageDialog(this, "USUARIO NO CORRESPONDE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+        if(valpo.buscarRut(rut, true).getRut().equals(rut)){
+            char[] password = jPasswordEntrada.getPassword();
+            String contraseña = new String(password);
+            //comprueba contraseña sean iguales
+           if(contraseña.equals(valpo.buscarRut(rut, true).contraseña())){
+               
+              EscrutinioVentana a = new EscrutinioVentana(this, true, valpo,valpo.buscarRut(rut, true));
+              this.setVisible(false);
+              a.setVisible(true);
+          
+              return true;
+           }  
+        }
+            JOptionPane.showMessageDialog(this, "USUARIO Y CONTRASEÑA NO CORRESPONDE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
             textEntradaUsuario.setText("");
             jPasswordEntrada.setText("");
-            
-        }
-        
-        char[] password = jPasswordEntrada.getPassword();
-        String contraseña = new String(password);
-        //comprueba contraseña sean iguales
-        if(!password.equals(valpo.buscarRut(rut, true).contraseña())){
-            JOptionPane.showMessageDialog(this, "CONTRASEÑA NO CORRESPONDE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-            textEntradaUsuario.setText("");
-            jPasswordEntrada.setText("");
-        }
-        
-        EscrutinioVentana a = new EscrutinioVentana(this, true, valpo,valpo.buscarRut(rut, true));
-        this.setVisible(false);
-        a.setVisible(true);
-        return true;
+            textEntradaUsuario.requestFocus();
+            return false;
+       
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

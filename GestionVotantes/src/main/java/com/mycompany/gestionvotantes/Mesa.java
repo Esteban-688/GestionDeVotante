@@ -42,11 +42,10 @@ public class Mesa {
       *rut: NO ASIGNADO
      */
     public void reservarParaVocal(){
-        String name = ("VOCAL DE MESA");
+        String name = (" DE MESA");
         String rut = ("NO ASIGNADO");
-        //aunque dice que es un votante solo es para reservar el espacio para cuando se asigne un nuevo vocal
-        //a una mesa ya creada;
-        Votante nuevoVocal = new Votante(name, rut, id);
+        
+        Vocal nuevoVocal = new Vocal(name, rut, id," ");
         mesaPersona.add(0, nuevoVocal);
     }
     
