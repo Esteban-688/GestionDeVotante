@@ -56,7 +56,7 @@ public class Mesa {
      */
     public boolean retonarSiExisteVocal(){
         
-       if(mesaPersona.get(0).getName().equals("VOCAL DE MESA")){
+       if(mesaPersona.get(0).getName().equals(" DE MESA")){
            return false;
        }
         return true;
