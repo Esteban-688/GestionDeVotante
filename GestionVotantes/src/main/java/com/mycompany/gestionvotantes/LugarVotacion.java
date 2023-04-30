@@ -180,7 +180,17 @@ public class LugarVotacion {
     public void eliminarMesa(int numeroMesa){
             valparaiso.remove(numeroMesa);
             System.out.println("¡Mesa borrada con éxito!\n");
-    }  
+    }
+    /**
+     * busca la mesa y mandan los votos
+     * @param numero numero de mesa a la que se coloca los votos
+     * @param si votos si
+     * @param no votos no
+     * @param nulos votos nulos
+     */
+    public void rellenarEscrutinio(int numero, int si, int no, int nulos){
+        valparaiso.get(numero).rellenaVotos(si, no, nulos);
+    }
    
 }
     

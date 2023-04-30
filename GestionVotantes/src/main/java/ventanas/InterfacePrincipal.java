@@ -41,25 +41,71 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         BackgroundItems = new javax.swing.JPanel();
-        BotonCrearV = new javax.swing.JButton();
-        BotonCrearMesa = new javax.swing.JButton();
-        BotonMostraTodo = new javax.swing.JButton();
-        BotonBuscarRut = new javax.swing.JButton();
         BotonVolver = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         LBLtitle = new javax.swing.JLabel();
-        LBLetiqueta = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
-        BotonEliminarRut = new javax.swing.JButton();
-        BotonCambiarVotantePorVocal = new javax.swing.JButton();
-        BotonEliminarMesa = new javax.swing.JButton();
+        BotonCrearV = new javax.swing.JButton();
         BotonCrearVocal = new javax.swing.JButton();
+        BotonCrearMesa = new javax.swing.JButton();
+        BotonEliminarMesa = new javax.swing.JButton();
+        BotonMostraTodo = new javax.swing.JButton();
+        BotonCambiarVotantePorVocal = new javax.swing.JButton();
+        BotonBuscarRut = new javax.swing.JButton();
+        BotonEliminarRut = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         background.setBackground(new java.awt.Color(0, 153, 204));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BackgroundItems.setBackground(new java.awt.Color(64, 224, 208));
+
+        BotonVolver.setText("VOLVER");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
+        BackgroundItems.setLayout(BackgroundItemsLayout);
+        BackgroundItemsLayout.setHorizontalGroup(
+            BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+        BackgroundItemsLayout.setVerticalGroup(
+            BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundItemsLayout.createSequentialGroup()
+                .addContainerGap(745, Short.MAX_VALUE)
+                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
+
+        background.add(BackgroundItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 142, 810));
+
+        LBLtitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        LBLtitle.setForeground(new java.awt.Color(0, 0, 0));
+        LBLtitle.setText("GESTION DE VOTANTES");
+        background.add(LBLtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 350, 60));
+
+        BackgroundItems2.setBackground(new java.awt.Color(64, 224, 208));
+
+        javax.swing.GroupLayout BackgroundItems2Layout = new javax.swing.GroupLayout(BackgroundItems2);
+        BackgroundItems2.setLayout(BackgroundItems2Layout);
+        BackgroundItems2Layout.setHorizontalGroup(
+            BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        BackgroundItems2Layout.setVerticalGroup(
+            BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 830, Short.MAX_VALUE)
+        );
+
+        background.add(BackgroundItems2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, -7, 150, 830));
 
         BotonCrearV.setText("CREAR VOTANTE");
         BotonCrearV.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -72,107 +118,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearVActionPerformed(evt);
             }
         });
-
-        BotonCrearMesa.setText("CREAR MESA");
-        BotonCrearMesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCrearMesaActionPerformed(evt);
-            }
-        });
-
-        BotonMostraTodo.setText("MOSTRAR TODO");
-        BotonMostraTodo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonMostraTodoActionPerformed(evt);
-            }
-        });
-
-        BotonBuscarRut.setText("BUSCAR POR RUT");
-        BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonBuscarRutActionPerformed(evt);
-            }
-        });
-
-        BotonVolver.setText("Volver al LOGIN");
-        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonVolverActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("Icono/adminlogoSF.png"));
-
-        javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
-        BackgroundItems.setLayout(BackgroundItemsLayout);
-        BackgroundItemsLayout.setHorizontalGroup(
-            BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
-            .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(52, 52, 52))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        BackgroundItemsLayout.setVerticalGroup(
-            BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BotonCrearV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(BotonCrearMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(BotonMostraTodo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(119, 119, 119)
-                .addComponent(BotonBuscarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
-                .addComponent(BotonVolver)
-                .addGap(22, 22, 22))
-        );
-
-        LBLtitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        LBLtitle.setForeground(new java.awt.Color(0, 0, 0));
-        LBLtitle.setText("GESTION DE VOTANTES");
-
-        LBLetiqueta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        LBLetiqueta.setForeground(new java.awt.Color(0, 0, 0));
-        LBLetiqueta.setText("MODO ADMINITRADOR");
-
-        BackgroundItems2.setBackground(new java.awt.Color(64, 224, 208));
-
-        BotonEliminarRut.setText("ELIMINAR POR RUT");
-        BotonEliminarRut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEliminarRutActionPerformed(evt);
-            }
-        });
-
-        BotonCambiarVotantePorVocal.setText("CAMBIAR VOTANTE POR VOCAL");
-        BotonCambiarVotantePorVocal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonCambiarVotantePorVocalActionPerformed(evt);
-            }
-        });
-
-        BotonEliminarMesa.setText("ELIMINAR MESA");
-        BotonEliminarMesa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonEliminarMesaActionPerformed(evt);
-            }
-        });
+        background.add(BotonCrearV, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 180, 40));
 
         BotonCrearVocal.setText("CREAR VOCAL");
         BotonCrearVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -180,82 +126,71 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearVocalActionPerformed(evt);
             }
         });
+        background.add(BotonCrearVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 180, 40));
 
-        javax.swing.GroupLayout BackgroundItems2Layout = new javax.swing.GroupLayout(BackgroundItems2);
-        BackgroundItems2.setLayout(BackgroundItems2Layout);
-        BackgroundItems2Layout.setHorizontalGroup(
-            BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItems2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
-            .addGroup(BackgroundItems2Layout.createSequentialGroup()
-                .addGroup(BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BackgroundItems2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BotonCambiarVotantePorVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(BackgroundItems2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BotonCrearVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BotonEliminarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 23, Short.MAX_VALUE))
-        );
-        BackgroundItems2Layout.setVerticalGroup(
-            BackgroundItems2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItems2Layout.createSequentialGroup()
-                .addContainerGap(148, Short.MAX_VALUE)
-                .addComponent(BotonCrearVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98)
-                .addComponent(BotonEliminarMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78)
-                .addComponent(BotonCambiarVotantePorVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125)
-                .addComponent(BotonEliminarRut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(188, 188, 188))
-        );
+        BotonCrearMesa.setText("CREAR MESA");
+        BotonCrearMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCrearMesaActionPerformed(evt);
+            }
+        });
+        background.add(BotonCrearMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 180, 40));
 
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(BackgroundItems, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(LBLtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(LBLetiqueta)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BackgroundItems2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(417, 417, 417))
-        );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(LBLtitle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LBLetiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BackgroundItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BackgroundItems2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        BotonEliminarMesa.setText("ELIMINAR MESA");
+        BotonEliminarMesa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarMesaActionPerformed(evt);
+            }
+        });
+        background.add(BotonEliminarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 180, 40));
+
+        BotonMostraTodo.setText("MOSTRAR TODO");
+        BotonMostraTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonMostraTodoActionPerformed(evt);
+            }
+        });
+        background.add(BotonMostraTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 180, 40));
+
+        BotonCambiarVotantePorVocal.setText("CAMBIAR VOTANTE POR VOCAL");
+        BotonCambiarVotantePorVocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCambiarVotantePorVocalActionPerformed(evt);
+            }
+        });
+        background.add(BotonCambiarVotantePorVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 220, 40));
+
+        BotonBuscarRut.setText("BUSCAR POR RUT");
+        BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarRutActionPerformed(evt);
+            }
+        });
+        background.add(BotonBuscarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 170, 40));
+
+        BotonEliminarRut.setText("ELIMINAR POR RUT");
+        BotonEliminarRut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEliminarRutActionPerformed(evt);
+            }
+        });
+        background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 180, 40));
+
+        jButton1.setText("CONTEO DE VOTOS");
+        background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 838, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)
         );
 
         pack();
@@ -350,10 +285,9 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonEliminarRut;
     private javax.swing.JButton BotonMostraTodo;
     private javax.swing.JButton BotonVolver;
-    private javax.swing.JLabel LBLetiqueta;
     private javax.swing.JLabel LBLtitle;
     private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
     
 }

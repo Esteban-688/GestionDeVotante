@@ -221,6 +221,19 @@ public class Mesa {
         }
         return false;
     }
+    /**
+     * reescribe los votos de la mesa escrutinio
+     * @param si votos SI
+     * @param no Votos NO
+     * @param nulos votos NULOS
+     * @return TRUE de que lo hizo correctamente
+     */
+    public boolean rellenaVotos(int si, int no, int nulos){
+        escrutinio.add(0,si);//SI
+        escrutinio.add(1,no);//NO
+        escrutinio.add(2,nulos);//NULOS
+        return true;
+    }
    
     //setter y getters
     public int getId() {

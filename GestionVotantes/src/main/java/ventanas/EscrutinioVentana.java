@@ -7,6 +7,7 @@ package ventanas;
 
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,6 +26,7 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         valpo = valparaiso;
         vocal = vocalLogin;
         initComponents();
+        rellenarVocal();
     }
 
     /**
@@ -65,6 +67,12 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         LBLModoVotante.setForeground(new java.awt.Color(0, 0, 0));
         LBLModoVotante.setText("Modo Vocal");
 
+        textEntradaSi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEntradaSiActionPerformed(evt);
+            }
+        });
+
         LBLInformacion.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         LBLInformacion.setForeground(new java.awt.Color(0, 0, 0));
         LBLInformacion.setText("Porfavor Rellene los siguientes Datos");
@@ -77,6 +85,12 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         LBLVotosNo.setForeground(new java.awt.Color(0, 0, 0));
         LBLVotosNo.setText("Cantidad Votos \"NO\"");
 
+        textEntradaNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEntradaNoActionPerformed(evt);
+            }
+        });
+
         textEntradaNulos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textEntradaNulosActionPerformed(evt);
@@ -88,6 +102,11 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         LBLVotosSI1.setText("Cantidad Votos \"NULOS/BLANCOS\"");
 
         textSalidaNombreVocal.setEditable(false);
+        textSalidaNombreVocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textSalidaNombreVocalActionPerformed(evt);
+            }
+        });
 
         textSalidaNumeroMesa.setEditable(false);
 
@@ -174,9 +193,9 @@ public class EscrutinioVentana extends javax.swing.JDialog {
                 .addComponent(textEntradaNo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LBLVotosSI1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(textEntradaNulos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(47, 47, 47)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addComponent(LBLInformacionNombre)
@@ -217,14 +236,48 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         //visibilidad de ventanas
         Login.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
-
+    private boolean enviarDatos(){
+        try {
+            int si = Integer.parseInt(textEntradaSi.getText());
+            int no = Integer.parseInt(textEntradaNo.getText());
+            int nulos = Integer.parseInt(textEntradaNulos.getText());
+            valpo.rellenarEscrutinio(vocal.getNMesa(), si, no, nulos); 
+            return true;
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Los votos deben ser Número Enteros", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            textEntradaSi.setText("");
+            textEntradaNo.setText("");
+            textEntradaNulos.setText("");
+            textEntradaSi.requestFocus();
+            return false;
+        }       
+    }
+    private void rellenarVocal(){
+        textSalidaNombreVocal.setText(vocal.getName());
+        textSalidaNumeroMesa.setText(Integer.toString(vocal.getNMesa()));
+        textEntradaSi.requestFocus();
+    }
     private void botonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarActionPerformed
-        // TODO add your handling code here:
+        enviarDatos();
     }//GEN-LAST:event_botonEnviarActionPerformed
 
     private void textEntradaNulosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaNulosActionPerformed
-        // TODO add your handling code here:
+        enviarDatos();
     }//GEN-LAST:event_textEntradaNulosActionPerformed
+
+    private void textSalidaNombreVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textSalidaNombreVocalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textSalidaNombreVocalActionPerformed
+
+    private void textEntradaSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaSiActionPerformed
+        // TODO add your handling code here:
+        textEntradaNo.requestFocus();
+    }//GEN-LAST:event_textEntradaSiActionPerformed
+
+    private void textEntradaNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaNoActionPerformed
+        // TODO add your handling code here:
+        textEntradaNulos.requestFocus();
+    }//GEN-LAST:event_textEntradaNoActionPerformed
 
     /**
      * @param args the command line arguments

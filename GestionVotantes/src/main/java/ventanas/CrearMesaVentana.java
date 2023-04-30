@@ -165,7 +165,7 @@ public class CrearMesaVentana extends javax.swing.JDialog {
        try{
             enviarDatos();
        }catch(ExceptionMesaExiste e){
-           JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "ESTA MESA YA EXISTE", "ERROR", JOptionPane.INFORMATION_MESSAGE);
             textNumeroMesa.setText("");
             textNumeroMesa.requestFocus();
        }
@@ -176,7 +176,7 @@ public class CrearMesaVentana extends javax.swing.JDialog {
         try{
             enviarDatos();
        }catch(ExceptionMesaExiste e){
-           JOptionPane.showMessageDialog(this, "Datos enviados con éxito", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "ESTA MESA YA EXISTE", "ERROR", JOptionPane.INFORMATION_MESSAGE);
             textNumeroMesa.setText("");
             textNumeroMesa.requestFocus();
        }
