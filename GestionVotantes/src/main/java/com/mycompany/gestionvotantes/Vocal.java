@@ -38,11 +38,8 @@ public class Vocal extends Persona{
         return ("VOCAL "+ name);
     }
     
-    public void setContraseña(String password){
-        contraseña = password;
-    }
-    
-    public String getContraseña(){
+    @Override
+    public String contraseña(){
         return contraseña;
     }
     

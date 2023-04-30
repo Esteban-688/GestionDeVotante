@@ -299,7 +299,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         textSalidaNombre.setText(valpo.buscarRut(rut, true).getName());
         textSalidaRut.setText(valpo.buscarRut(rut, true).getRut());
         textSalidaNMesa.setText(Integer.toString(valpo.buscarRut(rut, true).getNMesa()));
-        textSalidaUsuario.setText(valpo.buscarRut(rut, true).getName());
+        textSalidaUsuario.setText(valpo.buscarRut(rut, true).getRut());
        
         
         int id = Integer.parseInt(textSalidaNMesa.getText());

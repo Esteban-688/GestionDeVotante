@@ -170,7 +170,6 @@ public class CrearVotanteVentana extends javax.swing.JDialog {
 
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
         // TODO add your handling code here:
-        
         //cerrar ventana de Dialoj
         this.dispose();
         //visibilidad de ventanas

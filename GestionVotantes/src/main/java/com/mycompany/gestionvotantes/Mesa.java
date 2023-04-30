@@ -12,7 +12,12 @@ import java.util.*;
 public class Mesa {
     //declaration Variable
     private int id;//numero de la mesa que corresponde la cual es la id del hashmap en donde se encuentra
-    private ArrayList<Persona> mesaPersona = new ArrayList<>();
+    private ArrayList<Persona> mesaPersona = new ArrayList<>();//guarda objetos Persona
+    /**
+     * guarda los votos escultados
+     * posicion 0 = SI / 1 = NO / 3 = NULOS
+     */
+    private ArrayList<Integer> escrutinio = new ArrayList<>();
     
     
     /**
@@ -24,6 +29,9 @@ public class Mesa {
     public Mesa(int numeroDeMesa){
         id = numeroDeMesa;
         reservarParaVocal();
+        escrutinio.add(0,0);//SI
+        escrutinio.add(1,0);//NO
+        escrutinio.add(2,0);//NULOS
     }
    
     /**
@@ -55,12 +63,20 @@ public class Mesa {
         return true;
     }
     /**
-     * esta funncion retorna la persona del arraylist(index)
+     * esta funcion retorna la persona del arraylist mesaVotantes(index)
      * @param index posicion de la que retorna el ArrayList
      * @return un tipo Persona
      */
     public Persona obtenerPersona(int index){
         return mesaPersona.get(index);
+    }
+    /**
+     * esta funcion retorna el valor de los votos del arraylist escrutinio(index)
+     * @param index posicion de la que retorna el ArrayList
+     * @return un entero valor del voto SI/NO/NULOS
+     */
+    public int obtenerVotos(int index){
+        return escrutinio.get(index);
     }
     /**
      * esta funcion se utiliza para saber la cantidad Personas que tiene la mesa
@@ -206,7 +222,7 @@ public class Mesa {
         }
         return false;
     }
-    
+   
     //setter y getters
     public int getId() {
         return id;

@@ -149,7 +149,7 @@ public class Menu {
                         //se pedira contraseña, asumiendo que solo hay un vocal por mesa;
                         System.out.println("Introduzca una contraseña");
                         contraseña = leer.nextLine();
-                        System.out.println("Para Ingresar tenga en cuenta que el USUARIO es su nombre: " + name);
+                        System.out.println("Para Ingresar tenga en cuenta que el USUARIO es su RUT: " + rut);
                         System.out.println(" ");
                         //Con el contructor se crea el votante 
                         Vocal nuevoVocal = new Vocal(name, rut, nMesa, contraseña);

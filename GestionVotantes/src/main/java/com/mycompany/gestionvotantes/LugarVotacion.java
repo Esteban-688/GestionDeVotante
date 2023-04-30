@@ -181,6 +181,6 @@ public class LugarVotacion {
             valparaiso.remove(numeroMesa);
             System.out.println("¡Mesa borrada con éxito!\n");
     }  
-    
+   
 }
     

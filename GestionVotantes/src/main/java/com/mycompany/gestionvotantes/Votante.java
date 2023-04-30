@@ -27,6 +27,10 @@ public class Votante extends Persona {
       //con este metodo retornando true, avisa que es un Votante
       return true;
     }
+    @Override
+    public String contraseña(){
+        return null;
+    }
     /*
      //Funcion cargar datos desde un csv
      public static void cargarInscritos(ArrayList<Votante> mesaVotante) throws IOException{

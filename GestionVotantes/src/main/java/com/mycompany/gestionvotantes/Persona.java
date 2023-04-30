@@ -30,7 +30,7 @@ public abstract class Persona {
      */
     public abstract boolean retornaTipo();
    
-    
+    public abstract String contraseña();
     //setters y getters
     
     public String getName() {

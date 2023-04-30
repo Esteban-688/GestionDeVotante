@@ -288,14 +288,14 @@ public class CrearVocalVentana extends javax.swing.JDialog {
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void TextEntradaNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaNombreActionPerformed
-        // TODO add your handling code here:
-        TextSalidaUsuario.setText(TextEntradaNombre.getText());
+        // TODO add your handling code here
         TextEntradaRut.requestFocus();
         
     }//GEN-LAST:event_TextEntradaNombreActionPerformed
 
     private void TextEntradaRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaRutActionPerformed
         // TODO add your handling code here:
+        TextSalidaUsuario.setText(TextEntradaRut.getText());
         TextEntradaNumeroMesa.requestFocus();
     }//GEN-LAST:event_TextEntradaRutActionPerformed
 

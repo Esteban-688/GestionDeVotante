@@ -7,6 +7,7 @@ package ventanas;
 
 import com.mycompany.gestionvotantes.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -42,7 +43,7 @@ public class Login extends javax.swing.JFrame {
         LBLUsuario1 = new javax.swing.JLabel();
         textEntradaUsuario = new javax.swing.JTextField();
         jPasswordEntrada = new javax.swing.JPasswordField();
-        jButton2 = new javax.swing.JButton();
+        botonEntrar = new javax.swing.JButton();
         panelMODOADMIN = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
 
@@ -67,7 +68,24 @@ public class Login extends javax.swing.JFrame {
         LBLUsuario1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LBLUsuario1.setText("CONTRASEÑA");
 
-        jButton2.setText("ENTRAR");
+        textEntradaUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textEntradaUsuarioActionPerformed(evt);
+            }
+        });
+
+        jPasswordEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordEntradaActionPerformed(evt);
+            }
+        });
+
+        botonEntrar.setText("ENTRAR");
+        botonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEntrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelContenidoLayout = new javax.swing.GroupLayout(panelContenido);
         panelContenido.setLayout(panelContenidoLayout);
@@ -90,8 +108,8 @@ public class Login extends javax.swing.JFrame {
                         .addGap(122, 122, 122)
                         .addComponent(LBLUsuario1))
                     .addGroup(panelContenidoLayout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jButton2)))
+                        .addGap(187, 187, 187)
+                        .addComponent(botonEntrar)))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         panelContenidoLayout.setVerticalGroup(
@@ -107,9 +125,9 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(LBLUsuario1)
                 .addGap(18, 18, 18)
                 .addComponent(jPasswordEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(botonEntrar)
+                .addGap(28, 28, 28))
         );
 
         panelMODOADMIN.setBackground(new java.awt.Color(0, 153, 204));
@@ -175,11 +193,58 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private boolean entrarALogin(){
+        String rut = textEntradaUsuario.getText();
+        //comprueba que el rut exista
+        if(valpo.buscarRut(rut, true) == null){
+            JOptionPane.showMessageDialog(this, "USUARIO NO EXISTE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            textEntradaUsuario.setText("");
+            jPasswordEntrada.setText("");
+            
+        }
+        //comprueba que el usuario sean iguales
+        if(valpo.buscarRut(rut, true).getRut() != rut){
+            JOptionPane.showMessageDialog(this, "USUARIO NO CORRESPONDE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            textEntradaUsuario.setText("");
+            jPasswordEntrada.setText("");
+            
+        }
+        
+        char[] password = jPasswordEntrada.getPassword();
+        String contraseña = new String(password);
+        //comprueba contraseña sean iguales
+        if(!password.equals(valpo.buscarRut(rut, true).contraseña())){
+            JOptionPane.showMessageDialog(this, "CONTRASEÑA NO CORRESPONDE ", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+            textEntradaUsuario.setText("");
+            jPasswordEntrada.setText("");
+        }
+        
+        EscrutinioVentana a = new EscrutinioVentana(this, true, valpo,valpo.buscarRut(rut, true));
+        this.setVisible(false);
+        a.setVisible(true);
+        return true;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         MenuPrincipal.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
+        // TODO add your handling code here:
+       entrarALogin();
+    }//GEN-LAST:event_botonEntrarActionPerformed
+
+    private void jPasswordEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordEntradaActionPerformed
+        // TODO add your handling code here:
+        entrarALogin();
+    }//GEN-LAST:event_jPasswordEntradaActionPerformed
+
+    private void textEntradaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaUsuarioActionPerformed
+        // TODO add your handling code here:
+        jPasswordEntrada.requestFocus();
+    }//GEN-LAST:event_textEntradaUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,8 +256,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel LBLUsuario;
     private javax.swing.JLabel LBLUsuario1;
     private javax.swing.JLabel LBLtitulo;
+    private javax.swing.JButton botonEntrar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPasswordField jPasswordEntrada;
     private javax.swing.JPanel panelContenido;
     private javax.swing.JPanel panelMODOADMIN;
