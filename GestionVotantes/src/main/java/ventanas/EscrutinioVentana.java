@@ -6,8 +6,11 @@
 package ventanas;
 
 import com.mycompany.gestionvotantes.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 /**
  *
@@ -28,7 +31,7 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         
         initComponents();
         rellenarVocal();
-        
+        aviso();
     }
 
     /**
@@ -262,6 +265,18 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         textSalidaNumeroMesa.setText(Integer.toString(vocal.getNMesa()));
         textEntradaSi.requestFocus();
     }
+    private void aviso() {
+        int delay = 2000;
+        Timer timer = new Timer(delay, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Toda Informacion vertida debe ser veridica y es de exclusiva responsabilidad de quien la emite", "RECORDATORIO", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
+        timer.setRepeats(false); 
+        timer.start();
+    }
+    
     private void botonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarActionPerformed
         enviarDatos();
     }//GEN-LAST:event_botonEnviarActionPerformed

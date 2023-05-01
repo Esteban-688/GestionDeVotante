@@ -1,8 +1,8 @@
-1,Esteban Rodriguez,20795836-0,123
+1,Leonardo González,20551842-8,moai-san2158
+1,Esteban Rodriguez,20795836-0
 1,Tiburcio Jimenez,12345634-7
 1,Marco Tapia,50892291-9
 1,Luis Marquez,7882881-9
-1,Helga Pataki,13734402-2
 1,Arturo Ruiz,16784918-1
 2,Antonio Lopez,5222067-3
 2,Ignacio Cubillos,14648386-1

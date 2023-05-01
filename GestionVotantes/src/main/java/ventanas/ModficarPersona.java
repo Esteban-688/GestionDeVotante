@@ -26,6 +26,7 @@ public class ModficarPersona extends javax.swing.JDialog {
         valpo = valparaiso;
         initComponents();
         setResizable(false);
+        botonEnviar.setEnabled(false); 
     }
 
     /**
@@ -245,28 +246,29 @@ public class ModficarPersona extends javax.swing.JDialog {
     }
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-        buscarPersona();
+        if(buscarPersona()){
+            botonEnviar.setEnabled(true); 
+        }
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void textEntradaRutBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaRutBuscarActionPerformed
         // TODO add your handling code here:
-        buscarPersona();
+        if(buscarPersona()){
+            botonEnviar.setEnabled(true); 
+        }
     }//GEN-LAST:event_textEntradaRutBuscarActionPerformed
     private boolean enviarDatos(){
         String rut = textSalidaRut.getText();
         String nombreNuevo = textEntradaNombre.getText();
         String rutNuevo = textEntradaRut.getText();
         if(nombreNuevo.equals("")){
-            
-            if(rutNuevo.equals("")){
-                JOptionPane.showMessageDialog(this, "NOMBRE Y RUT no puede estar vacio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-  
-                return false;
-            }
             JOptionPane.showMessageDialog(this, "Nombre no puede estar vacio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
-            
             return false;
         }
+        if(rutNuevo.equals("")){
+                JOptionPane.showMessageDialog(this, "RUT no puede estar vacio", "ERROR", JOptionPane.INFORMATION_MESSAGE);
+                return false;
+            }
         valpo.buscarRut(rut, false).setName(nombreNuevo);
         valpo.buscarRut(rut, false).setRut(rutNuevo);
         JOptionPane.showMessageDialog(this, "SE MODIFICO CON EXITO", "EXITO", JOptionPane.INFORMATION_MESSAGE);
@@ -276,16 +278,19 @@ public class ModficarPersona extends javax.swing.JDialog {
         textEntradaRut.setText("");
         textSalidaNombre.setText("");
         textSalidaRut.setText("");
+        botonEnviar.setEnabled(false); 
         return true;
     }
     private void botonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnviarActionPerformed
         // TODO add your handling code here:
         enviarDatos();
+           
+        
     }//GEN-LAST:event_botonEnviarActionPerformed
 
     private void textEntradaRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textEntradaRutActionPerformed
         // TODO add your handling code here:
-        enviarDatos();
+        
     }//GEN-LAST:event_textEntradaRutActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
