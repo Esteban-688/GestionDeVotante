@@ -224,6 +224,26 @@ public class LugarVotacion {
         }
         return total;
     }
-   
+      
+    //Funcion cargar datos desde un csv
+    public void cargarInscritos() throws IOException{
+        String filePath = "./Personas.txt";
+        BufferedReader leer = new BufferedReader( new FileReader( filePath ) );
+        String lineText = null;
+		
+	while ((lineText = leer.readLine()) != null) {	
+            String[] arr = lineText.split(",");
+            boolean terminaCon = arr[1].startsWith("#");
+            
+            if(terminaCon){
+                Vocal nuevoVocal = new Vocal(arr[1], arr[2], Integer.parseInt(arr[0]),arr[3]);
+                agregarPersonaAMesa(nuevoVocal,Integer.parseInt(arr[0]));
+            }else{
+                Votante nuevoVotante = new Votante(arr[1], arr[2], Integer.parseInt(arr[0]));
+                agregarPersonaAMesa(nuevoVotante,Integer.parseInt(arr[0]));
+            }
+        }
+	leer.close();
+    }
 }
     

@@ -19,7 +19,7 @@ public class Menu {
      * @param valpo mapa donde se va utilizay y guardar el programa
      */
     public void desplegarMenu(LugarVotacion valpo){
-    //try{
+    
        System.out.println("Bienvenido al programa de gestión de votacion\n");
        
        do {
@@ -194,13 +194,6 @@ public class Menu {
                     }
                 }
             } while(choose != 0);
-   /* }
-    catch(IOException e){
-    
-    }
-    catch(ExceptionMesaNoCreada){
-        }*/
-        
 }
                     
     /**
