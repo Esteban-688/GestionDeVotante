@@ -72,15 +72,10 @@ public class LugarVotacion {
     /**
      * verifica si existe un vocal en Mesa
      * @param id mesa para preguntar si existe vocal
-     * @return TRUE Existe vocal/ FALSE NO existe vocal
+     * @return TRUE Existe NO vocal/ FALSE existe vocal
      */
-    public boolean vocalEnMesa(int id){
-        
-        if(valparaiso.get(id).retonarSiExisteVocal()){
-            //existe vocal en mesa
-          return true;
-        }
-       return false;
+    public boolean vocalEnMesa(int id){   
+        return valparaiso.get(id).retonarSiExisteVocal();
     }
     
     /**
@@ -246,7 +241,7 @@ public class LugarVotacion {
      * @throws IOException 
      */
     public void cargarInscritos() throws IOException{
-        String filePath = "/Personas.txt";
+        String filePath = "./Personas.txt";
         BufferedReader leer = new BufferedReader(new FileReader(filePath));
         String lineText = null;
 

@@ -149,7 +149,11 @@ public class EliminarMesaVentana extends javax.swing.JDialog {
             // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
             int numeroMesa = Integer.parseInt(textEntradaNumeroMesa.getText());
             // Realiza la acción con los datos (p. ej., enviar los valores al programa principal)
-             
+             if(textEntradaNumeroMesa.getText().equals("")){
+                 JOptionPane.showMessageDialog(this, "No ha ingresado Nada", "Error", JOptionPane.INFORMATION_MESSAGE);
+               
+                 return false;
+             }
             if(valpo.mesaExiste(numeroMesa) == false ){
                 JOptionPane.showMessageDialog(this, "La Mesa "+ numeroMesa+" NO Existe", "Error", JOptionPane.INFORMATION_MESSAGE);
                 // Limpia los campos de texto

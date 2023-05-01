@@ -29,6 +29,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         initComponents();
         setResizable(false);
         TextEntradaNombre.requestFocus();
+        BotonGuardar.setEnabled(false); 
     }
 
     /**
@@ -58,6 +59,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         BotonGuardar = new javax.swing.JButton();
         TextSalidaExisteVocal = new javax.swing.JTextField();
         LBLExisteVocal = new javax.swing.JLabel();
+        botonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -215,24 +217,41 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         LBLExisteVocal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LBLExisteVocal.setText("Existe vocal en la Mesa");
 
+        botonBuscar.setText("Buscar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout BackgroundCrearVocalLayout = new javax.swing.GroupLayout(BackgroundCrearVocal);
         BackgroundCrearVocal.setLayout(BackgroundCrearVocalLayout);
         BackgroundCrearVocalLayout.setHorizontalGroup(
             BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PanelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BackgroundCrearVocalLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
                 .addGroup(BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TextEntradaNumeroMesa)
-                        .addComponent(LBLMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LBLNombre)
-                        .addComponent(LBLRut)
-                        .addComponent(TextSalidaExisteVocal))
-                    .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LBLExisteVocal)
-                    .addComponent(TextEntradaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(BackgroundCrearVocalLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TextEntradaNumeroMesa)
+                                .addComponent(LBLMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(LBLNombre)
+                                .addComponent(LBLRut)
+                                .addComponent(TextSalidaExisteVocal))
+                            .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextEntradaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundCrearVocalLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(BackgroundCrearVocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundCrearVocalLayout.createSequentialGroup()
+                                .addComponent(LBLExisteVocal)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundCrearVocalLayout.createSequentialGroup()
+                                .addComponent(botonBuscar)
+                                .addGap(84, 84, 84)))))
                 .addComponent(PanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
@@ -244,25 +263,27 @@ public class CrearVocalVentana extends javax.swing.JDialog {
                     .addGroup(BackgroundCrearVocalLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(PanelUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 25, Short.MAX_VALUE))
                     .addGroup(BackgroundCrearVocalLayout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(LBLNombre)
                         .addGap(18, 18, 18)
                         .addComponent(TextEntradaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
+                        .addGap(18, 18, 18)
                         .addComponent(LBLRut)
                         .addGap(18, 18, 18)
                         .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(LBLMesa)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextEntradaNumeroMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(LBLExisteVocal)
+                        .addComponent(LBLMesa)
+                        .addGap(18, 18, 18)
+                        .addComponent(TextEntradaNumeroMesa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LBLExisteVocal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(TextSalidaExisteVocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))))
+                        .addContainerGap())))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -295,51 +316,42 @@ public class CrearVocalVentana extends javax.swing.JDialog {
 
     private void TextEntradaRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaRutActionPerformed
         // TODO add your handling code here:
-        TextSalidaUsuario.setText(TextEntradaRut.getText());
+        
         TextEntradaNumeroMesa.requestFocus();
     }//GEN-LAST:event_TextEntradaRutActionPerformed
 
     private void jPasswordEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordEntradaActionPerformed
         // TODO add your handling code here:
-        try{
-            enviarDatos();
-        }catch(ExceptionMesaNoCreada e){ 
-            
-            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
-            
-            if (result == JOptionPane.YES_OPTION) {
-                // El usuario seleccionó "Sí"
-                CrearMesaVentana a = new CrearMesaVentana(MenuPrincipal, true, valpo);
-                //visibilidad de ventanas
-                this.dispose();
-                a.setVisible(true);
-                
-            } else if (result == JOptionPane.NO_OPTION) {
-                // El usuario seleccionó "No"
-                TextEntradaNumeroMesa.setText("");
-                TextEntradaNumeroMesa.requestFocus();
-            } else {
-                TextEntradaNumeroMesa.setText("");
-                TextEntradaNumeroMesa.requestFocus();
-            }
-        }
+        
     }//GEN-LAST:event_jPasswordEntradaActionPerformed
 
     private void TextEntradaNumeroMesaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaNumeroMesaActionPerformed
         // TODO add your handling code here:
+        if(actualizaDatos()){
+         BotonGuardar.setEnabled(true);   
+        }
+        
+        
+    }//GEN-LAST:event_TextEntradaNumeroMesaActionPerformed
+    public boolean actualizaDatos(){
         try{
             int id = Integer.parseInt(TextEntradaNumeroMesa.getText());
+            //si la mesa no exite lanza exception
             if(valpo.mesaExiste(id) == false){
                     throw new ExceptionMesaNoCreada();
                 }
+            //pregunta si la mesa tiene vocal
             if(valpo.vocalEnMesa(id)){
-                //si es true existe vocal
-                TextSalidaExisteVocal.setText("SI EXISTE");
-            }else{
+                //si es true no existe vocal
                 TextSalidaExisteVocal.setText("NO EXISTE");
             }
+            
+            if(valpo.vocalEnMesa(id) == false){
+                TextSalidaExisteVocal.setText("SI EXISTE");
+            }
+            
         }catch(ExceptionMesaNoCreada e){
-          int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
+            int result = JOptionPane.showConfirmDialog(this, "¿Quieres crear una mesa?", "ERROR MESA NO EXISTE", JOptionPane.YES_NO_OPTION);
             
             if (result == JOptionPane.YES_OPTION) {
                 // El usuario seleccionó "Sí"
@@ -358,8 +370,9 @@ public class CrearVocalVentana extends javax.swing.JDialog {
             }  
         }
         jPasswordEntrada.requestFocus();
-    }//GEN-LAST:event_TextEntradaNumeroMesaActionPerformed
-
+        TextSalidaUsuario.setText(TextEntradaRut.getText());
+        return true;
+    }
     private void BotonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonGuardarActionPerformed
         // TODO add your handling code here:
         try{
@@ -389,6 +402,14 @@ public class CrearVocalVentana extends javax.swing.JDialog {
     private void TextSalidaExisteVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSalidaExisteVocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextSalidaExisteVocalActionPerformed
+
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        // TODO add your handling code here:
+        if(actualizaDatos()){
+         BotonGuardar.setEnabled(true);   
+        }
+        
+    }//GEN-LAST:event_botonBuscarActionPerformed
     public boolean enviarDatos()throws ExceptionMesaNoCreada{
         //declaration variable
         // Obtiene los valores de los campos de texto y realiza la acción para enviar los datos al programa
@@ -405,6 +426,11 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         char[] password = jPasswordEntrada.getPassword();
         String contraseña = new String(password);
         
+        if(contraseña.equals("")){
+           JOptionPane.showMessageDialog(this, "Debes introducir una contraseña valida", "Error", JOptionPane.INFORMATION_MESSAGE);
+           jPasswordEntrada.setText("");
+           return false;
+        }
          Vocal nuevoVocal = new Vocal(nombre,rut, numeroMesa,contraseña);
          valpo.agregarPersonaAMesa(nuevoVocal, numeroMesa);
          
@@ -418,6 +444,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
         TextSalidaExisteVocal.setText("SI EXISTE /  NO EXISTE");
         // Establece el enfoque en el primer campo de texto
         TextEntradaNombre.requestFocus();
+        BotonGuardar.setEnabled(false);
         return true;
     }
     
@@ -444,6 +471,7 @@ public class CrearVocalVentana extends javax.swing.JDialog {
     private javax.swing.JTextField TextEntradaRut;
     private javax.swing.JTextField TextSalidaExisteVocal;
     private javax.swing.JTextField TextSalidaUsuario;
+    private javax.swing.JButton botonBuscar;
     private javax.swing.JPasswordField jPasswordEntrada;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,7 +42,7 @@ public class Mesa {
       *rut: NO ASIGNADO
      */
     public void reservarParaVocal(){
-        String name = (" DE MESA");
+        String name = ("DE MESA");
         String rut = ("NO ASIGNADO");
         
         Vocal nuevoVocal = new Vocal(name, rut, id," ");
@@ -51,15 +51,15 @@ public class Mesa {
     
     /**
      * esta funcion pregunta en la mesa si existe un vocal
-     * si en la posicion 0 hay un "vocal vacio" retorna false
-     * @return TRUE si el vocal existe, FALSE si no existe vocal
+     * si en la posicion 0 hay un "vocal vacio" retorna true
+     * @return TRUE si el vocal no existe, FALSE si existe vocal
      */
     public boolean retonarSiExisteVocal(){
         
-       if(mesaPersona.get(0).getName().equals(" DE MESA")){
-           return false;
+       if(mesaPersona.get(0).getName().equals("VOCAL DE MESA")){
+           return true;
        }
-        return true;
+        return false;
     }
     /**
      * esta funcion retorna la persona del arraylist mesaVotantes(index)

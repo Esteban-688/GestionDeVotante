@@ -41,7 +41,6 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         BackgroundItems = new javax.swing.JPanel();
-        BotonVolver = new javax.swing.JButton();
         LBLtitle = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
         BotonCrearV = new javax.swing.JButton();
@@ -55,6 +54,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         botonConteoVotos = new javax.swing.JButton();
         botonCsv = new javax.swing.JButton();
         botonModificarVotante = new javax.swing.JButton();
+        BotonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,28 +63,15 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         BackgroundItems.setBackground(new java.awt.Color(64, 224, 208));
 
-        BotonVolver.setText("VOLVER");
-        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonVolverActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
         BackgroundItems.setLayout(BackgroundItemsLayout);
         BackgroundItemsLayout.setHorizontalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
+            .addGap(0, 142, Short.MAX_VALUE)
         );
         BackgroundItemsLayout.setVerticalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addContainerGap(745, Short.MAX_VALUE)
-                .addComponent(BotonVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+            .addGap(0, 810, Short.MAX_VALUE)
         );
 
         background.add(BackgroundItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 142, 810));
@@ -128,7 +115,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearVocalActionPerformed(evt);
             }
         });
-        background.add(BotonCrearVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 180, 40));
+        background.add(BotonCrearVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 180, 40));
 
         BotonCrearMesa.setText("CREAR MESA");
         BotonCrearMesa.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +123,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearMesaActionPerformed(evt);
             }
         });
-        background.add(BotonCrearMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 180, 40));
+        background.add(BotonCrearMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 180, 40));
 
         BotonEliminarMesa.setText("ELIMINAR MESA");
         BotonEliminarMesa.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +131,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonEliminarMesaActionPerformed(evt);
             }
         });
-        background.add(BotonEliminarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 180, 40));
+        background.add(BotonEliminarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 180, 40));
 
         BotonMostraTodo.setText("MOSTRAR TODO");
         BotonMostraTodo.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +139,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonMostraTodoActionPerformed(evt);
             }
         });
-        background.add(BotonMostraTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 180, 40));
+        background.add(BotonMostraTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 180, 40));
 
         BotonCambiarVotantePorVocal.setText("CAMBIAR VOTANTE POR VOCAL");
         BotonCambiarVotantePorVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +147,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCambiarVotantePorVocalActionPerformed(evt);
             }
         });
-        background.add(BotonCambiarVotantePorVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 220, 40));
+        background.add(BotonCambiarVotantePorVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 220, 40));
 
         BotonBuscarRut.setText("BUSCAR POR RUT");
         BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +155,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonBuscarRutActionPerformed(evt);
             }
         });
-        background.add(BotonBuscarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 170, 40));
+        background.add(BotonBuscarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 170, 40));
 
         BotonEliminarRut.setText("ELIMINAR POR RUT");
         BotonEliminarRut.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +163,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonEliminarRutActionPerformed(evt);
             }
         });
-        background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 180, 40));
+        background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 390, 180, 40));
 
         botonConteoVotos.setText("CONTEO DE VOTOS");
         botonConteoVotos.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +171,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 botonConteoVotosActionPerformed(evt);
             }
         });
-        background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 170, 40));
+        background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 170, 40));
 
         botonCsv.setText("DESCARGAR CSV");
         botonCsv.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +179,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 botonCsvActionPerformed(evt);
             }
         });
-        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 150, 40));
+        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 610, 150, 40));
 
         botonModificarVotante.setText("MODIFICAR VOTANTE");
         botonModificarVotante.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +187,15 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 botonModificarVotanteActionPerformed(evt);
             }
         });
-        background.add(botonModificarVotante, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 160, 40));
+        background.add(botonModificarVotante, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 500, 160, 40));
+
+        BotonVolver.setText("VOLVER");
+        BotonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonVolverActionPerformed(evt);
+            }
+        });
+        background.add(BotonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 610, 127, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -208,12 +203,11 @@ public class InterfacePrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 853, Short.MAX_VALUE)
+            .addComponent(background, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

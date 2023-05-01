@@ -26,6 +26,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         valpo = valparaiso;
         initComponents();
         setResizable(false);
+        BotonGuardar.setEnabled(false);
     }
 
     /**
@@ -53,6 +54,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         textSalidaNMesa = new javax.swing.JTextField();
         TextSalidaExisteVocal = new javax.swing.JTextField();
         LBLExisteVocal = new javax.swing.JLabel();
+        BotonBuscar = new javax.swing.JButton();
         BotonGuardar = new javax.swing.JButton();
         textSalidaUsuario = new javax.swing.JTextField();
         LBLUsuario = new javax.swing.JLabel();
@@ -106,7 +108,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
 
         LBLDatos.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         LBLDatos.setForeground(new java.awt.Color(0, 0, 0));
-        LBLDatos.setText("Datos: (Al usar Enter, se visualiza Votante)");
+        LBLDatos.setText("Datos:");
 
         LBLRutSalida.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         LBLRutSalida.setForeground(new java.awt.Color(0, 0, 0));
@@ -144,6 +146,13 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         LBLExisteVocal.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LBLExisteVocal.setText("Existe vocal en la Mesa");
 
+        BotonBuscar.setText("BUSCAR");
+        BotonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout backgroundLeftLayout = new javax.swing.GroupLayout(backgroundLeft);
         backgroundLeft.setLayout(backgroundLeftLayout);
         backgroundLeftLayout.setHorizontalGroup(
@@ -151,9 +160,6 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
             .addGroup(backgroundLeftLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(LBLRut)
-                        .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LBLDatos)
                     .addGroup(backgroundLeftLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
@@ -176,8 +182,14 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                         .addGap(32, 32, 32)
                         .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(textSalidaNMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(textSalidaRut))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                            .addComponent(textSalidaRut)))
+                    .addGroup(backgroundLeftLayout.createSequentialGroup()
+                        .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(LBLRut)
+                            .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonBuscar)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         backgroundLeftLayout.setVerticalGroup(
             backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,8 +197,10 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(LBLRut, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BotonBuscar))
+                .addGap(23, 23, 23)
                 .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -204,7 +218,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                 .addComponent(LBLExisteVocal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextSalidaExisteVocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(BotonVolver)
                 .addGap(27, 27, 27))
         );
@@ -259,7 +273,11 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
        
         char[] password = jPasswordEntrada.getPassword();
         String contraseña = new String(password);
-        
+        if(contraseña.equals("")){
+           JOptionPane.showMessageDialog(this, "Debes introducir una contraseña valida", "Error", JOptionPane.INFORMATION_MESSAGE);
+           jPasswordEntrada.setText("");
+           return false;
+        }
        valpo.cambiaVotantePorVocal(rut, contraseña);
        valpo.eliminarPorRut(rut, true);
        JOptionPane.showMessageDialog(this, "se cambio correctamente el votante", "Excelent", JOptionPane.INFORMATION_MESSAGE);
@@ -273,6 +291,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         TextSalidaExisteVocal.setText("SI EXISTE /  NO EXISTE");
         //volver curson al inicio
        TextEntradaRut.requestFocus();
+       BotonGuardar.setEnabled(false);
         return true;
     }
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
@@ -290,10 +309,11 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
     private boolean mostrarPersonaPorElRut(){
         
         String rut = TextEntradaRut.getText();
-         if(valpo.buscarRut(rut, true) == null){
+         if(valpo.buscarRut(rut, false) == null){
              JOptionPane.showMessageDialog(this, "No se encontro resultado", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);
             TextEntradaRut.setText("");
             TextEntradaRut.requestFocus();
+            return false;
         }
         textSalidaNombre.setText(valpo.buscarRut(rut, true).getName());
         textSalidaRut.setText(valpo.buscarRut(rut, true).getRut());
@@ -303,10 +323,10 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         
         int id = Integer.parseInt(textSalidaNMesa.getText());
         if(valpo.vocalEnMesa(id)){
-            //si es true existe vocal
-            TextSalidaExisteVocal.setText("SI EXISTE");
-        }else{
+            //si es true no existe vocal
             TextSalidaExisteVocal.setText("NO EXISTE");
+        }else{
+            TextSalidaExisteVocal.setText("SI EXISTE");
         }
         
         jPasswordEntrada.requestFocus();
@@ -314,23 +334,32 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
         return true;
     }
     private void TextEntradaRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntradaRutActionPerformed
-       mostrarPersonaPorElRut();
+       if(mostrarPersonaPorElRut()){
+           BotonGuardar.setEnabled(true);
+       }
     }//GEN-LAST:event_TextEntradaRutActionPerformed
 
     private void jPasswordEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordEntradaActionPerformed
         // TODO add your handling code here:
-        enviarDatos();
     }//GEN-LAST:event_jPasswordEntradaActionPerformed
 
     private void TextSalidaExisteVocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSalidaExisteVocalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TextSalidaExisteVocalActionPerformed
 
+    private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
+        // TODO add your handling code here:
+        if(mostrarPersonaPorElRut()){
+           BotonGuardar.setEnabled(true);
+       }
+    }//GEN-LAST:event_BotonBuscarActionPerformed
+
    
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BackgroundCambiarVotanteAVocal;
+    private javax.swing.JButton BotonBuscar;
     private javax.swing.JButton BotonGuardar;
     private javax.swing.JButton BotonVolver;
     private javax.swing.JLabel LBLContraseña;

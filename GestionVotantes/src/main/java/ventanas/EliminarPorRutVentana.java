@@ -26,6 +26,7 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
         valpo = valparaiso;
         initComponents();
         setResizable(false);
+        BotonBuscar.setEnabled(false);
     }
 
     /**
@@ -53,6 +54,7 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
         LBLVocal = new javax.swing.JLabel();
         TextSalidaDeVocal = new javax.swing.JTextField();
         LBLDatos = new javax.swing.JLabel();
+        boton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -140,7 +142,14 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
         LBLDatos.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         LBLDatos.setForeground(new java.awt.Color(0, 0, 0));
         LBLDatos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LBLDatos.setText("Datos: (presionar ENTER)");
+        LBLDatos.setText("Datos: ");
+
+        boton.setText("BUSCAR");
+        boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BackgroundBuscarPorRut1Layout = new javax.swing.GroupLayout(BackgroundBuscarPorRut1);
         BackgroundBuscarPorRut1.setLayout(BackgroundBuscarPorRut1Layout);
@@ -151,20 +160,23 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
                     .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LBLRut)
+                            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LBLRut)
+                                    .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                                        .addComponent(LBLMesa)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(TextSalidaDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(LBLVocal)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(TextSalidaDeVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
                                 .addComponent(BotonVolverMenuPrincipal)
-                                .addGap(107, 107, 107)
-                                .addComponent(BotonBuscar))
-                            .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
-                                .addComponent(LBLMesa)
-                                .addGap(18, 18, 18)
-                                .addComponent(TextSalidaDeMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(LBLVocal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(TextSalidaDeVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BotonBuscar)
+                                .addGap(37, 37, 37))))
                     .addComponent(PanelTitulo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundBuscarPorRut1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -180,8 +192,13 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
                 .addComponent(TextEntraRut, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(85, 85, 85))
             .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(boton))
+                    .addGroup(BackgroundBuscarPorRut1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundBuscarPorRut1Layout.setVerticalGroup(
@@ -190,7 +207,9 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
                 .addComponent(PanelTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TextEntraRut, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(boton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(LBLDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(BackgroundBuscarPorRut1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -249,6 +268,7 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
         TextSalidaDeMesa.setText("");
         TextSalidaDeVocal.setText("SI / NO");
         TextEntraRut.requestFocus();
+        BotonBuscar.setEnabled(false);
         return true;
     }
     private boolean rellenarEntradaRut(){
@@ -256,7 +276,7 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
         if(valpo.buscarRut(rut, true) == null){
              JOptionPane.showMessageDialog(this, "No se encontro resultado", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);
             TextEntraRut.setText("");
-            
+            return false;
         }
         TextSalidaDeNombre.setText(valpo.buscarRut(rut, true).getName());
         TextSalidaDeRut.setText(valpo.buscarRut(rut, true).getRut());
@@ -271,7 +291,10 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
     }
     private void TextEntraRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextEntraRutActionPerformed
         // TODO add your handling code here:
-        rellenarEntradaRut();
+        
+        if(rellenarEntradaRut()){
+            BotonBuscar.setEnabled(true);
+        }
     }//GEN-LAST:event_TextEntraRutActionPerformed
 
     private void BotonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBuscarActionPerformed
@@ -286,11 +309,17 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
 
     }//GEN-LAST:event_BotonVolverMenuPrincipalActionPerformed
 
+    private void botonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActionPerformed
+        // TODO add your handling code here:
+        if(rellenarEntradaRut()){
+            BotonBuscar.setEnabled(true);
+        }
+    }//GEN-LAST:event_botonActionPerformed
+
    
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BackgroundBuscarPorRut;
     private javax.swing.JPanel BackgroundBuscarPorRut1;
     private javax.swing.JButton BotonBuscar;
     private javax.swing.JButton BotonVolverMenuPrincipal;
@@ -299,15 +328,14 @@ public class EliminarPorRutVentana extends javax.swing.JDialog {
     private javax.swing.JLabel LBLMesa;
     private javax.swing.JLabel LBLNombre;
     private javax.swing.JLabel LBLRut;
-    private javax.swing.JLabel LBLTITULO;
     private javax.swing.JLabel LBLTITULO1;
     private javax.swing.JLabel LBLVocal;
-    private javax.swing.JPanel PanelTitulo;
     private javax.swing.JPanel PanelTitulo1;
     private javax.swing.JTextField TextEntraRut;
     private javax.swing.JTextField TextSalidaDeMesa;
     private javax.swing.JTextField TextSalidaDeNombre;
     private javax.swing.JTextField TextSalidaDeRut;
     private javax.swing.JTextField TextSalidaDeVocal;
+    private javax.swing.JButton boton;
     // End of variables declaration//GEN-END:variables
 }
