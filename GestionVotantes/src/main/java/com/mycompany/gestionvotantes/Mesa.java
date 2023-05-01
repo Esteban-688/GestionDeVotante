@@ -151,6 +151,32 @@ public class Mesa {
         }
         return null;
     }
+    /**
+     * SI escoges FALSE Retorna VOTANTES
+     * SI escoges True  Retorna un VOTANTE/VOCAL
+     * @param rut rut de persona
+     * @param a TRUE(SOLO RETORNA VOTANTE) FALSE(RETORNA E IMPRIME por consola)
+     * @return TIPO PERSONA/ TRUE(retorna solo PERSONA) / FALSE(retorna SOLO VOTANTES)
+     */
+    public Persona retornarPersona(String rut, boolean a) {
+          
+        //Se muestran los datos del votante buscado
+        if(a){
+            for(int i = 0; i < mesaPersona.size(); i++){
+                if(rut.equals(mesaPersona.get(i).getRut()))  {
+                    return mesaPersona.get(i);
+                }
+            }
+        }
+        if(a == false){
+            for(int i = 1; i < mesaPersona.size(); i++){
+                if(rut.equals(mesaPersona.get(i).getRut()))  {
+                    return mesaPersona.get(i);
+                }
+            }
+        }
+        return null;
+    }
    
     //retorna true si logra borrarlo, sino return false
     /**

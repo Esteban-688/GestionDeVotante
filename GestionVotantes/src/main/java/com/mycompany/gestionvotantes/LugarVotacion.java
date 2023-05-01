@@ -135,7 +135,7 @@ public class LugarVotacion {
     
     /**
      *  Se recorre el mapa de mesas
-     *si es true es para USO en ventana, si es false es Para consola
+     *si es true RETORNA VOTANTES Y VOCALES, si es false SOLO VOTANTES
      * @param rut identificador de la Persona
      * @param a True (VENTANA), False(CONSOLA)
      * @return un TIPO PERSONA
@@ -143,8 +143,8 @@ public class LugarVotacion {
     public Persona buscarRut(String rut, boolean a) { 
         //true Ventana : false consola
             for (Integer key: valparaiso.keySet()){
-                if(valparaiso.get(key).imprimirPersona(rut, a) != null){
-                    return valparaiso.get(key).imprimirPersona(rut, a);
+                if(valparaiso.get(key).retornarPersona(rut, a) != null){
+                    return valparaiso.get(key).retornarPersona(rut, a);
                 }
             }
         return null;
@@ -169,10 +169,12 @@ public class LugarVotacion {
      * recorre el hashmap mesa por mesa
      * @param rut de la persona que se eliminara
      */
-    public void eliminarPorRut(String rut) { 
+    public Boolean eliminarPorRut(String rut) { 
         for (Integer key: valparaiso.keySet()){ 
             valparaiso.get(key).eliminarPersonaDeMesa(rut);
+            return true;
         } 
+        return false;
     }
     /**
      * sobrecarga de metodo
@@ -237,7 +239,12 @@ public class LugarVotacion {
         return total;
     }
       
-    //Funcion cargar datos desde un csv
+    /**
+     * Funcion cargar datos desde un csv
+     * esta funcion con solo tener el archivo Persona.txt carga automaticamente
+     * solo llamando la funcion
+     * @throws IOException 
+     */
     public void cargarInscritos() throws IOException{
         String filePath = "./Personas.txt";
         BufferedReader leer = new BufferedReader(new FileReader(filePath));

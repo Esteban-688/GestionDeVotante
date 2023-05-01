@@ -54,6 +54,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BotonEliminarRut = new javax.swing.JButton();
         botonConteoVotos = new javax.swing.JButton();
         botonCsv = new javax.swing.JButton();
+        botonModificarVotante = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,7 +120,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearVActionPerformed(evt);
             }
         });
-        background.add(BotonCrearV, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 180, 40));
+        background.add(BotonCrearV, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 180, 40));
 
         BotonCrearVocal.setText("CREAR VOCAL");
         BotonCrearVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -127,7 +128,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearVocalActionPerformed(evt);
             }
         });
-        background.add(BotonCrearVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 180, 40));
+        background.add(BotonCrearVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 180, 40));
 
         BotonCrearMesa.setText("CREAR MESA");
         BotonCrearMesa.addActionListener(new java.awt.event.ActionListener() {
@@ -135,7 +136,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCrearMesaActionPerformed(evt);
             }
         });
-        background.add(BotonCrearMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 180, 40));
+        background.add(BotonCrearMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 180, 40));
 
         BotonEliminarMesa.setText("ELIMINAR MESA");
         BotonEliminarMesa.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +144,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonEliminarMesaActionPerformed(evt);
             }
         });
-        background.add(BotonEliminarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 180, 40));
+        background.add(BotonEliminarMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 180, 40));
 
         BotonMostraTodo.setText("MOSTRAR TODO");
         BotonMostraTodo.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +152,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonMostraTodoActionPerformed(evt);
             }
         });
-        background.add(BotonMostraTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 180, 40));
+        background.add(BotonMostraTodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 180, 40));
 
         BotonCambiarVotantePorVocal.setText("CAMBIAR VOTANTE POR VOCAL");
         BotonCambiarVotantePorVocal.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +160,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonCambiarVotantePorVocalActionPerformed(evt);
             }
         });
-        background.add(BotonCambiarVotantePorVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 220, 40));
+        background.add(BotonCambiarVotantePorVocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 220, 40));
 
         BotonBuscarRut.setText("BUSCAR POR RUT");
         BotonBuscarRut.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +168,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonBuscarRutActionPerformed(evt);
             }
         });
-        background.add(BotonBuscarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 170, 40));
+        background.add(BotonBuscarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 170, 40));
 
         BotonEliminarRut.setText("ELIMINAR POR RUT");
         BotonEliminarRut.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +176,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 BotonEliminarRutActionPerformed(evt);
             }
         });
-        background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 180, 40));
+        background.add(BotonEliminarRut, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 180, 40));
 
         botonConteoVotos.setText("CONTEO DE VOTOS");
         botonConteoVotos.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +184,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 botonConteoVotosActionPerformed(evt);
             }
         });
-        background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
+        background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 170, 40));
 
         botonCsv.setText("DESCARGAR CSV");
         botonCsv.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +192,15 @@ public class InterfacePrincipal extends javax.swing.JFrame {
                 botonCsvActionPerformed(evt);
             }
         });
-        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 680, 150, 40));
+        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 150, 40));
+
+        botonModificarVotante.setText("MODIFICAR VOTANTE");
+        botonModificarVotante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarVotanteActionPerformed(evt);
+            }
+        });
+        background.add(botonModificarVotante, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -297,6 +306,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_botonCsvActionPerformed
 
+    private void botonModificarVotanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarVotanteActionPerformed
+        // TODO add your handling code here:
+        ModficarPersona a = new ModficarPersona(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
+    }//GEN-LAST:event_botonModificarVotanteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,6 +333,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JButton botonConteoVotos;
     private javax.swing.JButton botonCsv;
+    private javax.swing.JButton botonModificarVotante;
     // End of variables declaration//GEN-END:variables
     
 }

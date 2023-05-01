@@ -230,6 +230,7 @@ public class BuscarPorRutVentana extends javax.swing.JDialog {
         if(valpo.buscarRut(rut, true) == null){
              JOptionPane.showMessageDialog(this, "No se encontro resultado", "NO EXISTE", JOptionPane.INFORMATION_MESSAGE);
             TextEntraRut.setText("");
+            return false;
             
         }
         TextSalidaDeNombre.setText(valpo.buscarRut(rut, true).getName());
