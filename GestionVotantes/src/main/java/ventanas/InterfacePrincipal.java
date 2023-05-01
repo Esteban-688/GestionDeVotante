@@ -185,13 +185,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         });
         background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
 
-        botonCsv.setText("CSV");
+        botonCsv.setText("DESCARGAR CSV");
         botonCsv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCsvActionPerformed(evt);
             }
         });
-        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, -1, -1));
+        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 680, 150, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
