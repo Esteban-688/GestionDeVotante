@@ -246,7 +246,7 @@ public class LugarVotacion {
      * @throws IOException 
      */
     public void cargarInscritos() throws IOException{
-        String filePath = "./Personas.txt";
+        String filePath = "/Personas.txt";
         BufferedReader leer = new BufferedReader(new FileReader(filePath));
         String lineText = null;
 
