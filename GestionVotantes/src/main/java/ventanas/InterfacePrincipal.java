@@ -53,6 +53,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         BotonBuscarRut = new javax.swing.JButton();
         BotonEliminarRut = new javax.swing.JButton();
         botonConteoVotos = new javax.swing.JButton();
+        botonCsv = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,6 +185,14 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         });
         background.add(botonConteoVotos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 170, 40));
 
+        botonCsv.setText("CSV");
+        botonCsv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonCsvActionPerformed(evt);
+            }
+        });
+        background.add(botonCsv, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,6 +290,13 @@ public class InterfacePrincipal extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_botonConteoVotosActionPerformed
 
+    private void botonCsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCsvActionPerformed
+        // TODO add your handling code here:
+        DownloadCsv a = new DownloadCsv(this, true, valpo);
+        this.setVisible(false);
+        a.setVisible(true);
+    }//GEN-LAST:event_botonCsvActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -300,6 +316,7 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel LBLtitle;
     private javax.swing.JPanel background;
     private javax.swing.JButton botonConteoVotos;
+    private javax.swing.JButton botonCsv;
     // End of variables declaration//GEN-END:variables
     
 }

@@ -155,19 +155,6 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                         .addComponent(LBLRut)
                         .addComponent(TextEntradaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(LBLDatos)
-                    .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, backgroundLeftLayout.createSequentialGroup()
-                            .addComponent(LBLNMesa)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textSalidaNMesa, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, backgroundLeftLayout.createSequentialGroup()
-                            .addComponent(LBLRutSalida)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textSalidaRut, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, backgroundLeftLayout.createSequentialGroup()
-                            .addComponent(LBLNombre)
-                            .addGap(31, 31, 31)
-                            .addComponent(textSalidaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(backgroundLeftLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,8 +164,20 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                                 .addComponent(TextSalidaExisteVocal, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(backgroundLeftLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
-                                .addComponent(BotonVolver)))))
-                .addContainerGap(9, Short.MAX_VALUE))
+                                .addComponent(BotonVolver))))
+                    .addGroup(backgroundLeftLayout.createSequentialGroup()
+                        .addComponent(LBLNombre)
+                        .addGap(31, 31, 31)
+                        .addComponent(textSalidaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(backgroundLeftLayout.createSequentialGroup()
+                        .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LBLRutSalida)
+                            .addComponent(LBLNMesa))
+                        .addGap(32, 32, 32)
+                        .addGroup(backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(textSalidaNMesa, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(textSalidaRut))))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         backgroundLeftLayout.setVerticalGroup(
             backgroundLeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +209,7 @@ public class CambiarVotanteAVocal extends javax.swing.JDialog {
                 .addGap(27, 27, 27))
         );
 
-        BackgroundCambiarVotanteAVocal.add(backgroundLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, 430));
+        BackgroundCambiarVotanteAVocal.add(backgroundLeft, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 420, 430));
 
         BotonGuardar.setText("CAMBIAR");
         BotonGuardar.addActionListener(new java.awt.event.ActionListener() {

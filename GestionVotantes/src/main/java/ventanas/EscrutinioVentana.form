@@ -59,40 +59,41 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="botonVolver" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="textEntradaSi" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <Component id="LBLVotosSI" min="-2" pref="191" max="-2" attributes="0"/>
-                                  <Component id="LBLVotosNo" alignment="0" min="-2" pref="191" max="-2" attributes="0"/>
-                                  <Component id="textEntradaNo" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <Component id="LBLVotosSI1" alignment="0" min="-2" pref="310" max="-2" attributes="0"/>
-                                  <Component id="textEntradaNulos" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="botonEnviar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="LBLInformacionNombre" min="-2" pref="73" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="textSalidaNumeroMesa" min="-2" pref="133" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="1" attributes="0">
-                                                      <Component id="LBLInformacionNMESA" min="-2" pref="134" max="-2" attributes="0"/>
-                                                      <Component id="textSalidaNombreVocal" min="-2" pref="133" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                                          </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="botonVolver" min="-2" max="-2" attributes="0"/>
+                                      <Component id="textEntradaSi" min="-2" pref="91" max="-2" attributes="0"/>
+                                      <Component id="LBLVotosSI" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="LBLVotosNo" alignment="0" min="-2" pref="191" max="-2" attributes="0"/>
+                                      <Component id="textEntradaNo" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                                      <Component id="LBLVotosSI1" alignment="0" min="-2" pref="310" max="-2" attributes="0"/>
+                                      <Component id="textEntradaNulos" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="botonEnviar" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="LBLInformacionNombre" min="-2" pref="73" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="textSalidaNumeroMesa" min="-2" pref="133" max="-2" attributes="0"/>
+                                              <Component id="LBLInformacionNMESA" min="-2" pref="134" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="textSalidaNombreVocal" alignment="1" min="-2" pref="209" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="0" pref="25" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>

@@ -113,6 +113,19 @@ public class LugarVotacion {
         }
     }
     /**
+     * sobrecarga de metodo
+     * FUNCION PARA VENTANA
+     * Esta funcion recorre el Hashmap y agrega la PERSONA al CSV
+     * @param datos es el arraylist donde se agregara
+     */
+    public void recorrerHashmap(List<String[]> datos){
+        for (Integer key: valparaiso.keySet()) {
+            for(int i = 0; i < valparaiso.get(key).obtenerTotal(); i++){     
+              datos.add(new String[]{valparaiso.get(key).obtenerPersona(i).getName(),valparaiso.get(key).obtenerPersona(i).getRut(),Integer.toString(valparaiso.get(key).obtenerPersona(i).getNMesa())});
+            }
+        }
+    }
+    /**
      * Esta funcion solo imprime la mesa pedida
      * @param id Numero de Mesa
      */
@@ -179,7 +192,6 @@ public class LugarVotacion {
      */
     public void eliminarMesa(int numeroMesa){
             valparaiso.remove(numeroMesa);
-            System.out.println("¡Mesa borrada con éxito!\n");
     }
     /**
      * busca la mesa y mandan los votos
@@ -228,22 +240,20 @@ public class LugarVotacion {
     //Funcion cargar datos desde un csv
     public void cargarInscritos() throws IOException{
         String filePath = "./Personas.txt";
-        BufferedReader leer = new BufferedReader( new FileReader( filePath ) );
+        BufferedReader leer = new BufferedReader(new FileReader(filePath));
         String lineText = null;
-		
-	while ((lineText = leer.readLine()) != null) {	
+
+        while ((lineText = leer.readLine()) != null) {
             String[] arr = lineText.split(",");
-            boolean terminaCon = arr[1].startsWith("#");
-            
-            if(terminaCon){
-                Vocal nuevoVocal = new Vocal(arr[1], arr[2], Integer.parseInt(arr[0]),arr[3]);
-                agregarPersonaAMesa(nuevoVocal,Integer.parseInt(arr[0]));
-            }else{
+            if (arr.length == 4) {
+                Vocal nuevoVocal = new Vocal(arr[1], arr[2], Integer.parseInt(arr[0]), arr[3]);
+                agregarPersonaAMesa(nuevoVocal, Integer.parseInt(arr[0]));
+            } else if (arr.length == 3) {
                 Votante nuevoVotante = new Votante(arr[1], arr[2], Integer.parseInt(arr[0]));
-                agregarPersonaAMesa(nuevoVotante,Integer.parseInt(arr[0]));
+                agregarPersonaAMesa(nuevoVotante, Integer.parseInt(arr[0]));
             }
         }
-	leer.close();
+        leer.close();
     }
 }
     

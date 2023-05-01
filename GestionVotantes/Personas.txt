@@ -1,4 +1,4 @@
-1,Esteban Rodriguez#,20795836-0,123
+1,Esteban Rodriguez,20795836-0,123
 1,Tiburcio Jimenez,12345634-7
 1,Marco Tapia,50892291-9
 1,Luis Marquez,7882881-9
