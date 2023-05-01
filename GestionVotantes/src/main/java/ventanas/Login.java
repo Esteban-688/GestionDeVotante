@@ -24,10 +24,7 @@ public class Login extends javax.swing.JFrame {
         MenuPrincipal = (JFrame) parent;
         initComponents();
         setResizable(false);
-        //asi siempre empieza en limpio los login
-        textEntradaUsuario.setText("");
-        jPasswordEntrada.setText("");
-        textEntradaUsuario.requestFocus();
+        
         
     }
 
@@ -214,6 +211,7 @@ public class Login extends javax.swing.JFrame {
             return false;
        
     }
+    
     
     private void botonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEntrarActionPerformed
         // TODO add your handling code here:

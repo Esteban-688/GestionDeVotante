@@ -25,8 +25,10 @@ public class EscrutinioVentana extends javax.swing.JDialog {
         Login = (JFrame) parent;
         valpo = valparaiso;
         vocal = vocalLogin;
+        
         initComponents();
         rellenarVocal();
+        
     }
 
     /**
@@ -241,7 +243,9 @@ public class EscrutinioVentana extends javax.swing.JDialog {
             int si = Integer.parseInt(textEntradaSi.getText());
             int no = Integer.parseInt(textEntradaNo.getText());
             int nulos = Integer.parseInt(textEntradaNulos.getText());
-            valpo.rellenarEscrutinio(vocal.getNMesa(), si, no, nulos); 
+            valpo.rellenarEscrutinio(vocal.getNMesa(), si, no, nulos);
+            JOptionPane.showMessageDialog(this, "Los votos se han enviado correctamente", "Exito", JOptionPane.INFORMATION_MESSAGE);
+            
             return true;
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Los votos deben ser Número Enteros", "ERROR", JOptionPane.INFORMATION_MESSAGE);
