@@ -41,8 +41,6 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         BackgroundItems = new javax.swing.JPanel();
-        lblCrearVotante = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         LBLtitle = new javax.swing.JLabel();
         BackgroundItems2 = new javax.swing.JPanel();
         BotonCrearV = new javax.swing.JButton();
@@ -65,32 +63,15 @@ public class InterfacePrincipal extends javax.swing.JFrame {
 
         BackgroundItems.setBackground(new java.awt.Color(64, 224, 208));
 
-        lblCrearVotante.setIcon(new javax.swing.ImageIcon("./Icono/agregarPersonaSF.png"));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("./Icono/mostrarSF.png"));
-
         javax.swing.GroupLayout BackgroundItemsLayout = new javax.swing.GroupLayout(BackgroundItems);
         BackgroundItems.setLayout(BackgroundItemsLayout);
         BackgroundItemsLayout.setHorizontalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundItemsLayout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
-                        .addComponent(lblCrearVotante)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+            .addGap(0, 142, Short.MAX_VALUE)
         );
         BackgroundItemsLayout.setVerticalGroup(
             BackgroundItemsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundItemsLayout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(lblCrearVotante)
-                .addGap(228, 228, 228)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(453, Short.MAX_VALUE))
+            .addGap(0, 820, Short.MAX_VALUE)
         );
 
         background.add(BackgroundItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -7, 142, 820));
@@ -348,8 +329,6 @@ public class InterfacePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton botonConteoVotos;
     private javax.swing.JButton botonCsv;
     private javax.swing.JButton botonModificarVotante;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblCrearVotante;
     // End of variables declaration//GEN-END:variables
     
 }
